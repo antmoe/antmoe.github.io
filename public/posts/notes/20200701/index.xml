@@ -1,14 +1,35 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>All 2020年07月01日笔记汇总 - 小康的学习记录</title><link>https://antmoe.gitee.io/posts/notes/20200701/</link><description>All 2020年07月01日笔记汇总 | 小康的学习记录</description><generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>sviptzk@163.com (Dreamy.TZK)</managingEditor><webMaster>sviptzk@163.com (Dreamy.TZK)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Wed, 01 Jul 2020 17:03:50 +0800</lastBuildDate><atom:link href="https://antmoe.gitee.io/posts/notes/20200701/" rel="self" type="application/rss+xml"/><item><title>二、ES6新语法</title><link>https://antmoe.gitee.io/posts/notes/20200701/20200701-2/</link><pubDate>Wed, 01 Jul 2020 17:05:00 +0800</pubDate><author>Author</author><guid>https://antmoe.gitee.io/posts/notes/20200701/20200701-2/</guid><description>let关键字 特点 var关键字 let关键字 变量提升 √ × 作用域 没有块级作用域，是函数作用域 有块级作用域 重复声明 √ × 重新赋值 √ √ 变量提升
-1 2 console.log(age); let age = 38; 作用域
-1 2 3 4 5 for (var i = 0; i &amp;lt; 10; i++) {} console.log(i); for (let n = 0; i &amp;lt; 10; i++) {} console.</description></item><item><title>一、Node.js入门</title><link>https://antmoe.gitee.io/posts/notes/20200701/20200701-1/</link><pubDate>Wed, 01 Jul 2020 17:04:50 +0800</pubDate><author>Author</author><guid>https://antmoe.gitee.io/posts/notes/20200701/20200701-1/</guid><description>什么是NodeJs NodeJs是一个基于谷歌V8引擎的运行环境。(服务器上的v8引擎就是node.js)
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>All 2020年07月01日笔记汇总 - 小康的学习记录</title>
+        <link>https://antmoe.gitee.io/posts/notes/20200701/</link>
+        <description>All 2020年07月01日笔记汇总 | 小康的学习记录</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>sviptzk@163.com (Dreamy.TZK)</managingEditor>
+            <webMaster>sviptzk@163.com (Dreamy.TZK)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Wed, 01 Jul 2020 17:03:50 &#43;0800</lastBuildDate><atom:link href="https://antmoe.gitee.io/posts/notes/20200701/" rel="self" type="application/rss+xml" /><item>
+    <title>二、ES6新语法</title>
+    <link>https://antmoe.gitee.io/posts/notes/20200701/20200701-2/</link>
+    <pubDate>Wed, 01 Jul 2020 17:05:00 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://antmoe.gitee.io/posts/notes/20200701/20200701-2/</guid>
+    <description><![CDATA[let关键字    特点 var关键字 let关键字     变量提升 √ ×   作用域 没有块级作用域，是函数作用域 有块级作用域   重复声明 √ ×   重新赋值 √ √      变量提升
+1 2  console.log(age); let age = 38;     作用域
+1 2 3 4 5  for (var i = 0; i &lt; 10; i++) {} console.log(i); for (let n = 0; i &lt; 10; i++) {} console.]]></description>
+</item><item>
+    <title>一、Node.js入门</title>
+    <link>https://antmoe.gitee.io/posts/notes/20200701/20200701-1/</link>
+    <pubDate>Wed, 01 Jul 2020 17:04:50 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://antmoe.gitee.io/posts/notes/20200701/20200701-1/</guid>
+    <description><![CDATA[什么是NodeJs NodeJs是一个基于谷歌V8引擎的运行环境。(服务器上的v8引擎就是node.js)
 其作用是让js拥有开发服务端的功能
 环境安装 官方地址：https://nodejs.org/zh-cn/
 安装完成后，添加环境变量。命令行终端输入node -v即可输出版本号。
 同样的，安装完NodeJs之后会自动安装npm（node package manager）。输入npm -v也会出现版本号。
-npm可以到NPM去寻找包，类似GitHub。
-运行NodeJs VSCode中使用RunCoder插件
-终端
+ npm可以到NPM去寻找包，类似GitHub。
+ 运行NodeJs   VSCode中使用RunCoder插件
+  终端
 注意路径问题，执行命令为node 文件名
-VSCode中的终端同理。
-双击node.exe，在其内编写代码
-服务器端与浏览器端 服务端的JavaScript只有ECMAScript，也就意味着在NodeJs</description></item></channel></rss>
+ VSCode中的终端同理。
+   双击node.exe，在其内编写代码
+  服务器端与浏览器端 服务端的JavaScript只有ECMAScript，也就意味着在NodeJs]]></description>
+</item></channel>
+</rss>

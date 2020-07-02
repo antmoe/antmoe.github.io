@@ -1,4 +1,16 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>All 2020年06月15日笔记汇总 - 小康的学习记录</title><link>https://antmoe.gitee.io/posts/notes/20200615/</link><description>All 2020年06月15日笔记汇总 | 小康的学习记录</description><generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>sviptzk@163.com (Dreamy.TZK)</managingEditor><webMaster>sviptzk@163.com (Dreamy.TZK)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Mon, 15 Jun 2020 21:35:50 +0800</lastBuildDate><atom:link href="https://antmoe.gitee.io/posts/notes/20200615/" rel="self" type="application/rss+xml"/><item><title>三、jQuery属性操作</title><link>https://antmoe.gitee.io/posts/notes/20200615/20200615-3/</link><pubDate>Mon, 15 Jun 2020 18:50:52 +0800</pubDate><author>Author</author><guid>https://antmoe.gitee.io/posts/notes/20200615/20200615-3/</guid><description><![CDATA[jQuery内容选择器 为了方便测试，先将DOM元素写为以下格式：
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>All 2020年06月15日笔记汇总 - 小康的学习记录</title>
+        <link>https://antmoe.gitee.io/posts/notes/20200615/</link>
+        <description>All 2020年06月15日笔记汇总 | 小康的学习记录</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>sviptzk@163.com (Dreamy.TZK)</managingEditor>
+            <webMaster>sviptzk@163.com (Dreamy.TZK)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Mon, 15 Jun 2020 21:35:50 &#43;0800</lastBuildDate><atom:link href="https://antmoe.gitee.io/posts/notes/20200615/" rel="self" type="application/rss+xml" /><item>
+    <title>三、jQuery属性操作</title>
+    <link>https://antmoe.gitee.io/posts/notes/20200615/20200615-3/</link>
+    <pubDate>Mon, 15 Jun 2020 18:50:52 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://antmoe.gitee.io/posts/notes/20200615/20200615-3/</guid>
+    <description><![CDATA[jQuery内容选择器 为了方便测试，先将DOM元素写为以下格式：
 1 2 3 4 5  &lt;div&gt;&lt;/div&gt; &lt;div&gt;我是div&lt;/div&gt; &lt;div&gt;我是div123&lt;/div&gt; &lt;div&gt;&lt;span&gt;&lt;/span&gt;&lt;/div&gt; &lt;div&gt;&lt;p&gt;&lt;/p&gt;&lt;/div&gt;     :empty找到既没有文本内容也没有子元素的指定元素。
 这个选择器对于以上内容只能找到第一个div。
 1 2  var $div = $(&#39;div:empty&#39;) console.log($div)     :parent 找到有文本内容或有子元素的指定元素
@@ -7,7 +19,14 @@
 视内容找到包含内容的div
 1 2  var $div = $(&#39;div:contains(&#34;我是div123&#34;)&#39;) console.log($div)     :has(selector)找到包含指定子元素的指定元素
 视搜索内容找到包含此子元素的元素
-1 2  var $div = $(&#39;div:has(&#34;span&#34;)&#39;) console.log($div)     属性和属性节点   什么是属性]]></description></item><item><title>二、jQuery核心函数和工具方法</title><link>https://antmoe.gitee.io/posts/notes/20200615/20200615-2/</link><pubDate>Mon, 15 Jun 2020 18:50:51 +0800</pubDate><author>Author</author><guid>https://antmoe.gitee.io/posts/notes/20200615/20200615-2/</guid><description><![CDATA[jQuery核心函数 jQuery的核心函数就是$();，圆括号内可以传递函数、字符串选择器、字符串代码片段、DOM元素等。
+1 2  var $div = $(&#39;div:has(&#34;span&#34;)&#39;) console.log($div)     属性和属性节点   什么是属性]]></description>
+</item><item>
+    <title>二、jQuery核心函数和工具方法</title>
+    <link>https://antmoe.gitee.io/posts/notes/20200615/20200615-2/</link>
+    <pubDate>Mon, 15 Jun 2020 18:50:51 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://antmoe.gitee.io/posts/notes/20200615/20200615-2/</guid>
+    <description><![CDATA[jQuery核心函数 jQuery的核心函数就是$();，圆括号内可以传递函数、字符串选择器、字符串代码片段、DOM元素等。
   传递函数
 1 2 3  $(function () { alert(1) })     字符串选择器
 返回一个jQuery对象，对象中保存了找到的DOM元素
@@ -15,8 +34,17 @@
 返回一个jQuery对象，对象中保存了创建的DOM元素
 1 2 3 4  $(function () { var $p = $(&#39;&lt;p&gt;我是段落&lt;/p&gt;&#39;) console.log($p) })     接收一个DOM元素
 DOM元素会被包装成一个jQuery对象返回。
-1 2 3 4 5 6  $(function () { var span = document.]]></description></item><item><title>一、初识jQuery</title><link>https://antmoe.gitee.io/posts/notes/20200615/20200615-1/</link><pubDate>Mon, 15 Jun 2020 18:50:50 +0800</pubDate><author>Author</author><guid>https://antmoe.gitee.io/posts/notes/20200615/20200615-1/</guid><description><![CDATA[版本选择 1.x：兼容ie678，但相对其它版本文件较大，官方只做BUG维护，功能不再新增，最终版本：1.12.4 (2016年5月20日).
+1 2 3 4 5 6  $(function () { var span = document.]]></description>
+</item><item>
+    <title>一、初识jQuery</title>
+    <link>https://antmoe.gitee.io/posts/notes/20200615/20200615-1/</link>
+    <pubDate>Mon, 15 Jun 2020 18:50:50 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://antmoe.gitee.io/posts/notes/20200615/20200615-1/</guid>
+    <description><![CDATA[版本选择 1.x：兼容ie678，但相对其它版本文件较大，官方只做BUG维护，功能不再新增，最终版本：1.12.4 (2016年5月20日).
 2.x：不兼容ie678，相对1.x文件较小，官方只做BUG维护，功能不再新增，最终版本：2.2.4 (2016年5月20日)
 3.x：不兼容ie678，只支持最新的浏览器，很多老的jQuery插件不支持这个版本，相对1.x文件较小，提供不包含Ajax/动画API版本。
 jQuery的使用  下载jQuery或者使用cdn 引入jQuery的文件 编写代码  1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20  &lt;!DOCTYPE html&gt; &lt;html lang=&#34;en&#34;&gt; &lt;head&gt; &lt;meta charset=&#34;UTF-8&#34;&gt; &lt;meta name=&#34;viewport&#34; content=&#34;width=device-width, initial-scale=1.0&#34;&gt; &lt;title&gt;Document&lt;/title&gt; &lt;script src=&#34;https://cdn.bootcdn.net/ajax/libs/jquery/1.12.4/jquery.js&#34;&gt;&lt;/script&gt; &lt;script&gt; $(document).ready(function () { alert(&#39;hello tzk&#39;) }) &lt;/script&gt; &lt;/head&gt; &lt;body&gt; &lt;/body&gt; &lt;/html&gt;   jQuery和JS的加载模式   通过原生JS和jQuery都可以拿到DOM元素，及图片的宽高
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16  window.]]></description></item></channel></rss>
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16  window.]]></description>
+</item></channel>
+</rss>
