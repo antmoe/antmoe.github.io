@@ -1,0 +1,896 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=robots content="noodp"><meta http-equiv=x-ua-compatible content="IE=edge, chrome=1"><title>三、jQuery属性操作 - 小康的学习记录</title><meta name=Description content="一个收藏回忆与分享技术的地方！"><meta property="og:title" content="三、jQuery属性操作"><meta property="og:description" content="jQuery内容选择器 为了方便测试，先将DOM元素写为以下格式：
+1 2 3 4 5  <div></div> <div>我是div</div> <div>我是div123</div> <div><span></span></div> <div><p></p></div>     :empty找到既没有文本内容也没有子元素的指定元素。
+这个选择器对于以上内容只能找到第一个div。
+1 2  var $div = $('div:empty') console.log($div)     :parent 找到有文本内容或有子元素的指定元素
+可以找到除第一个意外的四个元素
+1 2  var $div = $('div:parent') console.log($div)     :contains(text)找到包含指定文本内容的指定元素
+视内容找到包含内容的div
+1 2  var $div = $('div:contains(&#34;我是div123&#34;)') console.log($div)     :has(selector)找到包含指定子元素的指定元素
+视搜索内容找到包含此子元素的元素
+1 2  var $div = $('div:has(&#34;span&#34;)') console.log($div)     属性和属性节点   什么是属性"><meta property="og:type" content="article"><meta property="og:url" content="https://antmoe.gitee.io/posts/notes/20200615/20200615-3/"><meta property="og:image" content="https://antmoe.gitee.io/logo.png"><meta property="article:published_time" content="2020-06-15T18:50:52+08:00"><meta property="article:modified_time" content="2020-06-15T19:01:28+08:00"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://antmoe.gitee.io/logo.png"><meta name=twitter:title content="三、jQuery属性操作"><meta name=twitter:description content="jQuery内容选择器 为了方便测试，先将DOM元素写为以下格式：
+1 2 3 4 5  <div></div> <div>我是div</div> <div>我是div123</div> <div><span></span></div> <div><p></p></div>     :empty找到既没有文本内容也没有子元素的指定元素。
+这个选择器对于以上内容只能找到第一个div。
+1 2  var $div = $('div:empty') console.log($div)     :parent 找到有文本内容或有子元素的指定元素
+可以找到除第一个意外的四个元素
+1 2  var $div = $('div:parent') console.log($div)     :contains(text)找到包含指定文本内容的指定元素
+视内容找到包含内容的div
+1 2  var $div = $('div:contains(&#34;我是div123&#34;)') console.log($div)     :has(selector)找到包含指定子元素的指定元素
+视搜索内容找到包含此子元素的元素
+1 2  var $div = $('div:has(&#34;span&#34;)') console.log($div)     属性和属性节点   什么是属性"><meta name=application-name content="Dreamy.tzk's blog"><meta name=apple-mobile-web-app-title content="Dreamy.tzk's blog"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://antmoe.gitee.io/posts/notes/20200615/20200615-3/><link rel=prev href=https://antmoe.gitee.io/posts/notes/20200615/20200615-2/><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"三、jQuery属性操作","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/antmoe.gitee.io\/posts\/notes\/20200615\/20200615-3\/"},"image":["https:\/\/cdn.jsdelivr.net\/gh\/sviptzk\/StaticFile_HEXO@latest\/butterfly\/img\/favicon.ico"],"genre":"posts","keywords":"jQuery","wordcount":1281,"url":"https:\/\/antmoe.gitee.io\/posts\/notes\/20200615\/20200615-3\/","datePublished":"2020-06-15T18:50:52+08:00","dateModified":"2020-06-15T19:01:28+08:00","license":"This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher":{"@type":"Organization","name":"Dreamy.TZK","logo":"https:\/\/cdn.jsdelivr.net\/gh\/sviptzk\/HexoStaticFile@latest\/avatar.jpg"},"author":{"@type":"Person","name":"Dreamy.TZK"},"description":""}</script></head><body header-desktop=fixed header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':('auto'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'auto'==='dark'))&&document.body.setAttribute('theme','dark');</script><div id=mask></div><div class=wrapper><header class=desktop id=header-desktop><div class=header-wrapper><div class=header-title><a href=/ title=小康的学习记录><span class=header-title-pre><i class="far fa-kiss-wink-heart fa-fw"></i></span>小康博客</a></div><div class=menu><div class=menu-inner><a class=menu-item href=/posts/>Posts </a><a class=menu-item href=/tags/>Tags </a><a class=menu-item href=/categories/>Categories </a><a class=menu-item href=/about/>About </a><span class="menu-item delimiter"></span><a href=javascript:void(0); class="menu-item language" title="Select Language">English<i class="fas fa-chevron-right fa-fw"></i>
+<select class=language-select id=language-select-desktop onchange="location=this.value;"><option value=/posts/notes/20200615/20200615-3/ selected>English</option></select>
+</a><span class="menu-item search" id=search-desktop><input type=text placeholder="Search titles or contents..." id=search-input-desktop>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-desktop title=Search><i class="fas fa-search fa-fw"></i></a><a href=javascript:void(0); class="search-button search-clear" id=search-clear-desktop title=Clear><i class="fas fa-times-circle fa-fw"></i></a><span class="search-button search-loading" id=search-loading-desktop><i class="fas fa-spinner fa-fw fa-spin"></i></span></span><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme"><i class="fas fa-adjust fa-fw"></i></a></div></div></div></header><header class=mobile id=header-mobile><div class=header-container><div class=header-wrapper><div class=header-title><a href=/ title=小康的学习记录><span class=header-title-pre><i class="far fa-kiss-wink-heart fa-fw"></i></span>小康博客</a></div><div class=menu-toggle id=menu-toggle-mobile><span></span><span></span><span></span></div></div><div class=menu id=menu-mobile><div class=search-wrapper><div class="search mobile" id=search-mobile><input type=text placeholder="Search titles or contents..." id=search-input-mobile>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-mobile title=Search><i class="fas fa-search fa-fw"></i></a><a href=javascript:void(0); class="search-button search-clear" id=search-clear-mobile title=Clear><i class="fas fa-times-circle fa-fw"></i></a><span class="search-button search-loading" id=search-loading-mobile><i class="fas fa-spinner fa-fw fa-spin"></i></span></div><a href=javascript:void(0); class=search-cancel id=search-cancel-mobile>Cancel</a></div><a class=menu-item href=/posts/>Posts</a><a class=menu-item href=/tags/>Tags</a><a class=menu-item href=/categories/>Categories</a><a class=menu-item href=/about/>About</a><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme">
+<i class="fas fa-adjust fa-fw"></i></a><a href=javascript:void(0); class=menu-item title="Select Language">English<i class="fas fa-chevron-right fa-fw"></i>
+<select class=language-select onchange="location=this.value;"><option value=/posts/notes/20200615/20200615-3/ selected>English</option></select></a></div></div></header><div class="search-dropdown desktop"><div id=search-dropdown-desktop></div></div><div class="search-dropdown mobile"><div id=search-dropdown-mobile></div></div><main class=main><div class=container><div class=toc id=toc-auto><h2 class=toc-title>Contents</h2><div class=toc-content id=toc-content-auto></div></div><article class="page single"><h1 class="single-title animated flipInX">三、jQuery属性操作</h1><div class=post-meta><div class=post-meta-line><span class=post-author><a href=https://antmoe.gitee.io title=Author target=_blank rel="noopener noreffer author" class=author><i class="fas fa-user-circle fa-fw"></i>Dreamy.TZK</a></span>&nbsp;<span class=post-category>included in <a href=/categories/notes/><i class="far fa-folder fa-fw"></i>notes</a></span></div><div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2020-06-15>2020-06-15</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1281 words&nbsp;
+<i class="far fa-clock fa-fw"></i>&nbsp;7 minutes&nbsp;<span id=/posts/notes/20200615/20200615-3/ class=leancloud_visitors data-flag-title=三、jQuery属性操作>
+<i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;views
+</span>&nbsp;</div></div><div class="details toc" id=toc-static kept><div class="details-summary toc-title"><span>Contents</span>
+<span><i class="details-icon fas fa-angle-right"></i></span></div><div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents><ul><li><a href=#jquery内容选择器>jQuery内容选择器</a></li><li><a href=#属性和属性节点>属性和属性节点</a></li><li><a href=#attr方法>attr方法</a></li><li><a href=#prop方法>prop方法</a><ul><li><a href=#图片切换的小案例>图片切换的小案例</a></li></ul></li><li><a href=#jquery类操作相关方法>jQuery类操作相关方法</a></li><li><a href=#文本值相关操作>文本值相关操作</a></li><li><a href=#操作样式方法>操作样式方法</a></li><li><a href=#尺寸和位置相关>尺寸和位置相关</a><ul><li><a href=#尺寸>尺寸</a></li><li><a href=#位置>位置</a></li></ul></li><li><a href=#scrolltop方法>scrollTop方法</a></li></ul></nav></div></div><div class=content id=content><h2 id=jquery内容选择器>jQuery内容选择器</h2><p>为了方便测试，先将DOM元素写为以下格式：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-html data-lang=html><span class=p>&lt;</span><span class=nt>div</span><span class=p>&gt;&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>
+<span class=p>&lt;</span><span class=nt>div</span><span class=p>&gt;</span>我是div<span class=p>&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>
+<span class=p>&lt;</span><span class=nt>div</span><span class=p>&gt;</span>我是div123<span class=p>&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>
+<span class=p>&lt;</span><span class=nt>div</span><span class=p>&gt;&lt;</span><span class=nt>span</span><span class=p>&gt;&lt;/</span><span class=nt>span</span><span class=p>&gt;&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>
+<span class=p>&lt;</span><span class=nt>div</span><span class=p>&gt;&lt;</span><span class=nt>p</span><span class=p>&gt;&lt;/</span><span class=nt>p</span><span class=p>&gt;&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>
+</code></pre></td></tr></table></div></div><ol><li><p><code>:empty</code>找到既没有文本内容也没有子元素的指定元素。</p><p><em>这个选择器对于以上内容只能找到第一个div。</em></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-javascript data-lang=javascript><span class=kd>var</span> <span class=nx>$div</span> <span class=o>=</span> <span class=nx>$</span><span class=p>(</span><span class=s1>&#39;div:empty&#39;</span><span class=p>)</span>
+<span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>$div</span><span class=p>)</span>
+</code></pre></td></tr></table></div></div><p><img class=lazyload src=/svg/loading.min.svg data-src=https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/06/15/7a245ffc65436d81ebb2875b9647d9f3.png data-srcset="https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/06/15/7a245ffc65436d81ebb2875b9647d9f3.png, https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/06/15/7a245ffc65436d81ebb2875b9647d9f3.png 1.5x, https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/06/15/7a245ffc65436d81ebb2875b9647d9f3.png 2x" data-sizes=auto alt=https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/06/15/7a245ffc65436d81ebb2875b9647d9f3.png title=image-20200615142932500></p></li><li><p><code>:parent</code> 找到有文本内容或有子元素的指定元素</p><p><em>可以找到除第一个意外的四个元素</em></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-javascript data-lang=javascript><span class=kd>var</span> <span class=nx>$div</span> <span class=o>=</span> <span class=nx>$</span><span class=p>(</span><span class=s1>&#39;div:parent&#39;</span><span class=p>)</span>
+<span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>$div</span><span class=p>)</span>
+</code></pre></td></tr></table></div></div><p><img class=lazyload src=/svg/loading.min.svg data-src=https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/06/15/d6774408d217ff78660c94fe964ac9e6.png data-srcset="https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/06/15/d6774408d217ff78660c94fe964ac9e6.png, https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/06/15/d6774408d217ff78660c94fe964ac9e6.png 1.5x, https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/06/15/d6774408d217ff78660c94fe964ac9e6.png 2x" data-sizes=auto alt=https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/06/15/d6774408d217ff78660c94fe964ac9e6.png title=https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/06/15/d6774408d217ff78660c94fe964ac9e6.png></p></li><li><p><code>:contains(text)</code>找到包含指定文本内容的指定元素</p><p><em>视内容找到包含内容的div</em></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-javascript data-lang=javascript><span class=kd>var</span> <span class=nx>$div</span> <span class=o>=</span> <span class=nx>$</span><span class=p>(</span><span class=s1>&#39;div:contains(&#34;我是div123&#34;)&#39;</span><span class=p>)</span>
+<span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>$div</span><span class=p>)</span>
+</code></pre></td></tr></table></div></div><p><img class=lazyload src=/svg/loading.min.svg data-src=https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/06/15/31e6aadb60a87f1589f604a866403b7c.png data-srcset="https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/06/15/31e6aadb60a87f1589f604a866403b7c.png, https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/06/15/31e6aadb60a87f1589f604a866403b7c.png 1.5x, https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/06/15/31e6aadb60a87f1589f604a866403b7c.png 2x" data-sizes=auto alt=https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/06/15/31e6aadb60a87f1589f604a866403b7c.png title=image-20200615143646748></p></li><li><p><code>:has(selector)</code>找到包含指定子元素的指定元素</p><p><em>视搜索内容找到包含此子元素的元素</em></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-javascript data-lang=javascript><span class=kd>var</span> <span class=nx>$div</span> <span class=o>=</span> <span class=nx>$</span><span class=p>(</span><span class=s1>&#39;div:has(&#34;span&#34;)&#39;</span><span class=p>)</span>
+<span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>$div</span><span class=p>)</span>
+</code></pre></td></tr></table></div></div><p><img class=lazyload src=/svg/loading.min.svg data-src=https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/06/15/e49d3e536eb5aa8a172947838aa73369.png data-srcset="https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/06/15/e49d3e536eb5aa8a172947838aa73369.png, https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/06/15/e49d3e536eb5aa8a172947838aa73369.png 1.5x, https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/06/15/e49d3e536eb5aa8a172947838aa73369.png 2x" data-sizes=auto alt=https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/06/15/e49d3e536eb5aa8a172947838aa73369.png title=image-20200615143837461></p></li></ol><h2 id=属性和属性节点>属性和属性节点</h2><ol><li><p>什么是属性</p><p>对象身上保存的变量就是属性</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-javascript data-lang=javascript><span class=kd>function</span> <span class=nx>Person</span><span class=p>()</span> <span class=p>{}</span>
+<span class=kd>var</span> <span class=nx>p</span> <span class=o>=</span> <span class=k>new</span> <span class=nx>Person</span><span class=p>()</span>
+<span class=nx>p</span><span class=p>.</span><span class=nx>name</span> <span class=o>=</span> <span class=s1>&#39;tzk&#39;</span>
+</code></pre></td></tr></table></div></div></li><li><p>如何操作属性</p><p>对象.属性名称 = 值</p><p>对象.属性名称</p><p>对象[&lsquo;属性名称&rsquo;] = 值</p><p>对象[&lsquo;属性名称&rsquo;]</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-javascript data-lang=javascript><span class=c1>// 赋值属性
+</span><span class=c1></span><span class=nx>p</span><span class=p>[</span><span class=s1>&#39;name&#39;</span><span class=p>]</span> <span class=o>=</span> <span class=s1>&#39;tzk&#39;</span>
+<span class=c1>// 获取属性
+</span><span class=c1></span><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>p</span><span class=p>.</span><span class=nx>name</span><span class=p>)</span>
+</code></pre></td></tr></table></div></div></li><li><p>什么是属性节点</p><p><code>&lt;span name='xiaokang'>&lt;/span></code> 在编写HTML代码时，在HTML标签中添加的属性就是属性节点。</p><p>在浏览器中找到<code>span</code>这个DOM元素之后，展开看到的都是属性。</p><p>在attributes属性中保持的所有内容都是属性节点。</p></li><li><p>操作属性节点</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-javascript data-lang=javascript><span class=kd>var</span> <span class=nx>span</span> <span class=o>=</span> <span class=nb>document</span><span class=p>.</span><span class=nx>getElementsByTagName</span><span class=p>(</span><span class=s1>&#39;span&#39;</span><span class=p>)[</span><span class=mi>0</span><span class=p>]</span>
+<span class=c1>// 设置属性
+</span><span class=c1></span><span class=nx>span</span><span class=p>.</span><span class=nx>setAttribute</span><span class=p>(</span><span class=s1>&#39;name&#39;</span><span class=p>,</span> <span class=s1>&#39;tzk&#39;</span><span class=p>)</span>
+<span class=c1>// 获取属性
+</span><span class=c1></span><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>span</span><span class=p>.</span><span class=nx>getAttribute</span><span class=p>(</span><span class=s1>&#39;name&#39;</span><span class=p>))</span>
+</code></pre></td></tr></table></div></div><p><img class=lazyload src=/svg/loading.min.svg data-src=https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/06/15/1d920febfe1d7bc0c5e75e858bd8b046.png data-srcset="https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/06/15/1d920febfe1d7bc0c5e75e858bd8b046.png, https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/06/15/1d920febfe1d7bc0c5e75e858bd8b046.png 1.5x, https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/06/15/1d920febfe1d7bc0c5e75e858bd8b046.png 2x" data-sizes=auto alt=https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/06/15/1d920febfe1d7bc0c5e75e858bd8b046.png title=image-20200615145341815></p><p><img class=lazyload src=/svg/loading.min.svg data-src=https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/06/15/1d920febfe1d7bc0c5e75e858bd8b046.png data-srcset="https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/06/15/1d920febfe1d7bc0c5e75e858bd8b046.png, https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/06/15/1d920febfe1d7bc0c5e75e858bd8b046.png 1.5x, https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/06/15/1d920febfe1d7bc0c5e75e858bd8b046.png 2x" data-sizes=auto alt=https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/06/15/1d920febfe1d7bc0c5e75e858bd8b046.png title=https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/06/15/1d920febfe1d7bc0c5e75e858bd8b046.png></p></li><li><p>属性和属性节点的区别</p><p>任何对象都有属性，但只有DOM对象才有属性节点</p></li></ol><h2 id=attr方法>attr方法</h2><ol><li><p><code>attr(name|pro|key,val|fn)</code>方法</p><ul><li><p>获取或者设置属性节点的值</p></li><li><p>参数</p><ul><li><p>可以传递一个参数，代表获取节点的值</p><p>无论找到多少个元素，只会返回第一个元素指定的属性节点的值。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-html data-lang=html><span class=cp>&lt;!DOCTYPE html&gt;</span>
+<span class=p>&lt;</span><span class=nt>html</span> <span class=na>lang</span><span class=o>=</span><span class=s>&#34;en&#34;</span><span class=p>&gt;</span>
+       
+    <span class=p>&lt;</span><span class=nt>head</span><span class=p>&gt;</span>
+        <span class=p>&lt;</span><span class=nt>meta</span> <span class=na>charset</span><span class=o>=</span><span class=s>&#34;UTF-8&#34;</span><span class=p>&gt;</span>
+        <span class=p>&lt;</span><span class=nt>meta</span> <span class=na>name</span><span class=o>=</span><span class=s>&#34;viewport&#34;</span> <span class=na>content</span><span class=o>=</span><span class=s>&#34;width=device-width, initial-scale=1.0&#34;</span><span class=p>&gt;</span>
+        <span class=p>&lt;</span><span class=nt>title</span><span class=p>&gt;</span>Document<span class=p>&lt;/</span><span class=nt>title</span><span class=p>&gt;</span>
+        <span class=p>&lt;</span><span class=nt>script</span> <span class=na>src</span><span class=o>=</span><span class=s>&#34;https://cdn.bootcdn.net/ajax/libs/jquery/1.12.4/jquery.js&#34;</span><span class=p>&gt;&lt;/</span><span class=nt>script</span><span class=p>&gt;</span>
+        <span class=p>&lt;</span><span class=nt>script</span><span class=p>&gt;</span>
+            <span class=nx>$</span><span class=p>(</span><span class=kd>function</span> <span class=p>()</span> <span class=p>{</span>
+                <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>$</span><span class=p>(</span><span class=s2>&#34;span&#34;</span><span class=p>).</span><span class=nx>attr</span><span class=p>(</span><span class=s1>&#39;class&#39;</span><span class=p>))</span> <span class=c1>// span1
+</span><span class=c1></span>            <span class=p>})</span>
+        <span class=p>&lt;/</span><span class=nt>script</span><span class=p>&gt;</span>
+    <span class=p>&lt;/</span><span class=nt>head</span><span class=p>&gt;</span>
+       
+    <span class=p>&lt;</span><span class=nt>body</span><span class=p>&gt;</span>
+        <span class=p>&lt;</span><span class=nt>span</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;span1&#34;</span> <span class=na>name</span><span class=o>=</span><span class=s>&#39;name1&#39;</span><span class=p>&gt;&lt;/</span><span class=nt>span</span><span class=p>&gt;</span>
+        <span class=p>&lt;</span><span class=nt>span</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;span2&#34;</span> <span class=na>name</span><span class=o>=</span><span class=s>&#39;name2&#39;</span><span class=p>&gt;&lt;/</span><span class=nt>span</span><span class=p>&gt;</span>
+    <span class=p>&lt;/</span><span class=nt>body</span><span class=p>&gt;</span>
+       
+<span class=p>&lt;/</span><span class=nt>html</span><span class=p>&gt;</span>
+</code></pre></td></tr></table></div></div></li><li><p>也可以传递两个参数，设置属性节点的值</p><p>如果设置值，找到多少个元素就会设置多少个元素。</p><p>如果设置的节点不存在，那么会新增该属性。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-html data-lang=html><span class=cp>&lt;!DOCTYPE html&gt;</span>
+<span class=p>&lt;</span><span class=nt>html</span> <span class=na>lang</span><span class=o>=</span><span class=s>&#34;en&#34;</span><span class=p>&gt;</span>
+       
+    <span class=p>&lt;</span><span class=nt>head</span><span class=p>&gt;</span>
+        <span class=p>&lt;</span><span class=nt>meta</span> <span class=na>charset</span><span class=o>=</span><span class=s>&#34;UTF-8&#34;</span><span class=p>&gt;</span>
+        <span class=p>&lt;</span><span class=nt>meta</span> <span class=na>name</span><span class=o>=</span><span class=s>&#34;viewport&#34;</span> <span class=na>content</span><span class=o>=</span><span class=s>&#34;width=device-width, initial-scale=1.0&#34;</span><span class=p>&gt;</span>
+        <span class=p>&lt;</span><span class=nt>title</span><span class=p>&gt;</span>Document<span class=p>&lt;/</span><span class=nt>title</span><span class=p>&gt;</span>
+        <span class=p>&lt;</span><span class=nt>script</span> <span class=na>src</span><span class=o>=</span><span class=s>&#34;https://cdn.bootcdn.net/ajax/libs/jquery/1.12.4/jquery.js&#34;</span><span class=p>&gt;&lt;/</span><span class=nt>script</span><span class=p>&gt;</span>
+        <span class=p>&lt;</span><span class=nt>script</span><span class=p>&gt;</span>
+            <span class=nx>$</span><span class=p>(</span><span class=kd>function</span> <span class=p>()</span> <span class=p>{</span>
+                <span class=nx>$</span><span class=p>(</span><span class=s1>&#39;span&#39;</span><span class=p>).</span><span class=nx>attr</span><span class=p>(</span><span class=s1>&#39;class&#39;</span><span class=p>,</span> <span class=s1>&#39;box&#39;</span><span class=p>)</span>
+            <span class=p>})</span>
+        <span class=p>&lt;/</span><span class=nt>script</span><span class=p>&gt;</span>
+    <span class=p>&lt;/</span><span class=nt>head</span><span class=p>&gt;</span>
+       
+    <span class=p>&lt;</span><span class=nt>body</span><span class=p>&gt;</span>
+        <span class=p>&lt;</span><span class=nt>span</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;span1&#34;</span> <span class=na>name</span><span class=o>=</span><span class=s>&#39;name1&#39;</span><span class=p>&gt;&lt;/</span><span class=nt>span</span><span class=p>&gt;</span>
+        <span class=p>&lt;</span><span class=nt>span</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;span2&#34;</span> <span class=na>name</span><span class=o>=</span><span class=s>&#39;name2&#39;</span><span class=p>&gt;&lt;/</span><span class=nt>span</span><span class=p>&gt;</span>
+    <span class=p>&lt;/</span><span class=nt>body</span><span class=p>&gt;</span>
+       
+<span class=p>&lt;/</span><span class=nt>html</span><span class=p>&gt;</span>
+</code></pre></td></tr></table></div></div></li></ul></li></ul></li><li><p><code>removeAttr(name)</code>节点</p><ul><li><p>删除属性节点</p></li><li><p>参数</p><p>会删除所有找到元素指定的属性节点</p><ul><li><p>删除一个节点</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-html data-lang=html><span class=cp>&lt;!DOCTYPE html&gt;</span>
+<span class=p>&lt;</span><span class=nt>html</span> <span class=na>lang</span><span class=o>=</span><span class=s>&#34;en&#34;</span><span class=p>&gt;</span>
+       
+    <span class=p>&lt;</span><span class=nt>head</span><span class=p>&gt;</span>
+        <span class=p>&lt;</span><span class=nt>meta</span> <span class=na>charset</span><span class=o>=</span><span class=s>&#34;UTF-8&#34;</span><span class=p>&gt;</span>
+        <span class=p>&lt;</span><span class=nt>meta</span> <span class=na>name</span><span class=o>=</span><span class=s>&#34;viewport&#34;</span> <span class=na>content</span><span class=o>=</span><span class=s>&#34;width=device-width, initial-scale=1.0&#34;</span><span class=p>&gt;</span>
+        <span class=p>&lt;</span><span class=nt>title</span><span class=p>&gt;</span>Document<span class=p>&lt;/</span><span class=nt>title</span><span class=p>&gt;</span>
+        <span class=p>&lt;</span><span class=nt>script</span> <span class=na>src</span><span class=o>=</span><span class=s>&#34;https://cdn.bootcdn.net/ajax/libs/jquery/1.12.4/jquery.js&#34;</span><span class=p>&gt;&lt;/</span><span class=nt>script</span><span class=p>&gt;</span>
+        <span class=p>&lt;</span><span class=nt>script</span><span class=p>&gt;</span>
+            <span class=nx>$</span><span class=p>(</span><span class=kd>function</span> <span class=p>()</span> <span class=p>{</span>
+                <span class=nx>$</span><span class=p>(</span><span class=s1>&#39;span&#39;</span><span class=p>).</span><span class=nx>removeAttr</span><span class=p>(</span><span class=s1>&#39;class&#39;</span><span class=p>)</span>
+            <span class=p>})</span>
+        <span class=p>&lt;/</span><span class=nt>script</span><span class=p>&gt;</span>
+    <span class=p>&lt;/</span><span class=nt>head</span><span class=p>&gt;</span>
+       
+    <span class=p>&lt;</span><span class=nt>body</span><span class=p>&gt;</span>
+        <span class=p>&lt;</span><span class=nt>span</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;span1&#34;</span> <span class=na>name</span><span class=o>=</span><span class=s>&#39;name1&#39;</span><span class=p>&gt;&lt;/</span><span class=nt>span</span><span class=p>&gt;</span>
+        <span class=p>&lt;</span><span class=nt>span</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;span2&#34;</span> <span class=na>name</span><span class=o>=</span><span class=s>&#39;name2&#39;</span><span class=p>&gt;&lt;/</span><span class=nt>span</span><span class=p>&gt;</span>
+    <span class=p>&lt;/</span><span class=nt>body</span><span class=p>&gt;</span>
+       
+<span class=p>&lt;/</span><span class=nt>html</span><span class=p>&gt;</span>
+</code></pre></td></tr></table></div></div><p><img class=lazyload src=/svg/loading.min.svg data-src=https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/06/15/745a70c62bd755cb16ec7bbc04ba39fa.png data-srcset="https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/06/15/745a70c62bd755cb16ec7bbc04ba39fa.png, https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/06/15/745a70c62bd755cb16ec7bbc04ba39fa.png 1.5x, https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/06/15/745a70c62bd755cb16ec7bbc04ba39fa.png 2x" data-sizes=auto alt=https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/06/15/745a70c62bd755cb16ec7bbc04ba39fa.png title=image-20200615151335448></p></li><li><p>删除多个属性</p><p>只需要在传递参数时用空格隔开即可。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-javascript data-lang=javascript><span class=nx>$</span><span class=p>(</span><span class=s1>&#39;span&#39;</span><span class=p>).</span><span class=nx>removeAttr</span><span class=p>(</span><span class=s1>&#39;class name&#39;</span><span class=p>)</span>
+</code></pre></td></tr></table></div></div><p><img class=lazyload src=/svg/loading.min.svg data-src=https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/06/15/8914eafe82f1703f5f6ad9fd39034bb3.png data-srcset="https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/06/15/8914eafe82f1703f5f6ad9fd39034bb3.png, https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/06/15/8914eafe82f1703f5f6ad9fd39034bb3.png 1.5x, https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/06/15/8914eafe82f1703f5f6ad9fd39034bb3.png 2x" data-sizes=auto alt=https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/06/15/8914eafe82f1703f5f6ad9fd39034bb3.png title=image-20200615151424496></p></li></ul></li></ul></li></ol><h2 id=prop方法>prop方法</h2><p><code>prop</code>方法与<code>attr</code>方法一致。</p><ol><li><p>设置或新增属性</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-javascript data-lang=javascript><span class=nx>$</span><span class=p>(</span><span class=s2>&#34;span&#34;</span><span class=p>).</span><span class=nx>eq</span><span class=p>(</span><span class=mi>0</span><span class=p>).</span><span class=nx>prop</span><span class=p>(</span><span class=s1>&#39;demo&#39;</span><span class=p>,</span> <span class=s1>&#39;name1&#39;</span><span class=p>)</span>
+<span class=nx>$</span><span class=p>(</span><span class=s2>&#34;span&#34;</span><span class=p>).</span><span class=nx>eq</span><span class=p>(</span><span class=mi>1</span><span class=p>).</span><span class=nx>prop</span><span class=p>(</span><span class=s1>&#39;demo&#39;</span><span class=p>,</span> <span class=s1>&#39;tzk&#39;</span><span class=p>)</span>
+</code></pre></td></tr></table></div></div><p><img class=lazyload src=/svg/loading.min.svg data-src=https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/06/15/914cffd3aa644a1057208025dd631ee4.png data-srcset="https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/06/15/914cffd3aa644a1057208025dd631ee4.png, https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/06/15/914cffd3aa644a1057208025dd631ee4.png 1.5x, https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/06/15/914cffd3aa644a1057208025dd631ee4.png 2x" data-sizes=auto alt=https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/06/15/914cffd3aa644a1057208025dd631ee4.png title=image-20200615152658852></p></li><li><p>获取属性</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-javascript data-lang=javascript> <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>$</span><span class=p>(</span><span class=s1>&#39;span&#39;</span><span class=p>).</span><span class=nx>prop</span><span class=p>(</span><span class=s1>&#39;demo&#39;</span><span class=p>))</span> <span class=c1>//name1
+</span></code></pre></td></tr></table></div></div></li><li><p>删除属性</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-javascript data-lang=javascript><span class=nx>$</span><span class=p>(</span><span class=s2>&#34;span&#34;</span><span class=p>).</span><span class=nx>removeProp</span><span class=p>(</span><span class=s1>&#39;demo&#39;</span><span class=p>)</span>
+</code></pre></td></tr></table></div></div></li><li><p>操作属性节点</p><p>官方推荐在操作属性节点时，具有<code>true</code>和<code>false</code>两个属性的属性节点，如<code>checked</code>, <code>selected</code>或者<code>disabled</code>使用<code>prop()</code>,其他的使用<code>attr()</code></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-javascript data-lang=javascript><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>$</span><span class=p>(</span><span class=s1>&#39;.input1&#39;</span><span class=p>).</span><span class=nx>prop</span><span class=p>(</span><span class=s1>&#39;checked&#39;</span><span class=p>))</span> <span class=c1>//true
+</span><span class=c1></span><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>$</span><span class=p>(</span><span class=s1>&#39;.input1&#39;</span><span class=p>).</span><span class=nx>attr</span><span class=p>(</span><span class=s1>&#39;checked&#39;</span><span class=p>))</span> <span class=c1>//checked
+</span><span class=c1></span><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>$</span><span class=p>(</span><span class=s1>&#39;.input2&#39;</span><span class=p>).</span><span class=nx>prop</span><span class=p>(</span><span class=s1>&#39;checked&#39;</span><span class=p>))</span> <span class=c1>//false
+</span><span class=c1></span><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>$</span><span class=p>(</span><span class=s1>&#39;.input2&#39;</span><span class=p>).</span><span class=nx>attr</span><span class=p>(</span><span class=s1>&#39;checked&#39;</span><span class=p>))</span> <span class=c1>//undefined
+</span></code></pre></td></tr></table></div></div></li></ol><h3 id=图片切换的小案例>图片切换的小案例</h3><p><img class=lazyload src=/svg/loading.min.svg data-src=https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/06/15/a1c0a76f7ee40839aec3b74bc70feaf2.png data-srcset="https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/06/15/a1c0a76f7ee40839aec3b74bc70feaf2.png, https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/06/15/a1c0a76f7ee40839aec3b74bc70feaf2.png 1.5x, https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/06/15/a1c0a76f7ee40839aec3b74bc70feaf2.png 2x" data-sizes=auto alt=https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/06/15/a1c0a76f7ee40839aec3b74bc70feaf2.png title=https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/06/15/a1c0a76f7ee40839aec3b74bc70feaf2.png></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-html data-lang=html><span class=cp>&lt;!DOCTYPE html&gt;</span>
+<span class=p>&lt;</span><span class=nt>html</span> <span class=na>lang</span><span class=o>=</span><span class=s>&#34;en&#34;</span><span class=p>&gt;</span>
+
+<span class=p>&lt;</span><span class=nt>head</span><span class=p>&gt;</span>
+    <span class=p>&lt;</span><span class=nt>meta</span> <span class=na>charset</span><span class=o>=</span><span class=s>&#34;UTF-8&#34;</span><span class=p>&gt;</span>
+    <span class=p>&lt;</span><span class=nt>meta</span> <span class=na>name</span><span class=o>=</span><span class=s>&#34;viewport&#34;</span> <span class=na>content</span><span class=o>=</span><span class=s>&#34;width=device-width, initial-scale=1.0&#34;</span><span class=p>&gt;</span>
+    <span class=p>&lt;</span><span class=nt>title</span><span class=p>&gt;</span>Document<span class=p>&lt;/</span><span class=nt>title</span><span class=p>&gt;</span>
+    <span class=p>&lt;</span><span class=nt>script</span> <span class=na>src</span><span class=o>=</span><span class=s>&#34;https://cdn.bootcdn.net/ajax/libs/jquery/1.12.4/jquery.js&#34;</span><span class=p>&gt;&lt;/</span><span class=nt>script</span><span class=p>&gt;</span>
+    <span class=p>&lt;</span><span class=nt>script</span><span class=p>&gt;</span>
+        <span class=nx>$</span><span class=p>(</span><span class=kd>function</span> <span class=p>()</span> <span class=p>{</span>
+            <span class=c1>// 编写jQuery相关代码
+</span><span class=c1></span>            <span class=c1>// 1. 给按钮添加点击事件
+</span><span class=c1></span>            <span class=kd>var</span> <span class=nx>btn</span> <span class=o>=</span> <span class=nb>document</span><span class=p>.</span><span class=nx>getElementsByTagName</span><span class=p>(</span><span class=s1>&#39;button&#39;</span><span class=p>)[</span><span class=mi>0</span><span class=p>]</span>
+            <span class=nx>btn</span><span class=p>.</span><span class=nx>onclick</span> <span class=o>=</span> <span class=kd>function</span> <span class=p>()</span> <span class=p>{</span>
+                <span class=c1>// 2. 获取输入框输入的内容
+</span><span class=c1></span>                <span class=kd>var</span> <span class=nx>input</span> <span class=o>=</span> <span class=nb>document</span><span class=p>.</span><span class=nx>getElementsByTagName</span><span class=p>(</span><span class=s1>&#39;input&#39;</span><span class=p>)[</span><span class=mi>0</span><span class=p>]</span>
+                <span class=kd>var</span> <span class=nx>text</span> <span class=o>=</span> <span class=nx>input</span><span class=p>.</span><span class=nx>value</span>
+                <span class=c1>// 3. 修改img的src属性节点的值
+</span><span class=c1></span>                <span class=nx>$</span><span class=p>(</span><span class=s1>&#39;img&#39;</span><span class=p>).</span><span class=nx>attr</span><span class=p>(</span><span class=s1>&#39;src&#39;</span><span class=p>,</span> <span class=nx>text</span><span class=p>)</span>
+                <span class=c1>// $(&#39;img&#39;).prop(&#39;src&#39;, text)
+</span><span class=c1></span>            <span class=p>}</span>
+        <span class=p>})</span>
+    <span class=p>&lt;/</span><span class=nt>script</span><span class=p>&gt;</span>
+<span class=p>&lt;/</span><span class=nt>head</span><span class=p>&gt;</span>
+
+<span class=p>&lt;</span><span class=nt>body</span><span class=p>&gt;</span>
+    <span class=p>&lt;</span><span class=nt>input</span> <span class=na>type</span><span class=o>=</span><span class=s>&#34;text&#34;</span><span class=p>&gt;</span>
+    <span class=p>&lt;</span><span class=nt>button</span><span class=p>&gt;</span>切换图片<span class=p>&lt;/</span><span class=nt>button</span><span class=p>&gt;&lt;</span><span class=nt>br</span> <span class=p>/&gt;</span>
+    <span class=p>&lt;</span><span class=nt>img</span> <span class=na>src</span><span class=o>=</span><span class=s>&#34;https://www.baidu.com/img/dongsc_eb45d000832f8e889ff64951eaf7f381.gif&#34;</span> <span class=na>alt</span><span class=o>=</span><span class=s>&#34;&#34;</span><span class=p>&gt;</span>
+<span class=p>&lt;/</span><span class=nt>body</span><span class=p>&gt;</span>
+
+<span class=p>&lt;/</span><span class=nt>html</span><span class=p>&gt;</span>
+</code></pre></td></tr></table></div></div><h2 id=jquery类操作相关方法>jQuery类操作相关方法</h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-html data-lang=html><span class=cp>&lt;!DOCTYPE html&gt;</span>
+<span class=p>&lt;</span><span class=nt>html</span> <span class=na>lang</span><span class=o>=</span><span class=s>&#34;en&#34;</span><span class=p>&gt;</span>
+
+    <span class=p>&lt;</span><span class=nt>head</span><span class=p>&gt;</span>
+        <span class=p>&lt;</span><span class=nt>meta</span> <span class=na>charset</span><span class=o>=</span><span class=s>&#34;UTF-8&#34;</span><span class=p>&gt;</span>
+        <span class=p>&lt;</span><span class=nt>meta</span> <span class=na>name</span><span class=o>=</span><span class=s>&#34;viewport&#34;</span> <span class=na>content</span><span class=o>=</span><span class=s>&#34;width=device-width, initial-scale=1.0&#34;</span><span class=p>&gt;</span>
+        <span class=p>&lt;</span><span class=nt>title</span><span class=p>&gt;</span>Document<span class=p>&lt;/</span><span class=nt>title</span><span class=p>&gt;</span>
+        <span class=p>&lt;</span><span class=nt>style</span><span class=p>&gt;</span>
+            <span class=o>*</span> <span class=p>{</span>
+                <span class=k>margin</span><span class=p>:</span> <span class=mi>0</span><span class=p>;</span>
+                <span class=k>padding</span><span class=p>:</span> <span class=mi>0</span><span class=p>;</span>
+            <span class=p>}</span>
+
+            <span class=p>.</span><span class=nc>class1</span> <span class=p>{</span>
+                <span class=k>width</span><span class=p>:</span> <span class=mi>100</span><span class=kt>px</span><span class=p>;</span>
+                <span class=k>height</span><span class=p>:</span> <span class=mi>100</span><span class=kt>px</span><span class=p>;</span>
+                <span class=k>background</span><span class=p>:</span> <span class=kc>red</span><span class=p>;</span>
+            <span class=p>}</span>
+
+            <span class=p>.</span><span class=nc>class2</span> <span class=p>{</span>
+                <span class=k>border</span><span class=p>:</span> <span class=mi>5</span><span class=kt>px</span> <span class=kc>solid</span> <span class=kc>black</span>
+            <span class=p>}</span>
+        <span class=p>&lt;/</span><span class=nt>style</span><span class=p>&gt;</span>
+        <span class=p>&lt;</span><span class=nt>script</span> <span class=na>src</span><span class=o>=</span><span class=s>&#34;https://cdn.bootcdn.net/ajax/libs/jquery/1.12.4/jquery.js&#34;</span><span class=p>&gt;&lt;/</span><span class=nt>script</span><span class=p>&gt;</span>
+        <span class=p>&lt;</span><span class=nt>script</span><span class=p>&gt;</span>
+            <span class=nx>$</span><span class=p>(</span><span class=kd>function</span> <span class=p>()</span> <span class=p>{</span>
+                <span class=kd>var</span> <span class=nx>btns</span> <span class=o>=</span> <span class=nb>document</span><span class=p>.</span><span class=nx>getElementsByTagName</span><span class=p>(</span><span class=s1>&#39;button&#39;</span><span class=p>)</span>
+                <span class=p>})</span>
+        <span class=p>&lt;/</span><span class=nt>script</span><span class=p>&gt;</span>
+    <span class=p>&lt;/</span><span class=nt>head</span><span class=p>&gt;</span>
+
+    <span class=p>&lt;</span><span class=nt>body</span><span class=p>&gt;</span>
+        <span class=p>&lt;</span><span class=nt>button</span><span class=p>&gt;</span>添加类<span class=p>&lt;/</span><span class=nt>button</span><span class=p>&gt;</span>
+        <span class=p>&lt;</span><span class=nt>button</span><span class=p>&gt;</span>删除类<span class=p>&lt;/</span><span class=nt>button</span><span class=p>&gt;</span>
+        <span class=p>&lt;</span><span class=nt>button</span><span class=p>&gt;</span>切换类<span class=p>&lt;/</span><span class=nt>button</span><span class=p>&gt;</span>
+        <span class=p>&lt;</span><span class=nt>div</span><span class=p>&gt;&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>
+    <span class=p>&lt;/</span><span class=nt>body</span><span class=p>&gt;</span>
+
+<span class=p>&lt;/</span><span class=nt>html</span><span class=p>&gt;</span>
+</code></pre></td></tr></table></div></div><ol><li><p>添加与删除类</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-javascript data-lang=javascript><span class=nx>btns</span><span class=p>[</span><span class=mi>0</span><span class=p>].</span><span class=nx>onclick</span> <span class=o>=</span> <span class=kd>function</span> <span class=p>()</span> <span class=p>{</span>
+    <span class=c1>// 添加多个类用空格隔开
+</span><span class=c1></span>    <span class=nx>$</span><span class=p>(</span><span class=s1>&#39;div&#39;</span><span class=p>).</span><span class=nx>addClass</span><span class=p>(</span><span class=s1>&#39;class1 class2&#39;</span><span class=p>)</span>
+<span class=p>}</span>
+<span class=nx>btns</span><span class=p>[</span><span class=mi>1</span><span class=p>].</span><span class=nx>onclick</span> <span class=o>=</span> <span class=kd>function</span> <span class=p>()</span> <span class=p>{</span>
+    <span class=c1>// 删除多个类用空格隔开
+</span><span class=c1></span>    <span class=nx>$</span><span class=p>(</span><span class=s1>&#39;div&#39;</span><span class=p>).</span><span class=nx>removeClass</span><span class=p>(</span><span class=s1>&#39;class1 class2&#39;</span><span class=p>)</span>
+<span class=p>}</span>
+</code></pre></td></tr></table></div></div><p><img class=lazyload src=/svg/loading.min.svg data-src=https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/06/15/ae14a1b25cde0b55c306e4928676b34f.png data-srcset="https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/06/15/ae14a1b25cde0b55c306e4928676b34f.png, https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/06/15/ae14a1b25cde0b55c306e4928676b34f.png 1.5x, https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/06/15/ae14a1b25cde0b55c306e4928676b34f.png 2x" data-sizes=auto alt=https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/06/15/ae14a1b25cde0b55c306e4928676b34f.png title=https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/06/15/ae14a1b25cde0b55c306e4928676b34f.png></p></li><li><p>切换类</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-javascript data-lang=javascript><span class=nx>btns</span><span class=p>[</span><span class=mi>2</span><span class=p>].</span><span class=nx>onclick</span> <span class=o>=</span> <span class=kd>function</span> <span class=p>()</span> <span class=p>{</span>
+    <span class=c1>// 多个用空格隔开
+</span><span class=c1></span>    <span class=nx>$</span><span class=p>(</span><span class=s1>&#39;div&#39;</span><span class=p>).</span><span class=nx>toggleClass</span><span class=p>(</span><span class=s1>&#39;class1 class2&#39;</span><span class=p>)</span>
+<span class=p>}</span>
+</code></pre></td></tr></table></div></div><p><img class=lazyload src=/svg/loading.min.svg data-src=https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/06/15/61e500b7479c6c596b162ceab4901e42.png data-srcset="https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/06/15/61e500b7479c6c596b162ceab4901e42.png, https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/06/15/61e500b7479c6c596b162ceab4901e42.png 1.5x, https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/06/15/61e500b7479c6c596b162ceab4901e42.png 2x" data-sizes=auto alt=https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/06/15/61e500b7479c6c596b162ceab4901e42.png title=https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/06/15/61e500b7479c6c596b162ceab4901e42.png></p></li></ol><h2 id=文本值相关操作>文本值相关操作</h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-html data-lang=html><span class=cp>&lt;!DOCTYPE html&gt;</span>
+<span class=p>&lt;</span><span class=nt>html</span> <span class=na>lang</span><span class=o>=</span><span class=s>&#34;en&#34;</span><span class=p>&gt;</span>
+
+    <span class=p>&lt;</span><span class=nt>head</span><span class=p>&gt;</span>
+        <span class=p>&lt;</span><span class=nt>meta</span> <span class=na>charset</span><span class=o>=</span><span class=s>&#34;UTF-8&#34;</span><span class=p>&gt;</span>
+        <span class=p>&lt;</span><span class=nt>meta</span> <span class=na>name</span><span class=o>=</span><span class=s>&#34;viewport&#34;</span> <span class=na>content</span><span class=o>=</span><span class=s>&#34;width=device-width, initial-scale=1.0&#34;</span><span class=p>&gt;</span>
+        <span class=p>&lt;</span><span class=nt>title</span><span class=p>&gt;</span>Document<span class=p>&lt;/</span><span class=nt>title</span><span class=p>&gt;</span>
+        <span class=p>&lt;</span><span class=nt>style</span><span class=p>&gt;</span>
+            <span class=o>*</span> <span class=p>{</span>
+                <span class=k>margin</span><span class=p>:</span> <span class=mi>0</span><span class=p>;</span>
+                <span class=k>padding</span><span class=p>:</span> <span class=mi>0</span><span class=p>;</span>
+            <span class=p>}</span>
+
+            <span class=nt>div</span> <span class=p>{</span>
+                <span class=k>width</span><span class=p>:</span> <span class=mi>100</span><span class=kt>px</span><span class=p>;</span>
+                <span class=k>height</span><span class=p>:</span> <span class=mi>100</span><span class=kt>px</span><span class=p>;</span>
+                <span class=k>border</span><span class=p>:</span> <span class=mi>1</span><span class=kt>px</span> <span class=kc>solid</span> <span class=mh>#000</span><span class=p>;</span>
+            <span class=p>}</span>
+        <span class=p>&lt;/</span><span class=nt>style</span><span class=p>&gt;</span>
+        <span class=p>&lt;</span><span class=nt>script</span> <span class=na>src</span><span class=o>=</span><span class=s>&#34;https://cdn.bootcdn.net/ajax/libs/jquery/1.12.4/jquery.js&#34;</span><span class=p>&gt;&lt;/</span><span class=nt>script</span><span class=p>&gt;</span>
+        <span class=p>&lt;</span><span class=nt>script</span><span class=p>&gt;</span>
+            <span class=nx>$</span><span class=p>(</span><span class=kd>function</span> <span class=p>()</span> <span class=p>{</span>
+                <span class=kd>var</span> <span class=nx>btns</span> <span class=o>=</span> <span class=nb>document</span><span class=p>.</span><span class=nx>getElementsByTagName</span><span class=p>(</span><span class=s1>&#39;button&#39;</span><span class=p>)</span>
+                <span class=p>})</span>
+        <span class=p>&lt;/</span><span class=nt>script</span><span class=p>&gt;</span>
+    <span class=p>&lt;/</span><span class=nt>head</span><span class=p>&gt;</span>
+
+    <span class=p>&lt;</span><span class=nt>body</span><span class=p>&gt;</span>
+        <span class=p>&lt;</span><span class=nt>button</span><span class=p>&gt;</span>设置HTML<span class=p>&lt;/</span><span class=nt>button</span><span class=p>&gt;</span>
+        <span class=p>&lt;</span><span class=nt>button</span><span class=p>&gt;</span>获取HTML<span class=p>&lt;/</span><span class=nt>button</span><span class=p>&gt;</span>
+        <span class=p>&lt;</span><span class=nt>button</span><span class=p>&gt;</span>设置text<span class=p>&lt;/</span><span class=nt>button</span><span class=p>&gt;</span>
+        <span class=p>&lt;</span><span class=nt>button</span><span class=p>&gt;</span>获取text<span class=p>&lt;/</span><span class=nt>button</span><span class=p>&gt;</span>
+        <span class=p>&lt;</span><span class=nt>button</span><span class=p>&gt;</span>设置value<span class=p>&lt;/</span><span class=nt>button</span><span class=p>&gt;</span>
+        <span class=p>&lt;</span><span class=nt>button</span><span class=p>&gt;</span>获取text<span class=p>&lt;/</span><span class=nt>button</span><span class=p>&gt;</span>
+        <span class=p>&lt;</span><span class=nt>div</span><span class=p>&gt;&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>
+        <span class=p>&lt;</span><span class=nt>input</span> <span class=na>type</span><span class=o>=</span><span class=s>&#34;text&#34;</span><span class=p>&gt;</span>
+    <span class=p>&lt;/</span><span class=nt>body</span><span class=p>&gt;</span>
+
+<span class=p>&lt;/</span><span class=nt>html</span><span class=p>&gt;</span>
+</code></pre></td></tr></table></div></div><ol><li><p><code>html([val|fn])</code>，用于设置元素的html元素。</p><p>类似原生js中的<code>innerHTML</code>方法</p><ul><li><p>如果传入参数，则代表将当前元素的html修改为参数输入内容</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-javascript data-lang=javascript><span class=nx>btns</span><span class=p>[</span><span class=mi>0</span><span class=p>].</span><span class=nx>onclick</span> <span class=o>=</span> <span class=kd>function</span> <span class=p>()</span> <span class=p>{</span>
+    <span class=nx>$</span><span class=p>(</span><span class=s1>&#39;div&#39;</span><span class=p>).</span><span class=nx>html</span><span class=p>(</span><span class=s1>&#39;&lt;p&gt;我是一个段落&lt;span&gt;我是一个span&lt;/span&gt;&lt;/p&gt;&#39;</span><span class=p>)</span>
+<span class=p>}</span>
+</code></pre></td></tr></table></div></div><p><img class=lazyload src=/svg/loading.min.svg data-src=https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/06/15/51944b3da54a4a33f5f3387187466bc5.png data-srcset="https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/06/15/51944b3da54a4a33f5f3387187466bc5.png, https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/06/15/51944b3da54a4a33f5f3387187466bc5.png 1.5x, https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/06/15/51944b3da54a4a33f5f3387187466bc5.png 2x" data-sizes=auto alt=https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/06/15/51944b3da54a4a33f5f3387187466bc5.png title=image-20200615174005610></p></li><li><p>如果不传入参数，则代表获取当前元素的HTML代码。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-javascript data-lang=javascript><span class=nx>btns</span><span class=p>[</span><span class=mi>1</span><span class=p>].</span><span class=nx>onclick</span> <span class=o>=</span> <span class=kd>function</span> <span class=p>()</span> <span class=p>{</span>
+    <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>$</span><span class=p>(</span><span class=s1>&#39;div&#39;</span><span class=p>).</span><span class=nx>html</span><span class=p>())</span>
+<span class=p>}</span>
+</code></pre></td></tr></table></div></div><p><img class=lazyload src=/svg/loading.min.svg data-src=https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/06/15/dafdc3f6282ea863069836ac8cfc5186.png data-srcset="https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/06/15/dafdc3f6282ea863069836ac8cfc5186.png, https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/06/15/dafdc3f6282ea863069836ac8cfc5186.png 1.5x, https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/06/15/dafdc3f6282ea863069836ac8cfc5186.png 2x" data-sizes=auto alt=https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/06/15/dafdc3f6282ea863069836ac8cfc5186.png title=https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/06/15/dafdc3f6282ea863069836ac8cfc5186.png></p></li></ul></li><li><p><code>text([val|fn])</code></p><p>类似原生js中的<code>innerText</code>方法。参数传入与<code>html()</code>方法一模一样</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-javascript data-lang=javascript><span class=nx>btns</span><span class=p>[</span><span class=mi>2</span><span class=p>].</span><span class=nx>onclick</span> <span class=o>=</span> <span class=kd>function</span> <span class=p>()</span> <span class=p>{</span>
+    <span class=nx>$</span><span class=p>(</span><span class=s1>&#39;div&#39;</span><span class=p>).</span><span class=nx>text</span><span class=p>(</span><span class=s1>&#39;&lt;p&gt;我是一个段落&lt;span&gt;我是一个span&lt;/span&gt;&lt;/p&gt;&#39;</span><span class=p>)</span>
+<span class=p>}</span>
+<span class=nx>btns</span><span class=p>[</span><span class=mi>3</span><span class=p>].</span><span class=nx>onclick</span> <span class=o>=</span> <span class=kd>function</span> <span class=p>()</span> <span class=p>{</span>
+    <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>$</span><span class=p>(</span><span class=s1>&#39;div&#39;</span><span class=p>).</span><span class=nx>text</span><span class=p>())</span>
+<span class=p>}</span>
+</code></pre></td></tr></table></div></div><p><img class=lazyload src=/svg/loading.min.svg data-src=https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/06/15/ecda8d11282ce6210348c04cb76ffea5.png data-srcset="https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/06/15/ecda8d11282ce6210348c04cb76ffea5.png, https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/06/15/ecda8d11282ce6210348c04cb76ffea5.png 1.5x, https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/06/15/ecda8d11282ce6210348c04cb76ffea5.png 2x" data-sizes=auto alt=https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/06/15/ecda8d11282ce6210348c04cb76ffea5.png title=https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/06/15/ecda8d11282ce6210348c04cb76ffea5.png></p></li><li><p><code>val([val|fn|arr])</code></p><p>与value属性类似。参数传入与前两种一模一样。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-javascript data-lang=javascript><span class=nx>btns</span><span class=p>[</span><span class=mi>4</span><span class=p>].</span><span class=nx>onclick</span> <span class=o>=</span> <span class=kd>function</span> <span class=p>()</span> <span class=p>{</span>
+    <span class=nx>$</span><span class=p>(</span><span class=s1>&#39;input&#39;</span><span class=p>).</span><span class=nx>val</span><span class=p>(</span><span class=s1>&#39;请输入内容：&#39;</span><span class=p>)</span>
+<span class=p>}</span>
+<span class=nx>btns</span><span class=p>[</span><span class=mi>5</span><span class=p>].</span><span class=nx>onclick</span> <span class=o>=</span> <span class=kd>function</span> <span class=p>()</span> <span class=p>{</span>
+    <span class=nx>$</span><span class=p>(</span><span class=s1>&#39;input&#39;</span><span class=p>).</span><span class=nx>val</span><span class=p>()</span>
+<span class=p>}</span>
+</code></pre></td></tr></table></div></div><p><img class=lazyload src=/svg/loading.min.svg data-src=https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/06/15/24b96be6f8e034f4045c85f2ee162082.png data-srcset="https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/06/15/24b96be6f8e034f4045c85f2ee162082.png, https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/06/15/24b96be6f8e034f4045c85f2ee162082.png 1.5x, https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/06/15/24b96be6f8e034f4045c85f2ee162082.png 2x" data-sizes=auto alt=https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/06/15/24b96be6f8e034f4045c85f2ee162082.png title=https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/06/15/24b96be6f8e034f4045c85f2ee162082.png></p></li></ol><h2 id=操作样式方法>操作样式方法</h2><ol><li><p>设置属性值</p><ul><li><p>逐个设置</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-javascript data-lang=javascript><span class=nx>$</span><span class=p>(</span><span class=s1>&#39;div&#39;</span><span class=p>).</span><span class=nx>css</span><span class=p>(</span><span class=s1>&#39;width&#39;</span><span class=p>,</span> <span class=s1>&#39;100px&#39;</span><span class=p>)</span>
+<span class=nx>$</span><span class=p>(</span><span class=s1>&#39;div&#39;</span><span class=p>).</span><span class=nx>css</span><span class=p>(</span><span class=s1>&#39;height&#39;</span><span class=p>,</span> <span class=s1>&#39;100px&#39;</span><span class=p>)</span>
+<span class=nx>$</span><span class=p>(</span><span class=s1>&#39;div&#39;</span><span class=p>).</span><span class=nx>css</span><span class=p>(</span><span class=s1>&#39;background&#39;</span><span class=p>,</span> <span class=s1>&#39;red&#39;</span><span class=p>)</span>
+</code></pre></td></tr></table></div></div></li><li><p>链式设置</p><p>如果大于3步，建议分开</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-javascript data-lang=javascript><span class=nx>$</span><span class=p>(</span><span class=s1>&#39;div&#39;</span><span class=p>).</span><span class=nx>css</span><span class=p>(</span><span class=s1>&#39;width&#39;</span><span class=p>,</span> <span class=s1>&#39;100px&#39;</span><span class=p>).</span><span class=nx>css</span><span class=p>(</span><span class=s1>&#39;height&#39;</span><span class=p>,</span> <span class=s1>&#39;100px&#39;</span><span class=p>).</span><span class=nx>css</span><span class=p>(</span><span class=s1>&#39;background&#39;</span><span class=p>,</span> <span class=s1>&#39;blue&#39;</span><span class=p>)</span>
+</code></pre></td></tr></table></div></div></li><li><p>批量设置</p><p>参数可以传入一个对象，对象内传入css样式。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-javascript data-lang=javascript><span class=nx>$</span><span class=p>(</span><span class=s1>&#39;div&#39;</span><span class=p>).</span><span class=nx>css</span><span class=p>({</span>
+    <span class=nx>width</span><span class=o>:</span> <span class=s1>&#39;100px&#39;</span><span class=p>,</span>
+    <span class=nx>height</span><span class=o>:</span> <span class=s1>&#39;100px&#39;</span><span class=p>,</span>
+    <span class=nx>background</span><span class=o>:</span> <span class=s1>&#39;red&#39;</span>
+<span class=p>})</span>
+</code></pre></td></tr></table></div></div></li></ul></li><li><p>获取css样式。</p><p>传入参数即需要获取的样式名称。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-javascript data-lang=javascript><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>$</span><span class=p>(</span><span class=s1>&#39;div&#39;</span><span class=p>).</span><span class=nx>css</span><span class=p>(</span><span class=s1>&#39;width&#39;</span><span class=p>))</span>
+</code></pre></td></tr></table></div></div><p><img class=lazyload src=/svg/loading.min.svg data-src=https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/06/15/00792e5e8293230db6f67e6f8397159c.png data-srcset="https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/06/15/00792e5e8293230db6f67e6f8397159c.png, https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/06/15/00792e5e8293230db6f67e6f8397159c.png 1.5x, https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/06/15/00792e5e8293230db6f67e6f8397159c.png 2x" data-sizes=auto alt=https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/06/15/00792e5e8293230db6f67e6f8397159c.png title=image-20200615180236759></p></li></ol><h2 id=尺寸和位置相关>尺寸和位置相关</h2><h3 id=尺寸>尺寸</h3><p>以<code>width()</code>方法为例。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span><span class=lnt>40
+</span><span class=lnt>41
+</span><span class=lnt>42
+</span><span class=lnt>43
+</span><span class=lnt>44
+</span><span class=lnt>45
+</span><span class=lnt>46
+</span><span class=lnt>47
+</span><span class=lnt>48
+</span><span class=lnt>49
+</span><span class=lnt>50
+</span><span class=lnt>51
+</span><span class=lnt>52
+</span><span class=lnt>53
+</span><span class=lnt>54
+</span><span class=lnt>55
+</span><span class=lnt>56
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-html data-lang=html><span class=cp>&lt;!DOCTYPE html&gt;</span>
+<span class=p>&lt;</span><span class=nt>html</span> <span class=na>lang</span><span class=o>=</span><span class=s>&#34;en&#34;</span><span class=p>&gt;</span>
+
+    <span class=p>&lt;</span><span class=nt>head</span><span class=p>&gt;</span>
+        <span class=p>&lt;</span><span class=nt>meta</span> <span class=na>charset</span><span class=o>=</span><span class=s>&#34;UTF-8&#34;</span><span class=p>&gt;</span>
+        <span class=p>&lt;</span><span class=nt>meta</span> <span class=na>name</span><span class=o>=</span><span class=s>&#34;viewport&#34;</span> <span class=na>content</span><span class=o>=</span><span class=s>&#34;width=device-width, initial-scale=1.0&#34;</span><span class=p>&gt;</span>
+        <span class=p>&lt;</span><span class=nt>title</span><span class=p>&gt;</span>Document<span class=p>&lt;/</span><span class=nt>title</span><span class=p>&gt;</span>
+        <span class=p>&lt;</span><span class=nt>style</span><span class=p>&gt;</span>
+            <span class=o>*</span> <span class=p>{</span>
+                <span class=k>margin</span><span class=p>:</span> <span class=mi>0</span><span class=p>;</span>
+                <span class=k>padding</span><span class=p>:</span> <span class=mi>0</span><span class=p>;</span>
+            <span class=p>}</span>
+
+            <span class=p>.</span><span class=nc>father</span> <span class=p>{</span>
+                <span class=k>width</span><span class=p>:</span> <span class=mi>200</span><span class=kt>px</span><span class=p>;</span>
+                <span class=k>height</span><span class=p>:</span> <span class=mi>200</span><span class=kt>px</span><span class=p>;</span>
+                <span class=k>border</span><span class=p>:</span> <span class=mi>50</span><span class=kt>px</span> <span class=kc>solid</span> <span class=mh>#000</span><span class=p>;</span>
+                <span class=k>background</span><span class=p>:</span> <span class=kc>red</span><span class=p>;</span>
+                <span class=k>margin-left</span><span class=p>:</span> <span class=mi>50</span><span class=kt>px</span><span class=p>;</span>
+                <span class=k>position</span><span class=p>:</span> <span class=kc>relative</span><span class=p>;</span>
+            <span class=p>}</span>
+
+            <span class=p>.</span><span class=nc>son</span> <span class=p>{</span>
+                <span class=k>width</span><span class=p>:</span> <span class=mi>100</span><span class=kt>px</span><span class=p>;</span>
+                <span class=k>height</span><span class=p>:</span> <span class=mi>100</span><span class=kt>px</span><span class=p>;</span>
+                <span class=k>background</span><span class=p>:</span> <span class=kc>blue</span><span class=p>;</span>
+                <span class=k>position</span><span class=p>:</span> <span class=kc>absolute</span><span class=p>;</span>
+                <span class=k>left</span><span class=p>:</span> <span class=mi>50</span><span class=kt>px</span><span class=p>;</span>
+                <span class=k>top</span><span class=p>:</span> <span class=mi>50</span><span class=kt>px</span><span class=p>;</span>
+
+            <span class=p>}</span>
+        <span class=p>&lt;/</span><span class=nt>style</span><span class=p>&gt;</span>
+        <span class=p>&lt;</span><span class=nt>script</span> <span class=na>src</span><span class=o>=</span><span class=s>&#34;https://cdn.bootcdn.net/ajax/libs/jquery/1.12.4/jquery.js&#34;</span><span class=p>&gt;&lt;/</span><span class=nt>script</span><span class=p>&gt;</span>
+        <span class=p>&lt;</span><span class=nt>script</span><span class=p>&gt;</span>
+            <span class=nx>$</span><span class=p>(</span><span class=kd>function</span> <span class=p>()</span> <span class=p>{</span>
+                <span class=kd>var</span> <span class=nx>btns</span> <span class=o>=</span> <span class=nb>document</span><span class=p>.</span><span class=nx>getElementsByTagName</span><span class=p>(</span><span class=s1>&#39;button&#39;</span><span class=p>)</span>
+                <span class=nx>btns</span><span class=p>[</span><span class=mi>0</span><span class=p>].</span><span class=nx>onclick</span> <span class=o>=</span> <span class=kd>function</span> <span class=p>()</span> <span class=p>{</span>
+                    <span class=c1>// 获取元素的宽度
+</span><span class=c1></span>                    <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>$</span><span class=p>(</span><span class=s1>&#39;.father&#39;</span><span class=p>).</span><span class=nx>width</span><span class=p>())</span> <span class=c1>//200
+</span><span class=c1></span>                <span class=p>}</span>
+                <span class=nx>btns</span><span class=p>[</span><span class=mi>1</span><span class=p>].</span><span class=nx>onclick</span> <span class=o>=</span> <span class=kd>function</span> <span class=p>()</span> <span class=p>{</span>
+                    <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>$</span><span class=p>(</span><span class=s1>&#39;.father&#39;</span><span class=p>).</span><span class=nx>width</span><span class=p>(</span><span class=s1>&#39;500px&#39;</span><span class=p>))</span>
+                <span class=p>}</span>
+            <span class=p>})</span>
+        <span class=p>&lt;/</span><span class=nt>script</span><span class=p>&gt;</span>
+    <span class=p>&lt;/</span><span class=nt>head</span><span class=p>&gt;</span>
+
+    <span class=p>&lt;</span><span class=nt>body</span><span class=p>&gt;</span>
+        <span class=p>&lt;</span><span class=nt>div</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;father&#34;</span><span class=p>&gt;</span>
+            <span class=p>&lt;</span><span class=nt>div</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;son&#34;</span><span class=p>&gt;&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>
+        <span class=p>&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>
+        <span class=p>&lt;</span><span class=nt>button</span><span class=p>&gt;</span>获取<span class=p>&lt;/</span><span class=nt>button</span><span class=p>&gt;</span>
+        <span class=p>&lt;</span><span class=nt>button</span><span class=p>&gt;</span>设置<span class=p>&lt;/</span><span class=nt>button</span><span class=p>&gt;</span>
+    <span class=p>&lt;/</span><span class=nt>body</span><span class=p>&gt;</span>
+
+<span class=p>&lt;/</span><span class=nt>html</span><span class=p>&gt;</span>
+</code></pre></td></tr></table></div></div><p><img class=lazyload src=/svg/loading.min.svg data-src=https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/06/15/32c2ed9a615e012ead7c6a2ffeafbb19.png data-srcset="https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/06/15/32c2ed9a615e012ead7c6a2ffeafbb19.png, https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/06/15/32c2ed9a615e012ead7c6a2ffeafbb19.png 1.5x, https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/06/15/32c2ed9a615e012ead7c6a2ffeafbb19.png 2x" data-sizes=auto alt=https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/06/15/32c2ed9a615e012ead7c6a2ffeafbb19.png title=https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/06/15/32c2ed9a615e012ead7c6a2ffeafbb19.png></p><h3 id=位置>位置</h3><ol><li><p><code>offset()</code>获取距离<strong>窗口</strong>的偏移位。</p><ul><li><p>获取</p><p>例如获取距离左边的偏移位<code>$('div').offset().left</code></p></li><li><p>设置</p><p>参数内传入一个对象，对象内写需要设置的属性</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-javascript data-lang=javascript><span class=nx>btns</span><span class=p>[</span><span class=mi>1</span><span class=p>].</span><span class=nx>onclick</span> <span class=o>=</span> <span class=kd>function</span> <span class=p>()</span> <span class=p>{</span>
+    <span class=nx>$</span><span class=p>(</span><span class=s1>&#39;.son&#39;</span><span class=p>).</span><span class=nx>offset</span><span class=p>({</span>
+        <span class=nx>left</span><span class=o>:</span> <span class=mi>10</span>
+    <span class=p>})</span>
+<span class=p>}</span>
+</code></pre></td></tr></table></div></div></li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span><span class=lnt>40
+</span><span class=lnt>41
+</span><span class=lnt>42
+</span><span class=lnt>43
+</span><span class=lnt>44
+</span><span class=lnt>45
+</span><span class=lnt>46
+</span><span class=lnt>47
+</span><span class=lnt>48
+</span><span class=lnt>49
+</span><span class=lnt>50
+</span><span class=lnt>51
+</span><span class=lnt>52
+</span><span class=lnt>53
+</span><span class=lnt>54
+</span><span class=lnt>55
+</span><span class=lnt>56
+</span><span class=lnt>57
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-html data-lang=html><span class=cp>&lt;!DOCTYPE html&gt;</span>
+<span class=p>&lt;</span><span class=nt>html</span> <span class=na>lang</span><span class=o>=</span><span class=s>&#34;en&#34;</span><span class=p>&gt;</span>
+   
+    <span class=p>&lt;</span><span class=nt>head</span><span class=p>&gt;</span>
+        <span class=p>&lt;</span><span class=nt>meta</span> <span class=na>charset</span><span class=o>=</span><span class=s>&#34;UTF-8&#34;</span><span class=p>&gt;</span>
+        <span class=p>&lt;</span><span class=nt>meta</span> <span class=na>name</span><span class=o>=</span><span class=s>&#34;viewport&#34;</span> <span class=na>content</span><span class=o>=</span><span class=s>&#34;width=device-width, initial-scale=1.0&#34;</span><span class=p>&gt;</span>
+        <span class=p>&lt;</span><span class=nt>title</span><span class=p>&gt;</span>Document<span class=p>&lt;/</span><span class=nt>title</span><span class=p>&gt;</span>
+        <span class=p>&lt;</span><span class=nt>style</span><span class=p>&gt;</span>
+            <span class=o>*</span> <span class=p>{</span>
+                <span class=k>margin</span><span class=p>:</span> <span class=mi>0</span><span class=p>;</span>
+                <span class=k>padding</span><span class=p>:</span> <span class=mi>0</span><span class=p>;</span>
+            <span class=p>}</span>
+   
+            <span class=p>.</span><span class=nc>father</span> <span class=p>{</span>
+                <span class=k>width</span><span class=p>:</span> <span class=mi>200</span><span class=kt>px</span><span class=p>;</span>
+                <span class=k>height</span><span class=p>:</span> <span class=mi>200</span><span class=kt>px</span><span class=p>;</span>
+                <span class=k>border</span><span class=p>:</span> <span class=mi>50</span><span class=kt>px</span> <span class=kc>solid</span> <span class=mh>#000</span><span class=p>;</span>
+                <span class=k>background</span><span class=p>:</span> <span class=kc>red</span><span class=p>;</span>
+                <span class=k>margin-left</span><span class=p>:</span> <span class=mi>50</span><span class=kt>px</span><span class=p>;</span>
+                <span class=k>position</span><span class=p>:</span> <span class=kc>relative</span><span class=p>;</span>
+            <span class=p>}</span>
+   
+            <span class=p>.</span><span class=nc>son</span> <span class=p>{</span>
+                <span class=k>width</span><span class=p>:</span> <span class=mi>100</span><span class=kt>px</span><span class=p>;</span>
+                <span class=k>height</span><span class=p>:</span> <span class=mi>100</span><span class=kt>px</span><span class=p>;</span>
+                <span class=k>background</span><span class=p>:</span> <span class=kc>blue</span><span class=p>;</span>
+                <span class=k>position</span><span class=p>:</span> <span class=kc>absolute</span><span class=p>;</span>
+                <span class=k>left</span><span class=p>:</span> <span class=mi>50</span><span class=kt>px</span><span class=p>;</span>
+                <span class=k>top</span><span class=p>:</span> <span class=mi>50</span><span class=kt>px</span><span class=p>;</span>
+   
+            <span class=p>}</span>
+        <span class=p>&lt;/</span><span class=nt>style</span><span class=p>&gt;</span>
+        <span class=p>&lt;</span><span class=nt>script</span> <span class=na>src</span><span class=o>=</span><span class=s>&#34;https://cdn.bootcdn.net/ajax/libs/jquery/1.12.4/jquery.js&#34;</span><span class=p>&gt;&lt;/</span><span class=nt>script</span><span class=p>&gt;</span>
+        <span class=p>&lt;</span><span class=nt>script</span><span class=p>&gt;</span>
+            <span class=nx>$</span><span class=p>(</span><span class=kd>function</span> <span class=p>()</span> <span class=p>{</span>
+                <span class=kd>var</span> <span class=nx>btns</span> <span class=o>=</span> <span class=nb>document</span><span class=p>.</span><span class=nx>getElementsByTagName</span><span class=p>(</span><span class=s1>&#39;button&#39;</span><span class=p>)</span>
+                <span class=nx>btns</span><span class=p>[</span><span class=mi>0</span><span class=p>].</span><span class=nx>onclick</span> <span class=o>=</span> <span class=kd>function</span> <span class=p>()</span> <span class=p>{</span>
+                    <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>$</span><span class=p>(</span><span class=s1>&#39;.son&#39;</span><span class=p>).</span><span class=nx>offset</span><span class=p>().</span><span class=nx>left</span><span class=p>)</span> <span class=c1>//150
+</span><span class=c1></span>                <span class=p>}</span>
+                <span class=nx>btns</span><span class=p>[</span><span class=mi>1</span><span class=p>].</span><span class=nx>onclick</span> <span class=o>=</span> <span class=kd>function</span> <span class=p>()</span> <span class=p>{</span>
+                    <span class=nx>$</span><span class=p>(</span><span class=s1>&#39;.son&#39;</span><span class=p>).</span><span class=nx>offset</span><span class=p>({</span>
+                        <span class=nx>left</span><span class=o>:</span> <span class=mi>10</span>
+                    <span class=p>})</span>
+                <span class=p>}</span>
+            <span class=p>})</span>
+        <span class=p>&lt;/</span><span class=nt>script</span><span class=p>&gt;</span>
+    <span class=p>&lt;/</span><span class=nt>head</span><span class=p>&gt;</span>
+   
+    <span class=p>&lt;</span><span class=nt>body</span><span class=p>&gt;</span>
+        <span class=p>&lt;</span><span class=nt>div</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;father&#34;</span><span class=p>&gt;</span>
+            <span class=p>&lt;</span><span class=nt>div</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;son&#34;</span><span class=p>&gt;&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>
+        <span class=p>&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>
+        <span class=p>&lt;</span><span class=nt>button</span><span class=p>&gt;</span>获取<span class=p>&lt;/</span><span class=nt>button</span><span class=p>&gt;</span>
+        <span class=p>&lt;</span><span class=nt>button</span><span class=p>&gt;</span>设置<span class=p>&lt;/</span><span class=nt>button</span><span class=p>&gt;</span>
+    <span class=p>&lt;/</span><span class=nt>body</span><span class=p>&gt;</span>
+   
+<span class=p>&lt;/</span><span class=nt>html</span><span class=p>&gt;</span>
+</code></pre></td></tr></table></div></div><p><img class=lazyload src=/svg/loading.min.svg data-src=https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/06/15/00b11eca3c7cb76223e7ad9b5271eb2b.png data-srcset="https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/06/15/00b11eca3c7cb76223e7ad9b5271eb2b.png, https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/06/15/00b11eca3c7cb76223e7ad9b5271eb2b.png 1.5x, https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/06/15/00b11eca3c7cb76223e7ad9b5271eb2b.png 2x" data-sizes=auto alt=https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/06/15/00b11eca3c7cb76223e7ad9b5271eb2b.png title=https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/06/15/00b11eca3c7cb76223e7ad9b5271eb2b.png></p></li><li><p><code>position</code>获取元素距离<strong>定位</strong>元素的偏移位</p><p>该方法只有获取不能设置，但可以通过css方式进行设置</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span><span class=lnt>40
+</span><span class=lnt>41
+</span><span class=lnt>42
+</span><span class=lnt>43
+</span><span class=lnt>44
+</span><span class=lnt>45
+</span><span class=lnt>46
+</span><span class=lnt>47
+</span><span class=lnt>48
+</span><span class=lnt>49
+</span><span class=lnt>50
+</span><span class=lnt>51
+</span><span class=lnt>52
+</span><span class=lnt>53
+</span><span class=lnt>54
+</span><span class=lnt>55
+</span><span class=lnt>56
+</span><span class=lnt>57
+</span><span class=lnt>58
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-html data-lang=html><span class=cp>&lt;!DOCTYPE html&gt;</span>
+<span class=p>&lt;</span><span class=nt>html</span> <span class=na>lang</span><span class=o>=</span><span class=s>&#34;en&#34;</span><span class=p>&gt;</span>
+   
+<span class=p>&lt;</span><span class=nt>head</span><span class=p>&gt;</span>
+    <span class=p>&lt;</span><span class=nt>meta</span> <span class=na>charset</span><span class=o>=</span><span class=s>&#34;UTF-8&#34;</span><span class=p>&gt;</span>
+    <span class=p>&lt;</span><span class=nt>meta</span> <span class=na>name</span><span class=o>=</span><span class=s>&#34;viewport&#34;</span> <span class=na>content</span><span class=o>=</span><span class=s>&#34;width=device-width, initial-scale=1.0&#34;</span><span class=p>&gt;</span>
+    <span class=p>&lt;</span><span class=nt>title</span><span class=p>&gt;</span>Document<span class=p>&lt;/</span><span class=nt>title</span><span class=p>&gt;</span>
+    <span class=p>&lt;</span><span class=nt>style</span><span class=p>&gt;</span>
+        <span class=o>*</span> <span class=p>{</span>
+            <span class=k>margin</span><span class=p>:</span> <span class=mi>0</span><span class=p>;</span>
+            <span class=k>padding</span><span class=p>:</span> <span class=mi>0</span><span class=p>;</span>
+        <span class=p>}</span>
+   
+        <span class=p>.</span><span class=nc>father</span> <span class=p>{</span>
+            <span class=k>width</span><span class=p>:</span> <span class=mi>200</span><span class=kt>px</span><span class=p>;</span>
+            <span class=k>height</span><span class=p>:</span> <span class=mi>200</span><span class=kt>px</span><span class=p>;</span>
+            <span class=k>border</span><span class=p>:</span> <span class=mi>50</span><span class=kt>px</span> <span class=kc>solid</span> <span class=mh>#000</span><span class=p>;</span>
+            <span class=k>background</span><span class=p>:</span> <span class=kc>red</span><span class=p>;</span>
+            <span class=k>margin-left</span><span class=p>:</span> <span class=mi>50</span><span class=kt>px</span><span class=p>;</span>
+            <span class=k>position</span><span class=p>:</span> <span class=kc>relative</span><span class=p>;</span>
+        <span class=p>}</span>
+   
+        <span class=p>.</span><span class=nc>son</span> <span class=p>{</span>
+            <span class=k>width</span><span class=p>:</span> <span class=mi>100</span><span class=kt>px</span><span class=p>;</span>
+            <span class=k>height</span><span class=p>:</span> <span class=mi>100</span><span class=kt>px</span><span class=p>;</span>
+            <span class=k>background</span><span class=p>:</span> <span class=kc>blue</span><span class=p>;</span>
+            <span class=k>position</span><span class=p>:</span> <span class=kc>absolute</span><span class=p>;</span>
+            <span class=k>left</span><span class=p>:</span> <span class=mi>50</span><span class=kt>px</span><span class=p>;</span>
+            <span class=k>top</span><span class=p>:</span> <span class=mi>50</span><span class=kt>px</span><span class=p>;</span>
+   
+        <span class=p>}</span>
+    <span class=p>&lt;/</span><span class=nt>style</span><span class=p>&gt;</span>
+    <span class=p>&lt;</span><span class=nt>script</span> <span class=na>src</span><span class=o>=</span><span class=s>&#34;https://cdn.bootcdn.net/ajax/libs/jquery/1.12.4/jquery.js&#34;</span><span class=p>&gt;&lt;/</span><span class=nt>script</span><span class=p>&gt;</span>
+    <span class=p>&lt;</span><span class=nt>script</span><span class=p>&gt;</span>
+        <span class=nx>$</span><span class=p>(</span><span class=kd>function</span> <span class=p>()</span> <span class=p>{</span>
+            <span class=kd>var</span> <span class=nx>btns</span> <span class=o>=</span> <span class=nb>document</span><span class=p>.</span><span class=nx>getElementsByTagName</span><span class=p>(</span><span class=s1>&#39;button&#39;</span><span class=p>)</span>
+            <span class=nx>btns</span><span class=p>[</span><span class=mi>0</span><span class=p>].</span><span class=nx>onclick</span> <span class=o>=</span> <span class=kd>function</span> <span class=p>()</span> <span class=p>{</span>
+                <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>$</span><span class=p>(</span><span class=s1>&#39;.son&#39;</span><span class=p>).</span><span class=nx>position</span><span class=p>().</span><span class=nx>left</span><span class=p>)</span> <span class=c1>//50
+</span><span class=c1></span>            <span class=p>}</span>
+            <span class=nx>btns</span><span class=p>[</span><span class=mi>1</span><span class=p>].</span><span class=nx>onclick</span> <span class=o>=</span> <span class=kd>function</span> <span class=p>()</span> <span class=p>{</span>
+                <span class=c1>// 无法设置，即使设置也不生效
+</span><span class=c1></span>                <span class=nx>$</span><span class=p>(</span><span class=s1>&#39;.son&#39;</span><span class=p>).</span><span class=nx>position</span><span class=p>({</span>
+                    <span class=nx>left</span><span class=o>:</span> <span class=mi>10</span>
+                <span class=p>})</span>
+            <span class=p>}</span>
+        <span class=p>})</span>
+    <span class=p>&lt;/</span><span class=nt>script</span><span class=p>&gt;</span>
+<span class=p>&lt;/</span><span class=nt>head</span><span class=p>&gt;</span>
+   
+<span class=p>&lt;</span><span class=nt>body</span><span class=p>&gt;</span>
+    <span class=p>&lt;</span><span class=nt>div</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;father&#34;</span><span class=p>&gt;</span>
+        <span class=p>&lt;</span><span class=nt>div</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;son&#34;</span><span class=p>&gt;&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>
+    <span class=p>&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>
+    <span class=p>&lt;</span><span class=nt>button</span><span class=p>&gt;</span>获取<span class=p>&lt;/</span><span class=nt>button</span><span class=p>&gt;</span>
+    <span class=p>&lt;</span><span class=nt>button</span><span class=p>&gt;</span>设置<span class=p>&lt;/</span><span class=nt>button</span><span class=p>&gt;</span>
+<span class=p>&lt;/</span><span class=nt>body</span><span class=p>&gt;</span>
+   
+<span class=p>&lt;/</span><span class=nt>html</span><span class=p>&gt;</span>
+</code></pre></td></tr></table></div></div><p><img class=lazyload src=/svg/loading.min.svg data-src=https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/06/15/c64aa854b3b115cc5935730ad171a882.png data-srcset="https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/06/15/c64aa854b3b115cc5935730ad171a882.png, https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/06/15/c64aa854b3b115cc5935730ad171a882.png 1.5x, https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/06/15/c64aa854b3b115cc5935730ad171a882.png 2x" data-sizes=auto alt=https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/06/15/c64aa854b3b115cc5935730ad171a882.png title=https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/06/15/c64aa854b3b115cc5935730ad171a882.png></p></li></ol><h2 id=scrolltop方法>scrollTop方法</h2><ol><li><p>获取滚动偏移量</p><ul><li><p>元素</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-javascript data-lang=javascript><span class=nx>btns</span><span class=p>[</span><span class=mi>0</span><span class=p>].</span><span class=nx>onclick</span> <span class=o>=</span> <span class=kd>function</span> <span class=p>()</span> <span class=p>{</span>
+    <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>$</span><span class=p>(</span><span class=s1>&#39;.scroll&#39;</span><span class=p>).</span><span class=nx>scrollTop</span><span class=p>())</span>
+<span class=p>}</span>
+</code></pre></td></tr></table></div></div></li><li><p>网页</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-javascript data-lang=javascript><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>$</span><span class=p>(</span><span class=s1>&#39;html&#39;</span><span class=p>).</span><span class=nx>scrollTop</span><span class=p>())</span>
+</code></pre></td></tr></table></div></div><p>IE浏览器下可能无法获取，需要将<code>html</code>换成<code>body</code>。常用写法如下：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-javascript data-lang=javascript><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>$</span><span class=p>(</span><span class=s1>&#39;html&#39;</span><span class=p>).</span><span class=nx>scrollTop</span><span class=p>()</span><span class=o>+</span><span class=nx>$</span><span class=p>(</span><span class=s1>&#39;body&#39;</span><span class=p>).</span><span class=nx>scrollTop</span><span class=p>())</span>
+</code></pre></td></tr></table></div></div></li></ul></li><li><p>设置滚动偏移量</p><p>参数传入为整型，而不是字符串类型。</p><ul><li><p>元素</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-javascript data-lang=javascript><span class=nx>btns</span><span class=p>[</span><span class=mi>1</span><span class=p>].</span><span class=nx>onclick</span> <span class=o>=</span> <span class=kd>function</span> <span class=p>()</span> <span class=p>{</span>
+    <span class=nx>$</span><span class=p>(</span><span class=s1>&#39;.scroll&#39;</span><span class=p>).</span><span class=nx>scrollTop</span><span class=p>(</span><span class=mi>300</span><span class=p>)</span>
+<span class=p>}</span>
+</code></pre></td></tr></table></div></div></li><li><p>网页</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-javascript data-lang=javascript><span class=nx>$</span><span class=p>(</span><span class=s1>&#39;html&#39;</span><span class=p>).</span><span class=nx>scrollTop</span><span class=p>(</span><span class=mi>300</span><span class=p>)</span>
+</code></pre></td></tr></table></div></div><p>同样的IE浏览器不可使用，需要对<code>body</code>进行设置。通常写法如下：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-javascript data-lang=javascript><span class=nx>$</span><span class=p>(</span><span class=s1>&#39;html,body&#39;</span><span class=p>).</span><span class=nx>scrollTop</span><span class=p>(</span><span class=mi>300</span><span class=p>)</span>
+</code></pre></td></tr></table></div></div></li></ul></li></ol></div><div class=post-footer id=post-footer><div class=post-info><div class=post-info-line><div class=post-info-mod><span>Updated on 2020-06-15&nbsp;<a class=git-hash href=https://github.com/dillonzq/LoveIt/commit/7272e0878b7c68762eb06606bb062432980309d8 target=_blank title="commit by Antmoe(sviptzk@163.com) 7272e0878b7c68762eb06606bb062432980309d8: 新的">
+<i class="fas fa-hashtag fa-fw"></i>7272e08</a></span></div><div class=post-info-license></div></div><div class=post-info-line><div class=post-info-md><span><a class=link-to-markdown href=/posts/notes/20200615/20200615-3/index.md target=_blank>Read Markdown</a></span></div><div class=post-info-share><span><a href=javascript:void(0); title="Share on Twitter" data-sharer=twitter data-url=https://antmoe.gitee.io/posts/notes/20200615/20200615-3/ data-title=三、jQuery属性操作 data-hashtags=jQuery><i class="fab fa-twitter fa-fw"></i></a><a href=javascript:void(0); title="Share on Facebook" data-sharer=facebook data-url=https://antmoe.gitee.io/posts/notes/20200615/20200615-3/ data-hashtag=jQuery><i class="fab fa-facebook-square fa-fw"></i></a><a href=javascript:void(0); title="Share on Hacker News" data-sharer=hackernews data-url=https://antmoe.gitee.io/posts/notes/20200615/20200615-3/ data-title=三、jQuery属性操作><i class="fab fa-hacker-news fa-fw"></i></a><a href=javascript:void(0); title="Share on Line" data-sharer=line data-url=https://antmoe.gitee.io/posts/notes/20200615/20200615-3/ data-title=三、jQuery属性操作><i data-svg-src=https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg></i></a><a href=javascript:void(0); title="Share on 微博" data-sharer=weibo data-url=https://antmoe.gitee.io/posts/notes/20200615/20200615-3/ data-title=三、jQuery属性操作><i class="fab fa-weibo fa-fw"></i></a></span></div></div></div><div class=post-info-more><section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=/tags/jquery/>jQuery</a></section><section><span><a href=javascript:void(0); onclick=window.history.back();>Back</a></span>&nbsp;|&nbsp;<span><a href=/>Home</a></span></section></div><div class=post-nav><a href=/posts/notes/20200615/20200615-2/ class=prev rel=prev title=二、jQuery核心函数和工具方法><i class="fas fa-angle-left fa-fw"></i>二、jQuery核心函数和工具方法</a></div></div><div id=comments><div id=valine class=comment></div><noscript>Please enable JavaScript to view the comments powered by <a href=https://valine.js.org/>Valine</a>.</noscript></div></article></div></main><footer class=footer><div class=footer-container><div class=footer-line>Powered by <a href=https://gohugo.io/ target=_blank rel="noopener noreffer" title="Hugo 0.70.0">Hugo</a> | Theme - <a href=https://github.com/dillonzq/LoveIt target=_blank rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i>LoveIt</a></div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2020</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=https://antmoe.gitee.io target=_blank>Dreamy.TZK</a></span>&nbsp;|&nbsp;<span class=license><a rel="license external nofollow noopener noreffer" href=https://creativecommons.org/licenses/by-nc/4.0/ target=_blank>CC BY-NC 4.0</a></span></div></div></footer></div><div id=fixed-buttons><a href=# id=back-to-top class=fixed-button title="Back to Top"><i class="fas fa-arrow-up fa-fw"></i></a><a href=# id=view-comments class=fixed-button title="View Comments"><i class="fas fa-comment fa-fw"></i></a></div><link rel=stylesheet href=/lib/valine/valine.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/lightgallery.js@1.2.0/dist/css/lightgallery.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/copy-tex.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/gh/sviptzk/StaticFile_HEXO@v1.3/butterfly/css/pool.min.css><script type=text/javascript src=https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/lunr@2.3.8/lunr.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/twemoji@13.0.0/dist/twemoji.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/lightgallery.js@1.2.0/dist/js/lightgallery.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/lg-thumbnail.js@1.2.0/dist/lg-thumbnail.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/lg-zoom.js@1.2.0/dist/lg-zoom.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/copy-tex.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/mhchem.min.js></script><script type=text/javascript>window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{"valine":{"appId":"MSrsml5TjC3t4RglJVU0PO0K-MdYXbMMI","appKey":"XrcCUv4pMAYuY973iEM37zLq","avatar":"mp","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-facebook@5.0.1/img/facebook/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":true,"highlight":true,"lang":"zh-CN","pageSize":10,"placeholder":"建议在上方留下昵称和邮箱等信息，以便收到回复通知（以下三选一）\t\n1、仅在昵称中留下QQ号（系统自动获取QQ昵称、QQ邮箱、QQ头像等信息）\t\n2、自定义填写昵称、邮箱、网址信息（系统自动匹配头像）\t\n3、匿名留言（不会收到留言回复通知，不推荐）","recordIP":true,"requiredFields":["nick","mail"],"visitor":true}},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"},"twemoji":true};</script><script type=text/javascript src=/js/theme.min.js></script></body></html>

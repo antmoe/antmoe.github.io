@@ -1,0 +1,754 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=robots content="noodp"><meta http-equiv=x-ua-compatible content="IE=edge, chrome=1"><title>二、ES6新语法 - 小康的学习记录</title><meta name=Description content="一个收藏回忆与分享技术的地方！"><meta property="og:title" content="二、ES6新语法"><meta property="og:description" content="let关键字    特点 var关键字 let关键字     变量提升 √ ×   作用域 没有块级作用域，是函数作用域 有块级作用域   重复声明 √ ×   重新赋值 √ √      变量提升
+1 2  console.log(age); let age = 38;     作用域
+1 2 3 4 5  for (var i = 0; i < 10; i++) {} console.log(i); for (let n = 0; i < 10; i++) {} console."><meta property="og:type" content="article"><meta property="og:url" content="https://antmoe.gitee.io/posts/notes/20200701/20200701-2/"><meta property="og:image" content="https://antmoe.gitee.io/logo.png"><meta property="article:published_time" content="2020-07-01T17:05:00+08:00"><meta property="article:modified_time" content="2020-07-02T11:29:49+08:00"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://antmoe.gitee.io/logo.png"><meta name=twitter:title content="二、ES6新语法"><meta name=twitter:description content="let关键字    特点 var关键字 let关键字     变量提升 √ ×   作用域 没有块级作用域，是函数作用域 有块级作用域   重复声明 √ ×   重新赋值 √ √      变量提升
+1 2  console.log(age); let age = 38;     作用域
+1 2 3 4 5  for (var i = 0; i < 10; i++) {} console.log(i); for (let n = 0; i < 10; i++) {} console."><meta name=application-name content="Dreamy.tzk's blog"><meta name=apple-mobile-web-app-title content="Dreamy.tzk's blog"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://antmoe.gitee.io/posts/notes/20200701/20200701-2/><link rel=prev href=https://antmoe.gitee.io/posts/notes/20200701/20200701-1/><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"二、ES6新语法","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/antmoe.gitee.io\/posts\/notes\/20200701\/20200701-2\/"},"image":["https:\/\/cdn.jsdelivr.net\/gh\/sviptzk\/StaticFile_HEXO@latest\/butterfly\/img\/favicon.ico"],"genre":"posts","keywords":"ES6","wordcount":1739,"url":"https:\/\/antmoe.gitee.io\/posts\/notes\/20200701\/20200701-2\/","datePublished":"2020-07-01T17:05:00+08:00","dateModified":"2020-07-02T11:29:49+08:00","license":"This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher":{"@type":"Organization","name":"Dreamy.TZK","logo":"https:\/\/cdn.jsdelivr.net\/gh\/sviptzk\/HexoStaticFile@latest\/avatar.jpg"},"author":{"@type":"Person","name":"Dreamy.TZK"},"description":""}</script></head><body header-desktop=fixed header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':('auto'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'auto'==='dark'))&&document.body.setAttribute('theme','dark');</script><div id=mask></div><div class=wrapper><header class=desktop id=header-desktop><div class=header-wrapper><div class=header-title><a href=/ title=小康的学习记录><span class=header-title-pre><i class="far fa-kiss-wink-heart fa-fw"></i></span>小康博客</a></div><div class=menu><div class=menu-inner><a class=menu-item href=/posts/>Posts </a><a class=menu-item href=/tags/>Tags </a><a class=menu-item href=/categories/>Categories </a><a class=menu-item href=/about/>About </a><span class="menu-item delimiter"></span><a href=javascript:void(0); class="menu-item language" title="Select Language">English<i class="fas fa-chevron-right fa-fw"></i>
+<select class=language-select id=language-select-desktop onchange="location=this.value;"><option value=/posts/notes/20200701/20200701-2/ selected>English</option></select>
+</a><span class="menu-item search" id=search-desktop><input type=text placeholder="Search titles or contents..." id=search-input-desktop>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-desktop title=Search><i class="fas fa-search fa-fw"></i></a><a href=javascript:void(0); class="search-button search-clear" id=search-clear-desktop title=Clear><i class="fas fa-times-circle fa-fw"></i></a><span class="search-button search-loading" id=search-loading-desktop><i class="fas fa-spinner fa-fw fa-spin"></i></span></span><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme"><i class="fas fa-adjust fa-fw"></i></a></div></div></div></header><header class=mobile id=header-mobile><div class=header-container><div class=header-wrapper><div class=header-title><a href=/ title=小康的学习记录><span class=header-title-pre><i class="far fa-kiss-wink-heart fa-fw"></i></span>小康博客</a></div><div class=menu-toggle id=menu-toggle-mobile><span></span><span></span><span></span></div></div><div class=menu id=menu-mobile><div class=search-wrapper><div class="search mobile" id=search-mobile><input type=text placeholder="Search titles or contents..." id=search-input-mobile>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-mobile title=Search><i class="fas fa-search fa-fw"></i></a><a href=javascript:void(0); class="search-button search-clear" id=search-clear-mobile title=Clear><i class="fas fa-times-circle fa-fw"></i></a><span class="search-button search-loading" id=search-loading-mobile><i class="fas fa-spinner fa-fw fa-spin"></i></span></div><a href=javascript:void(0); class=search-cancel id=search-cancel-mobile>Cancel</a></div><a class=menu-item href=/posts/>Posts</a><a class=menu-item href=/tags/>Tags</a><a class=menu-item href=/categories/>Categories</a><a class=menu-item href=/about/>About</a><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme">
+<i class="fas fa-adjust fa-fw"></i></a><a href=javascript:void(0); class=menu-item title="Select Language">English<i class="fas fa-chevron-right fa-fw"></i>
+<select class=language-select onchange="location=this.value;"><option value=/posts/notes/20200701/20200701-2/ selected>English</option></select></a></div></div></header><div class="search-dropdown desktop"><div id=search-dropdown-desktop></div></div><div class="search-dropdown mobile"><div id=search-dropdown-mobile></div></div><main class=main><div class=container><div class=toc id=toc-auto><h2 class=toc-title>Contents</h2><div class=toc-content id=toc-content-auto></div></div><article class="page single"><h1 class="single-title animated flipInX">二、ES6新语法</h1><div class=post-meta><div class=post-meta-line><span class=post-author><a href=https://antmoe.gitee.io title=Author target=_blank rel="noopener noreffer author" class=author><i class="fas fa-user-circle fa-fw"></i>Dreamy.TZK</a></span>&nbsp;<span class=post-category>included in <a href=/categories/notes/><i class="far fa-folder fa-fw"></i>notes</a></span></div><div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2020-07-01>2020-07-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1739 words&nbsp;
+<i class="far fa-clock fa-fw"></i>&nbsp;9 minutes&nbsp;<span id=/posts/notes/20200701/20200701-2/ class=leancloud_visitors data-flag-title=二、ES6新语法>
+<i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;views
+</span>&nbsp;</div></div><div class="details toc" id=toc-static kept><div class="details-summary toc-title"><span>Contents</span>
+<span><i class="details-icon fas fa-angle-right"></i></span></div><div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents><ul><li><a href=#let关键字>let关键字</a></li><li><a href=#const关键字>const关键字</a></li><li><a href=#解构赋值>解构赋值</a><ul><li><a href=#对象解构>对象解构</a></li><li><a href=#数组解构>数组解构</a></li><li><a href=#解构赋值结合函数声明>解构赋值结合函数声明</a></li></ul></li><li><a href=#箭头函数>箭头函数</a><ul><li><a href=#this指向>this指向</a></li></ul></li><li><a href=#对象成员简写>对象成员简写</a></li><li><a href=#扩展展开运算符>扩展（展开）运算符</a><ul><li><a href=#对象展开>对象展开</a></li><li><a href=#数组展开>数组展开</a></li></ul></li><li><a href=#数据类型set>数据类型set</a></li><li><a href=#模板字符串>模板字符串</a></li><li><a href=#补充数组的方法>补充数组的方法</a></li><li><a href=#babel将es6代码转为es5>babel将ES6代码转为ES5</a></li></ul></nav></div></div><div class=content id=content><h2 id=let关键字>let关键字</h2><table><thead><tr><th align=center>特点</th><th align=center><code>var</code>关键字</th><th align=center><code>let</code>关键字</th></tr></thead><tbody><tr><td align=center>变量提升</td><td align=center>√</td><td align=center>×</td></tr><tr><td align=center>作用域</td><td align=center>没有块级作用域，是函数作用域</td><td align=center>有块级作用域</td></tr><tr><td align=center>重复声明</td><td align=center>√</td><td align=center>×</td></tr><tr><td align=center>重新赋值</td><td align=center>√</td><td align=center>√</td></tr></tbody></table><ol><li><p>变量提升</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-javascript data-lang=javascript><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>age</span><span class=p>);</span>
+<span class=kd>let</span> <span class=nx>age</span> <span class=o>=</span> <span class=mi>38</span><span class=p>;</span>
+</code></pre></td></tr></table></div></div><p><img class=lazyload src=/svg/loading.min.svg data-src=https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/01/19d9f5114247333e44745f8e267af1df.png data-srcset="https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/01/19d9f5114247333e44745f8e267af1df.png, https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/01/19d9f5114247333e44745f8e267af1df.png 1.5x, https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/01/19d9f5114247333e44745f8e267af1df.png 2x" data-sizes=auto alt=https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/01/19d9f5114247333e44745f8e267af1df.png title=image-20200701114547150></p></li><li><p>作用域</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-javascript data-lang=javascript><span class=k>for</span> <span class=p>(</span><span class=kd>var</span> <span class=nx>i</span> <span class=o>=</span> <span class=mi>0</span><span class=p>;</span> <span class=nx>i</span> <span class=o>&lt;</span> <span class=mi>10</span><span class=p>;</span> <span class=nx>i</span><span class=o>++</span><span class=p>)</span> <span class=p>{}</span>
+<span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>i</span><span class=p>);</span>
+   
+<span class=k>for</span> <span class=p>(</span><span class=kd>let</span> <span class=nx>n</span> <span class=o>=</span> <span class=mi>0</span><span class=p>;</span> <span class=nx>i</span> <span class=o>&lt;</span> <span class=mi>10</span><span class=p>;</span> <span class=nx>i</span><span class=o>++</span><span class=p>)</span> <span class=p>{}</span>
+<span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>n</span><span class=p>);</span>
+</code></pre></td></tr></table></div></div><p><img class=lazyload src=/svg/loading.min.svg data-src=https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/01/484c907316be029f074bdcbc5e49da5f.png data-srcset="https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/01/484c907316be029f074bdcbc5e49da5f.png, https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/01/484c907316be029f074bdcbc5e49da5f.png 1.5x, https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/01/484c907316be029f074bdcbc5e49da5f.png 2x" data-sizes=auto alt=https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/01/484c907316be029f074bdcbc5e49da5f.png title=image-20200701114808765></p><p>图中可对比看出，如果用<code>var</code>声明，在循环外部还是可以使用<code>i</code>变量；但用<code>let</code>声明变量，循环外部不可以使用<code>n</code>变量</p></li><li><p>不可重复声明</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-javascript data-lang=javascript><span class=kd>let</span> <span class=nx>num2</span> <span class=o>=</span> <span class=mi>10</span><span class=p>;</span>
+<span class=kd>let</span> <span class=nx>num2</span> <span class=o>=</span> <span class=mi>20</span><span class=p>;</span>
+<span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=s2>&#34;num2: &#34;</span><span class=p>,</span> <span class=nx>num2</span><span class=p>);</span>
+</code></pre></td></tr></table></div></div><p><img class=lazyload src=/svg/loading.min.svg data-src=https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/01/1c6ac93563f4592f50bd1fd94d629c76.png data-srcset="https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/01/1c6ac93563f4592f50bd1fd94d629c76.png, https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/01/1c6ac93563f4592f50bd1fd94d629c76.png 1.5x, https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/01/1c6ac93563f4592f50bd1fd94d629c76.png 2x" data-sizes=auto alt=https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/01/1c6ac93563f4592f50bd1fd94d629c76.png title=image-20200701115104294></p></li><li><p>重新赋值</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-javascript data-lang=javascript><span class=kd>let</span> <span class=nx>num2</span> <span class=o>=</span> <span class=mi>10</span><span class=p>;</span>
+<span class=nx>num2</span> <span class=o>=</span> <span class=mi>20</span><span class=p>;</span>
+<span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=s2>&#34;num2: &#34;</span><span class=p>,</span> <span class=nx>num2</span><span class=p>);</span>
+</code></pre></td></tr></table></div></div><p><img class=lazyload src=/svg/loading.min.svg data-src=https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/01/c26d54b19255edff9d6b5f3f77966ebe.png data-srcset="https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/01/c26d54b19255edff9d6b5f3f77966ebe.png, https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/01/c26d54b19255edff9d6b5f3f77966ebe.png 1.5x, https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/01/c26d54b19255edff9d6b5f3f77966ebe.png 2x" data-sizes=auto alt=https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/01/c26d54b19255edff9d6b5f3f77966ebe.png title=image-20200701115202044></p></li></ol><h2 id=const关键字>const关键字</h2><blockquote><p>使用场景</p><ol><li>一些不会变化的值，比如圆周率PI</li><li>大事件项目中，保存基地址</li></ol></blockquote><ol><li><p>没有变量提升</p><p><img class=lazyload src=/svg/loading.min.svg data-src=https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/01/26da63873971550e944e15abc009fa66.png data-srcset="https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/01/26da63873971550e944e15abc009fa66.png, https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/01/26da63873971550e944e15abc009fa66.png 1.5x, https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/01/26da63873971550e944e15abc009fa66.png 2x" data-sizes=auto alt=https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/01/26da63873971550e944e15abc009fa66.png title=image-20200701115648469></p></li><li><p>有块级作用域</p><p><img class=lazyload src=/svg/loading.min.svg data-src=https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/01/5447efd30de60d2e64f799787174cdc0.png data-srcset="https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/01/5447efd30de60d2e64f799787174cdc0.png, https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/01/5447efd30de60d2e64f799787174cdc0.png 1.5x, https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/01/5447efd30de60d2e64f799787174cdc0.png 2x" data-sizes=auto alt=https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/01/5447efd30de60d2e64f799787174cdc0.png title=image-20200701115756085></p></li><li><p>不能重复声明</p><p><img class=lazyload src=/svg/loading.min.svg data-src=https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/01/43ff3ec86ca614cd8261628cbc39ced6.png data-srcset="https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/01/43ff3ec86ca614cd8261628cbc39ced6.png, https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/01/43ff3ec86ca614cd8261628cbc39ced6.png 1.5x, https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/01/43ff3ec86ca614cd8261628cbc39ced6.png 2x" data-sizes=auto alt=https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/01/43ff3ec86ca614cd8261628cbc39ced6.png title=image-20200701115830566></p></li><li><p>不能重新赋值（声明必须要初始化）</p><p><img class=lazyload src=/svg/loading.min.svg data-src=https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/01/711696698acae370c823914eb92c8dd3.png data-srcset="https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/01/711696698acae370c823914eb92c8dd3.png, https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/01/711696698acae370c823914eb92c8dd3.png 1.5x, https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/01/711696698acae370c823914eb92c8dd3.png 2x" data-sizes=auto alt=https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/01/711696698acae370c823914eb92c8dd3.png title=image-20200701115846798></p></li></ol><h2 id=解构赋值>解构赋值</h2><h3 id=对象解构>对象解构</h3><p>取对象中属性的值，赋值给变量。</p><p>例如对于如下对象来说，在ES5与ES6中将对象赋值于变量的方式</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-javascript data-lang=javascript><span class=kd>let</span> <span class=nx>obj</span> <span class=o>=</span> <span class=p>{</span>
+  <span class=nx>name</span><span class=o>:</span> <span class=s2>&#34;波波&#34;</span><span class=p>,</span>
+  <span class=nx>age</span><span class=o>:</span> <span class=mi>38</span><span class=p>,</span>
+  <span class=nx>gender</span><span class=o>:</span> <span class=s2>&#34;男&#34;</span><span class=p>,</span>
+  <span class=nx>score</span><span class=o>:</span> <span class=mi>88</span><span class=p>,</span>
+<span class=p>};</span>
+</code></pre></td></tr></table></div></div><p><span class="inline-tag red">ES5中的写法</span></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-javascript data-lang=javascript><span class=kd>let</span> <span class=nx>name1</span> <span class=o>=</span> <span class=nx>obj</span><span class=p>.</span><span class=nx>name</span><span class=p>;</span>
+<span class=kd>let</span> <span class=nx>age1</span> <span class=o>=</span> <span class=nx>obj</span><span class=p>.</span><span class=nx>age</span><span class=p>;</span>
+<span class=kd>let</span> <span class=nx>gender1</span> <span class=o>=</span> <span class=nx>obj</span><span class=p>.</span><span class=nx>gender</span><span class=p>;</span>
+<span class=kd>let</span> <span class=nx>score1</span> <span class=o>=</span> <span class=nx>obj</span><span class=p>.</span><span class=nx>score</span><span class=p>;</span>
+<span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>name1</span><span class=p>,</span> <span class=nx>age1</span><span class=p>,</span> <span class=nx>gender1</span><span class=p>,</span> <span class=nx>score1</span><span class=p>);</span>
+</code></pre></td></tr></table></div></div><p><span class="inline-tag red">ES6中的写法</span></p><ol><li><p>定义变量名</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-javascript data-lang=javascript><span class=kd>let</span> <span class=p>{</span> <span class=nx>name</span><span class=o>:</span> <span class=nx>name2</span><span class=p>,</span> <span class=nx>age</span><span class=o>:</span> <span class=nx>age2</span><span class=p>,</span> <span class=nx>gender</span><span class=o>:</span> <span class=nx>gender2</span><span class=p>,</span> <span class=nx>score</span><span class=o>:</span> <span class=nx>score2</span> <span class=p>}</span> <span class=o>=</span> <span class=nx>obj</span><span class=p>;</span>
+<span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>name2</span><span class=p>,</span> <span class=nx>age2</span><span class=p>,</span> <span class=nx>gender2</span><span class=p>,</span> <span class=nx>score2</span><span class=p>);</span>
+</code></pre></td></tr></table></div></div></li><li><p>变量名可与属性名一致</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-javascript data-lang=javascript><span class=kd>let</span> <span class=p>{</span> <span class=nx>name</span><span class=o>:</span> <span class=nx>name</span><span class=p>,</span> <span class=nx>age</span><span class=o>:</span> <span class=nx>age</span><span class=p>,</span> <span class=nx>gender</span><span class=o>:</span> <span class=nx>gender</span><span class=p>,</span> <span class=nx>score</span><span class=o>:</span> <span class=nx>score</span> <span class=p>}</span> <span class=o>=</span> <span class=nx>obj</span><span class=p>;</span>
+<span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>name</span><span class=p>,</span> <span class=nx>age</span><span class=p>,</span> <span class=nx>gender</span><span class=p>,</span> <span class=nx>score</span><span class=p>);</span>
+</code></pre></td></tr></table></div></div></li><li><p>当变量名与属性名一致时，可以省略变量名</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-javascript data-lang=javascript><span class=kd>let</span> <span class=p>{</span> <span class=nx>name</span><span class=p>,</span> <span class=nx>age</span><span class=p>,</span> <span class=nx>gender</span><span class=p>,</span> <span class=nx>score</span> <span class=p>}</span> <span class=o>=</span> <span class=nx>obj</span><span class=p>;</span>
+<span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>name</span><span class=p>,</span> <span class=nx>age</span><span class=p>,</span> <span class=nx>gender</span><span class=p>,</span> <span class=nx>score</span><span class=p>);</span>
+</code></pre></td></tr></table></div></div></li></ol><p>以上代码的输出结果都为下图所示</p><p><img class=lazyload src=/svg/loading.min.svg data-src=https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/01/c385077e07719436034a5cefb262276a.png data-srcset="https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/01/c385077e07719436034a5cefb262276a.png, https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/01/c385077e07719436034a5cefb262276a.png 1.5x, https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/01/c385077e07719436034a5cefb262276a.png 2x" data-sizes=auto alt=https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/01/c385077e07719436034a5cefb262276a.png title=image-20200701153427629></p><div class="snote idea yellow"><p>当简写时，对象中没有的属性会赋值为undefined</p></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-javascript data-lang=javascript><span class=kd>let</span> <span class=nx>obj</span> <span class=o>=</span> <span class=p>{</span>
+  <span class=nx>name</span><span class=o>:</span> <span class=s2>&#34;波波&#34;</span><span class=p>,</span>
+  <span class=nx>age</span><span class=o>:</span> <span class=mi>38</span><span class=p>,</span>
+  <span class=nx>gender</span><span class=o>:</span> <span class=s2>&#34;男&#34;</span><span class=p>,</span>
+  <span class=nx>score</span><span class=o>:</span> <span class=mi>88</span><span class=p>,</span>
+<span class=p>};</span>
+<span class=kd>let</span> <span class=p>{</span> <span class=nx>name</span><span class=p>,</span> <span class=nx>age</span><span class=p>,</span> <span class=nx>gender</span><span class=p>,</span> <span class=nx>fenshu</span> <span class=p>}</span> <span class=o>=</span> <span class=nx>obj</span><span class=p>;</span>
+<span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>name</span><span class=p>,</span> <span class=nx>age</span><span class=p>,</span> <span class=nx>gender</span><span class=p>,</span> <span class=nx>fenshu</span><span class=p>);</span>
+</code></pre></td></tr></table></div></div><p><img class=lazyload src=/svg/loading.min.svg data-src=https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/01/c94aa0a25bbd79d6322b7afef0c6a683.png data-srcset="https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/01/c94aa0a25bbd79d6322b7afef0c6a683.png, https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/01/c94aa0a25bbd79d6322b7afef0c6a683.png 1.5x, https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/01/c94aa0a25bbd79d6322b7afef0c6a683.png 2x" data-sizes=auto alt=https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/01/c94aa0a25bbd79d6322b7afef0c6a683.png title=image-20200701153747123></p><div class="snote idea yellow"><p>简写与全写可以一起用</p></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-javascript data-lang=javascript><span class=kd>let</span> <span class=p>{</span> <span class=nx>name</span><span class=p>,</span> <span class=nx>age</span><span class=p>,</span> <span class=nx>gender</span><span class=p>,</span> <span class=nx>score</span><span class=o>:</span> <span class=nx>fenshu</span> <span class=p>}</span> <span class=o>=</span> <span class=nx>obj</span><span class=p>;</span>
+<span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>name</span><span class=p>,</span> <span class=nx>age</span><span class=p>,</span> <span class=nx>gender</span><span class=p>,</span> <span class=nx>fenshu</span><span class=p>);</span>
+</code></pre></td></tr></table></div></div><p><img class=lazyload src=/svg/loading.min.svg data-src=https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/01/6d9a7fa14e0087b0035e147a90c55464.png data-srcset="https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/01/6d9a7fa14e0087b0035e147a90c55464.png, https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/01/6d9a7fa14e0087b0035e147a90c55464.png 1.5x, https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/01/6d9a7fa14e0087b0035e147a90c55464.png 2x" data-sizes=auto alt=https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/01/6d9a7fa14e0087b0035e147a90c55464.png title=image-20200701153937328></p><div class="snote idea yellow"><p>设置默认值。当对象中没有此属性时会赋值为默认值而不是undefined。如果对象中存在这个属性，那么将赋值为对象中的属性，而不是默认值。</p></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-javascript data-lang=javascript><span class=kd>let</span> <span class=p>{</span> <span class=nx>name</span><span class=p>,</span> <span class=nx>age</span><span class=p>,</span> <span class=nx>gender</span><span class=p>,</span> <span class=nx>score</span><span class=o>:</span> <span class=nx>fenshu</span><span class=p>,</span> <span class=nx>height</span> <span class=o>=</span> <span class=mi>180</span> <span class=p>}</span> <span class=o>=</span> <span class=nx>obj</span><span class=p>;</span>
+<span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>name</span><span class=p>,</span> <span class=nx>age</span><span class=p>,</span> <span class=nx>gender</span><span class=p>,</span> <span class=nx>fenshu</span><span class=p>,</span> <span class=nx>height</span><span class=p>);</span>
+</code></pre></td></tr></table></div></div><p><img class=lazyload src=/svg/loading.min.svg data-src=https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/01/307b4a24bc06228f9d19eb59a32d8596.png data-srcset="https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/01/307b4a24bc06228f9d19eb59a32d8596.png, https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/01/307b4a24bc06228f9d19eb59a32d8596.png 1.5x, https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/01/307b4a24bc06228f9d19eb59a32d8596.png 2x" data-sizes=auto alt=https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/01/307b4a24bc06228f9d19eb59a32d8596.png title=image-20200701154223592></p><div class="snote idea yellow"><p>赋值一个除了某个属性不存在，但存在其余属性的对象</p></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-javascript data-lang=javascript><span class=kd>let</span> <span class=nx>obj</span> <span class=o>=</span> <span class=p>{</span>
+  <span class=nx>name</span><span class=o>:</span> <span class=s2>&#34;波波&#34;</span><span class=p>,</span>
+  <span class=nx>age</span><span class=o>:</span> <span class=mi>38</span><span class=p>,</span>
+  <span class=nx>gender</span><span class=o>:</span> <span class=s2>&#34;男&#34;</span><span class=p>,</span>
+  <span class=nx>score</span><span class=o>:</span> <span class=mi>100</span><span class=p>,</span>
+<span class=p>};</span>
+
+<span class=c1>// obj2相当于是obj对象里面除了name属性之外的属性组成的一个对象
+</span><span class=c1></span><span class=kd>let</span> <span class=p>{</span> <span class=nx>name</span><span class=p>,</span> <span class=p>...</span><span class=nx>obj2</span> <span class=p>}</span> <span class=o>=</span> <span class=nx>obj</span><span class=p>;</span>
+<span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>obj2</span><span class=p>);</span> <span class=c1>// { age: 38, gender: &#39;男&#39;, score: 100 }
+</span></code></pre></td></tr></table></div></div><p><img class=lazyload src=/svg/loading.min.svg data-src=https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/02/7f36c9d349dfabcb3c4a63f50833941c.png data-srcset="https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/02/7f36c9d349dfabcb3c4a63f50833941c.png, https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/02/7f36c9d349dfabcb3c4a63f50833941c.png 1.5x, https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/02/7f36c9d349dfabcb3c4a63f50833941c.png 2x" data-sizes=auto alt=https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/02/7f36c9d349dfabcb3c4a63f50833941c.png title=image-20200702092507243></p><h3 id=数组解构>数组解构</h3><p>把数组中每一个元素的值依次的赋值给变量。声明如下数组：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-javascript data-lang=javascript><span class=c1>// 声明一个数组
+</span><span class=c1></span><span class=kd>let</span> <span class=nx>arr</span> <span class=o>=</span> <span class=p>[</span><span class=mi>10</span><span class=p>,</span> <span class=mi>20</span><span class=p>,</span> <span class=mi>30</span><span class=p>,</span> <span class=mi>40</span><span class=p>];</span>
+</code></pre></td></tr></table></div></div><p><span class="inline-tag red">ES5中的写法</span></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-javascript data-lang=javascript><span class=kd>let</span> <span class=nx>num1</span> <span class=o>=</span> <span class=nx>arr</span><span class=p>[</span><span class=mi>0</span><span class=p>];</span>
+<span class=kd>let</span> <span class=nx>num2</span> <span class=o>=</span> <span class=nx>arr</span><span class=p>[</span><span class=mi>1</span><span class=p>];</span>
+<span class=kd>let</span> <span class=nx>num3</span> <span class=o>=</span> <span class=nx>arr</span><span class=p>[</span><span class=mi>2</span><span class=p>];</span>
+<span class=kd>let</span> <span class=nx>num4</span> <span class=o>=</span> <span class=nx>arr</span><span class=p>[</span><span class=mi>3</span><span class=p>];</span>
+<span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>num1</span><span class=p>,</span> <span class=nx>num2</span><span class=p>,</span> <span class=nx>num3</span><span class=p>,</span> <span class=nx>num4</span><span class=p>);</span>
+</code></pre></td></tr></table></div></div><p><span class="inline-tag red">ES6中的写法</span></p><ol><li><p>基础写法&ndash;一一对应</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-javascript data-lang=javascript><span class=kd>let</span> <span class=p>[</span><span class=nx>num1</span><span class=p>,</span> <span class=nx>num2</span><span class=p>,</span> <span class=nx>num3</span><span class=p>,</span> <span class=nx>num4</span><span class=p>]</span> <span class=o>=</span> <span class=nx>arr</span><span class=p>;</span>
+<span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>num1</span><span class=p>,</span> <span class=nx>num2</span><span class=p>,</span> <span class=nx>num3</span><span class=p>,</span> <span class=nx>num4</span><span class=p>);</span>
+</code></pre></td></tr></table></div></div><p><img class=lazyload src=/svg/loading.min.svg data-src=https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/01/d1ceb16e582dd46e27c6fafa49ee248c.png data-srcset="https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/01/d1ceb16e582dd46e27c6fafa49ee248c.png, https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/01/d1ceb16e582dd46e27c6fafa49ee248c.png 1.5x, https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/01/d1ceb16e582dd46e27c6fafa49ee248c.png 2x" data-sizes=auto alt=https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/01/d1ceb16e582dd46e27c6fafa49ee248c.png title=image-20200701155309108></p></li><li><p>默认值与没有值时与对象解构一致。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-javascript data-lang=javascript><span class=kd>let</span> <span class=p>[</span><span class=nx>num1</span><span class=p>,</span> <span class=nx>num2</span><span class=p>,</span> <span class=nx>num3</span><span class=p>,</span> <span class=nx>num4</span><span class=p>,</span> <span class=nx>num5</span><span class=p>]</span> <span class=o>=</span> <span class=nx>arr</span><span class=p>;</span>
+<span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>num1</span><span class=p>,</span> <span class=nx>num2</span><span class=p>,</span> <span class=nx>num3</span><span class=p>,</span> <span class=nx>num4</span><span class=p>,</span> <span class=nx>num5</span><span class=p>);</span> <span class=c1>// num5为undefined
+</span><span class=c1></span>   
+</code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-javascript data-lang=javascript><span class=kd>let</span> <span class=p>[</span><span class=nx>num1</span><span class=p>,</span> <span class=nx>num2</span><span class=p>,</span> <span class=nx>num3</span><span class=p>,</span> <span class=nx>num4</span><span class=p>,</span> <span class=nx>num5</span><span class=o>=</span><span class=mi>5</span><span class=p>]</span> <span class=o>=</span> <span class=nx>arr</span><span class=p>;</span>
+<span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>num1</span><span class=p>,</span> <span class=nx>num2</span><span class=p>,</span> <span class=nx>num3</span><span class=p>,</span> <span class=nx>num4</span><span class=p>,</span> <span class=nx>num5</span><span class=p>);</span> <span class=c1>// num5为5
+</span></code></pre></td></tr></table></div></div></li></ol><h3 id=解构赋值结合函数声明>解构赋值结合函数声明</h3><p><span class="inline-tag red">ES5中的写法</span></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-javascript data-lang=javascript><span class=kd>function</span> <span class=nx>test1</span><span class=p>(</span><span class=nx>obj</span><span class=p>)</span> <span class=p>{</span>
+  <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>obj</span><span class=p>.</span><span class=nx>name</span><span class=p>,</span> <span class=nx>obj</span><span class=p>.</span><span class=nx>age</span><span class=p>,</span> <span class=nx>obj</span><span class=p>.</span><span class=nx>gender</span><span class=p>);</span>
+<span class=p>}</span>
+<span class=nx>test1</span><span class=p>({</span>
+  <span class=nx>name</span><span class=o>:</span> <span class=s2>&#34;波波&#34;</span><span class=p>,</span>
+  <span class=nx>age</span><span class=o>:</span> <span class=mi>38</span><span class=p>,</span>
+  <span class=nx>gender</span><span class=o>:</span> <span class=s2>&#34;男&#34;</span><span class=p>,</span>
+<span class=p>});</span>
+</code></pre></td></tr></table></div></div><p><span class="inline-tag red">ES6中的写法</span></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-javascript data-lang=javascript><span class=kd>function</span> <span class=nx>test2</span><span class=p>({</span> <span class=nx>name</span><span class=p>,</span> <span class=nx>age</span><span class=p>,</span> <span class=nx>gender</span><span class=p>,</span> <span class=nx>height</span> <span class=o>=</span> <span class=mi>180</span> <span class=p>})</span> <span class=p>{</span>
+  <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>name</span><span class=p>,</span> <span class=nx>age</span><span class=p>,</span> <span class=nx>gender</span><span class=p>,</span> <span class=nx>height</span><span class=p>);</span>
+<span class=p>}</span>
+<span class=nx>test2</span><span class=p>({</span>
+  <span class=nx>name</span><span class=o>:</span> <span class=s2>&#34;波波&#34;</span><span class=p>,</span>
+  <span class=nx>age</span><span class=o>:</span> <span class=mi>38</span><span class=p>,</span>
+  <span class=nx>gender</span><span class=o>:</span> <span class=s2>&#34;男&#34;</span><span class=p>,</span>
+<span class=p>});</span>
+<span class=nx>test2</span><span class=p>({</span>
+  <span class=nx>name</span><span class=o>:</span> <span class=s2>&#34;波波&#34;</span><span class=p>,</span>
+  <span class=nx>age</span><span class=o>:</span> <span class=mi>38</span><span class=p>,</span>
+  <span class=nx>gender</span><span class=o>:</span> <span class=s2>&#34;男&#34;</span><span class=p>,</span>
+  <span class=nx>height</span><span class=o>:</span> <span class=mi>160</span><span class=p>,</span>
+<span class=p>});</span>
+</code></pre></td></tr></table></div></div><p><img class=lazyload src=/svg/loading.min.svg data-src=https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/01/5eb56f7e7c23d6ea3844833151c8f7ac.png data-srcset="https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/01/5eb56f7e7c23d6ea3844833151c8f7ac.png, https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/01/5eb56f7e7c23d6ea3844833151c8f7ac.png 1.5x, https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/01/5eb56f7e7c23d6ea3844833151c8f7ac.png 2x" data-sizes=auto alt=https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/01/5eb56f7e7c23d6ea3844833151c8f7ac.png title=image-20200701160704150></p><h2 id=箭头函数>箭头函数</h2><blockquote><p>简单来说，箭头函数就是匿名函数的一个简写。</p></blockquote><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-javascript data-lang=javascript><span class=c1>// 1. 普通的匿名函数
+</span><span class=c1></span><span class=kd>let</span> <span class=nx>fn</span> <span class=o>=</span> <span class=kd>function</span> <span class=p>(</span><span class=nx>name</span><span class=p>)</span> <span class=p>{</span>
+  <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=s2>&#34;my name is &#34;</span><span class=p>,</span> <span class=nx>name</span><span class=p>);</span>
+<span class=p>};</span>
+<span class=nx>fn</span><span class=p>(</span><span class=s2>&#34;波波&#34;</span><span class=p>);</span>
+
+<span class=c1>// 2. 箭头函数
+</span><span class=c1></span><span class=kd>let</span> <span class=nx>fn1</span> <span class=o>=</span> <span class=p>(</span><span class=nx>name</span><span class=p>)</span> <span class=p>=&gt;</span> <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=s2>&#34;my name is &#34;</span><span class=p>,</span> <span class=nx>name</span><span class=p>);</span>
+<span class=nx>fn1</span><span class=p>(</span><span class=s2>&#34;波波&#34;</span><span class=p>);</span>
+
+</code></pre></td></tr></table></div></div><p><img class=lazyload src=/svg/loading.min.svg data-src=https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/01/e34256695860c1a204dcfd2e446f2c3f.png data-srcset="https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/01/e34256695860c1a204dcfd2e446f2c3f.png, https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/01/e34256695860c1a204dcfd2e446f2c3f.png 1.5x, https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/01/e34256695860c1a204dcfd2e446f2c3f.png 2x" data-sizes=auto alt=https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/01/e34256695860c1a204dcfd2e446f2c3f.png title=image-20200701161344962></p><p>简写规则：</p><ol><li><p><code>function</code>改成<code>=></code>，<code>=></code>可以读成goes to</p></li><li><p>如果只有一个形参，那就可以省略形参小括号</p></li><li><p>如果不是一个形参（0个或多个），那就不能省略形参小括号</p></li><li><p>如果函数体只有一句话，那就可以省略函数体的大括号</p></li><li><p>如果函数体只有一句话，并且这一句话是<code>return</code>返回值，那<code>return</code>也要省略</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-javascript data-lang=javascript><span class=kd>let</span> <span class=nx>fn1</span> <span class=o>=</span> <span class=kd>function</span> <span class=p>(</span><span class=nx>name</span><span class=p>)</span> <span class=p>{</span>
+  <span class=k>return</span> <span class=nx>name</span> <span class=o>+</span> <span class=s2>&#34;你好吗?&#34;</span><span class=p>;</span>
+<span class=p>};</span>
+<span class=kd>let</span> <span class=nx>fn1</span> <span class=o>=</span> <span class=p>(</span><span class=nx>name</span><span class=p>)</span> <span class=p>=&gt;</span> <span class=nx>name</span> <span class=o>+</span> <span class=s2>&#34;你好吗?&#34;</span><span class=p>;</span>
+</code></pre></td></tr></table></div></div></li><li><p>如果函数体不是一句话，那就不能省略这个大括号</p></li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span><span class=lnt>9
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-javascript data-lang=javascript><span class=kd>let</span> <span class=nx>fn2</span> <span class=o>=</span> <span class=kd>function</span> <span class=p>(</span><span class=nx>num1</span><span class=p>,</span> <span class=nx>num2</span><span class=p>)</span> <span class=p>{</span>
+  <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>num1</span> <span class=o>+</span> <span class=nx>num2</span><span class=p>);</span>
+  <span class=k>return</span> <span class=nx>num1</span> <span class=o>+</span> <span class=nx>num2</span> <span class=o>+</span> <span class=mi>30</span><span class=p>;</span>
+<span class=p>};</span>
+
+<span class=kd>let</span> <span class=nx>fn2</span> <span class=o>=</span> <span class=p>(</span><span class=nx>num1</span><span class=p>,</span> <span class=nx>num2</span><span class=p>)</span> <span class=p>=&gt;</span> <span class=p>{</span>
+  <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>num1</span> <span class=o>+</span> <span class=nx>num2</span><span class=p>);</span>
+  <span class=k>return</span> <span class=nx>num1</span> <span class=o>+</span> <span class=nx>num2</span> <span class=o>+</span> <span class=mi>30</span><span class=p>;</span>
+<span class=p>};</span>
+</code></pre></td></tr></table></div></div><ol><li><p>无参数，一句话</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-javascript data-lang=javascript><span class=kd>let</span> <span class=nx>fn1</span> <span class=o>=</span> <span class=kd>function</span> <span class=p>()</span> <span class=p>{</span>
+  <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=s2>&#34;你好吗&#34;</span><span class=p>);</span>
+<span class=p>};</span>
+<span class=kd>let</span> <span class=nx>f1</span> <span class=o>=</span> <span class=p>()</span> <span class=p>=&gt;</span> <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=s2>&#34;你好吗&#34;</span><span class=p>);</span>
+</code></pre></td></tr></table></div></div></li><li><p>一个参数，一句话</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-javascript data-lang=javascript><span class=kd>let</span> <span class=nx>fn2</span> <span class=o>=</span> <span class=kd>function</span> <span class=p>(</span><span class=nx>name</span><span class=p>)</span> <span class=p>{</span>
+  <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>name</span> <span class=o>+</span> <span class=s2>&#34;你好吗&#34;</span><span class=p>);</span>
+<span class=p>};</span>
+<span class=kd>let</span> <span class=nx>fn2</span> <span class=o>=</span> <span class=p>(</span><span class=nx>name</span><span class=p>)</span> <span class=p>=&gt;</span> <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>name</span> <span class=o>+</span> <span class=s2>&#34;你好吗&#34;</span><span class=p>);</span>
+</code></pre></td></tr></table></div></div></li><li><p>两个参数，一句话</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-javascript data-lang=javascript><span class=kd>let</span> <span class=nx>fn3</span> <span class=o>=</span> <span class=kd>function</span> <span class=p>(</span><span class=nx>name</span><span class=p>,</span> <span class=nx>age</span><span class=p>)</span> <span class=p>{</span>
+  <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>name</span> <span class=o>+</span> <span class=s2>&#34;你好吗,你的年龄是&#34;</span> <span class=o>+</span> <span class=nx>age</span><span class=p>);</span>
+<span class=p>};</span>
+<span class=kd>let</span> <span class=nx>fn3</span> <span class=o>=</span> <span class=p>(</span><span class=nx>name</span><span class=p>,</span> <span class=nx>age</span><span class=p>)</span> <span class=p>=&gt;</span> <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>name</span> <span class=o>+</span> <span class=s2>&#34;你好吗,你的年龄是&#34;</span> <span class=o>+</span> <span class=nx>age</span><span class=p>);</span>
+</code></pre></td></tr></table></div></div></li><li><p>一个参数，一个<code>return</code></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-javascript data-lang=javascript><span class=kd>let</span> <span class=nx>fn4</span> <span class=o>=</span> <span class=kd>function</span> <span class=p>(</span><span class=nx>age</span><span class=p>)</span> <span class=p>{</span>
+  <span class=k>return</span> <span class=nx>age</span> <span class=o>+</span> <span class=mi>10</span><span class=p>;</span>
+<span class=p>};</span>
+<span class=kd>let</span> <span class=nx>fn4</span> <span class=o>=</span> <span class=p>(</span><span class=nx>age</span><span class=p>)</span> <span class=p>=&gt;</span> <span class=nx>age</span> <span class=o>+</span> <span class=mi>10</span><span class=p>;</span>
+</code></pre></td></tr></table></div></div></li><li><p>两个参数，多句</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-javascript data-lang=javascript><span class=kd>let</span> <span class=nx>fn5</span> <span class=o>=</span> <span class=kd>function</span> <span class=p>(</span><span class=nx>name</span><span class=p>,</span> <span class=nx>age</span><span class=p>)</span> <span class=p>{</span>
+  <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>name</span> <span class=o>+</span> <span class=s2>&#34;你好吗&#34;</span><span class=p>);</span>
+  <span class=k>return</span> <span class=nx>age</span> <span class=o>+</span> <span class=mi>10</span><span class=p>;</span>
+<span class=p>};</span>
+<span class=kd>let</span> <span class=nx>fn5</span> <span class=o>=</span> <span class=p>(</span><span class=nx>name</span><span class=p>,</span> <span class=nx>age</span><span class=p>)</span> <span class=p>=&gt;</span> <span class=p>{</span>
+  <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>name</span> <span class=o>+</span> <span class=s2>&#34;你好吗&#34;</span><span class=p>);</span>
+  <span class=k>return</span> <span class=nx>age</span> <span class=o>+</span> <span class=mi>10</span><span class=p>;</span>
+<span class=p>};</span>
+</code></pre></td></tr></table></div></div></li></ol><h3 id=this指向>this指向</h3><p>箭头函数的<code>this</code>由上下文环境决定，其原理就是将箭头函数的上下文<code>this</code>保存，在箭头函数内部使用这个被保存的<code>this</code>。使用注意：</p><ul><li><p>不是什么时候都使用箭头函数</p></li><li><p>不要用<code>new</code>关键字调用箭头函数</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-javascript data-lang=javascript><span class=kd>var</span> <span class=nx>Fn</span> <span class=o>=</span> <span class=p>(</span><span class=nx>name</span><span class=p>,</span> <span class=nx>age</span><span class=p>)</span> <span class=p>=&gt;</span> <span class=p>{</span>
+    <span class=k>this</span><span class=p>.</span><span class=nx>name</span> <span class=o>=</span> <span class=nx>name</span>
+    <span class=k>this</span><span class=p>.</span><span class=nx>age</span> <span class=o>=</span> <span class=nx>age</span>
+<span class=p>}</span>
+<span class=kd>var</span> <span class=nx>obj</span> <span class=o>=</span> <span class=k>new</span> <span class=nx>Fn</span><span class=p>(</span><span class=s1>&#39;伦哥&#39;</span><span class=p>,</span> <span class=mi>10</span><span class=p>)</span> <span class=c1>// Fn is not a constructor
+</span></code></pre></td></tr></table></div></div><p>箭头函数的<code>this</code>是由上下文环境决定，而不是<code>new</code>关键字来决定</p></li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-javascript data-lang=javascript><span class=kd>var</span> <span class=nx>obj</span> <span class=o>=</span> <span class=p>{</span>
+    <span class=nx>name</span><span class=o>:</span> <span class=s1>&#39;波波&#39;</span><span class=p>,</span>
+    <span class=nx>sayHi</span><span class=o>:</span> <span class=kd>function</span> <span class=p>()</span> <span class=p>{</span>
+        <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=s1>&#39;我的名字是：&#39;</span><span class=p>,</span> <span class=k>this</span><span class=p>.</span><span class=nx>name</span><span class=p>)</span> <span class=c1>// 我的名字是： 波波
+</span><span class=c1></span>        <span class=c1>// 上文环境
+</span><span class=c1></span>        <span class=nx>setTimeout</span><span class=p>(()</span> <span class=p>=&gt;</span> <span class=p>{</span>
+            <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=s1>&#39;我的名字是：&#39;</span><span class=p>,</span> <span class=k>this</span><span class=p>.</span><span class=nx>name</span><span class=p>)</span> <span class=c1>// 我的名字是： 波波
+</span><span class=c1></span>        <span class=p>},</span> <span class=mi>2000</span><span class=p>)</span>
+        <span class=c1>// 下文环境
+</span><span class=c1></span>    <span class=p>}</span>
+<span class=p>}</span>
+<span class=nx>obj</span><span class=p>.</span><span class=nx>sayHi</span><span class=p>()</span>
+</code></pre></td></tr></table></div></div><div class="snote idea yellow"><p>当多层箭头函数套用时，那么里面的this指向都与最外层的this指向一致。</p></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-javascript data-lang=javascript><span class=kd>var</span> <span class=nx>obj</span> <span class=o>=</span> <span class=p>{</span>
+    <span class=nx>name</span><span class=o>:</span> <span class=s1>&#39;波波&#39;</span><span class=p>,</span>
+    <span class=nx>sayHi</span><span class=o>:</span> <span class=kd>function</span> <span class=p>()</span> <span class=p>{</span>
+        <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=s1>&#39;我的名字是1：&#39;</span><span class=p>,</span> <span class=k>this</span><span class=p>.</span><span class=nx>name</span><span class=p>)</span>
+        <span class=c1>// 上文环境
+</span><span class=c1></span>        <span class=nx>setTimeout</span><span class=p>(()</span> <span class=p>=&gt;</span> <span class=p>{</span>
+            <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=s1>&#39;我的名字是2：&#39;</span><span class=p>,</span> <span class=k>this</span><span class=p>.</span><span class=nx>name</span><span class=p>)</span>
+            <span class=nx>setTimeout</span><span class=p>(()</span> <span class=p>=&gt;</span> <span class=p>{</span>
+                <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=s1>&#39;我的名字是3：&#39;</span><span class=p>,</span> <span class=k>this</span><span class=p>.</span><span class=nx>name</span><span class=p>)</span>
+                <span class=nx>setTimeout</span><span class=p>(()</span> <span class=p>=&gt;</span> <span class=p>{</span>
+                    <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=s1>&#39;我的名字是4：&#39;</span><span class=p>,</span> <span class=k>this</span><span class=p>.</span><span class=nx>name</span><span class=p>)</span>
+                <span class=p>},</span> <span class=mi>1000</span><span class=p>)</span>
+            <span class=p>},</span> <span class=mi>1000</span><span class=p>)</span>
+        <span class=p>},</span> <span class=mi>1000</span><span class=p>)</span>
+        <span class=c1>// 下文环境
+</span><span class=c1></span>    <span class=p>}</span>
+<span class=p>}</span>
+<span class=nx>obj</span><span class=p>.</span><span class=nx>sayHi</span><span class=p>()</span>
+</code></pre></td></tr></table></div></div><p><img class=lazyload src=/svg/loading.min.svg data-src=https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/02/79e5f4b3090f3f9355579f37f30a694e.png data-srcset="https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/02/79e5f4b3090f3f9355579f37f30a694e.png, https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/02/79e5f4b3090f3f9355579f37f30a694e.png 1.5x, https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/02/79e5f4b3090f3f9355579f37f30a694e.png 2x" data-sizes=auto alt=https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/02/79e5f4b3090f3f9355579f37f30a694e.png title=image-20200702094635888></p><h2 id=对象成员简写>对象成员简写</h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-javascript data-lang=javascript><span class=kd>let</span> <span class=nx>name</span> <span class=o>=</span> <span class=s2>&#34;千里&#34;</span><span class=p>;</span>
+<span class=kd>let</span> <span class=nx>age</span> <span class=o>=</span> <span class=mi>18</span><span class=p>;</span>
+<span class=kd>let</span> <span class=nx>gender</span> <span class=o>=</span> <span class=s2>&#34;man&#34;</span><span class=p>;</span>
+<span class=kd>let</span> <span class=nx>score</span> <span class=o>=</span> <span class=mi>10</span><span class=p>;</span>
+
+<span class=c1>// es6
+</span><span class=c1></span><span class=kd>let</span> <span class=nx>obj</span> <span class=o>=</span> <span class=p>{</span>
+  <span class=nx>name</span><span class=p>,</span>
+  <span class=nx>age</span><span class=p>,</span>
+  <span class=nx>gender</span><span class=p>,</span>
+  <span class=nx>score</span><span class=p>,</span>
+  <span class=nx>sayHi</span><span class=p>()</span> <span class=p>{</span>
+    <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=s2>&#34;哈哈&#34;</span><span class=p>);</span>
+  <span class=p>},</span>
+<span class=p>};</span>
+<span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>obj</span><span class=p>);</span>
+<span class=nx>obj</span><span class=p>.</span><span class=nx>sayHi</span><span class=p>();</span>
+
+</code></pre></td></tr></table></div></div><p><img class=lazyload src=/svg/loading.min.svg data-src=https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/01/2fb8b7c1414953aa40569dafdedcdc95.png data-srcset="https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/01/2fb8b7c1414953aa40569dafdedcdc95.png, https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/01/2fb8b7c1414953aa40569dafdedcdc95.png 1.5x, https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/01/2fb8b7c1414953aa40569dafdedcdc95.png 2x" data-sizes=auto alt=https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/01/2fb8b7c1414953aa40569dafdedcdc95.png title=image-20200701164157212></p><blockquote><p>在这种写法中，如果传入一个没有赋值的变量，那么就会报错。例如：</p></blockquote><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-javascript data-lang=javascript><span class=kd>let</span> <span class=nx>name</span> <span class=o>=</span> <span class=s2>&#34;千里&#34;</span><span class=p>;</span>
+<span class=kd>let</span> <span class=nx>age</span> <span class=o>=</span> <span class=mi>18</span><span class=p>;</span>
+<span class=kd>let</span> <span class=nx>gender</span> <span class=o>=</span> <span class=s2>&#34;man&#34;</span><span class=p>;</span>
+<span class=kd>let</span> <span class=nx>score</span> <span class=o>=</span> <span class=mi>10</span><span class=p>;</span>
+
+<span class=c1>// es6
+</span><span class=c1></span><span class=kd>let</span> <span class=nx>obj</span> <span class=o>=</span> <span class=p>{</span>
+    <span class=nx>name</span><span class=p>,</span>
+    <span class=nx>age</span><span class=p>,</span>
+    <span class=nx>gender</span><span class=p>,</span>
+    <span class=nx>score</span><span class=p>,</span>
+    <span class=c1>// fenshu, // 会发生报错，因为外部没有此变量，可以修改为下面的写法
+</span><span class=c1></span>    <span class=nx>fenshu</span><span class=o>:</span><span class=nx>score</span><span class=p>,</span>
+    <span class=nx>sayHi</span><span class=p>()</span> <span class=p>{</span>
+        <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=s2>&#34;哈哈&#34;</span><span class=p>);</span>
+    <span class=p>},</span>
+<span class=p>};</span>
+<span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>obj</span><span class=p>);</span>
+<span class=nx>obj</span><span class=p>.</span><span class=nx>sayHi</span><span class=p>();</span>
+
+</code></pre></td></tr></table></div></div><h2 id=扩展展开运算符>扩展（展开）运算符</h2><h3 id=对象展开>对象展开</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-javascript data-lang=javascript><span class=c1>// 声明一个对象
+</span><span class=c1></span><span class=kd>let</span> <span class=nx>chinese</span> <span class=o>=</span> <span class=p>{</span>
+    <span class=nx>skin</span><span class=o>:</span> <span class=s2>&#34;yellow&#34;</span><span class=p>,</span>
+    <span class=nx>hair</span><span class=o>:</span> <span class=s2>&#34;black&#34;</span><span class=p>,</span>
+    <span class=nx>sayHi</span><span class=p>()</span> <span class=p>{</span>
+        <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=s2>&#34;Are you eat?&#34;</span><span class=p>);</span>
+    <span class=p>},</span>
+<span class=p>};</span>
+
+<span class=kd>let</span> <span class=nx>CXK</span> <span class=o>=</span> <span class=p>{</span>
+    <span class=nx>slill</span><span class=o>:</span> <span class=s2>&#34;jump sing rap and play basketball&#34;</span><span class=p>,</span>
+    <span class=nx>song</span><span class=o>:</span> <span class=s2>&#34;啊哈哈哈&#34;</span><span class=p>,</span>
+<span class=p>};</span>
+<span class=kd>let</span> <span class=nx>linge</span> <span class=o>=</span> <span class=p>{</span>
+    <span class=c1>// skin: &#34;yellow&#34;,
+</span><span class=c1></span>    <span class=c1>// hair: &#34;black&#34;,
+</span><span class=c1></span>    <span class=c1>// sayHi() {
+</span><span class=c1></span>    <span class=c1>//   console.log(&#34;Are you eat?&#34;);
+</span><span class=c1></span>    <span class=c1>// },
+</span><span class=c1></span>    <span class=c1>// slill: &#34;jump sing rap and play basketball&#34;,
+</span><span class=c1></span>    <span class=c1>// song: &#34;啊哈哈哈&#34;,
+</span><span class=c1></span>    <span class=c1>// 展开语法 等同于上方写法
+</span><span class=c1></span>    <span class=p>...</span><span class=nx>chinese</span><span class=p>,</span>
+    <span class=p>...</span><span class=nx>CXK</span><span class=p>,</span>
+<span class=p>};</span>
+<span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>linge</span><span class=p>);</span>
+</code></pre></td></tr></table></div></div><p><img class=lazyload src=/svg/loading.min.svg data-src=https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/01/deb1635565a4fbe02bc5b18d3b9eee46.png data-srcset="https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/01/deb1635565a4fbe02bc5b18d3b9eee46.png, https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/01/deb1635565a4fbe02bc5b18d3b9eee46.png 1.5x, https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/01/deb1635565a4fbe02bc5b18d3b9eee46.png 2x" data-sizes=auto alt=https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/01/deb1635565a4fbe02bc5b18d3b9eee46.png title=image-20200701165348837></p><div class="snote idea yellow"><p>当新增属性时，直接添加即可。如果重新定义已经存在的，那么覆盖原来的。</p></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-javascript data-lang=javascript><span class=kd>let</span> <span class=nx>linge</span> <span class=o>=</span> <span class=p>{</span>
+  <span class=p>...</span><span class=nx>chinese</span><span class=p>,</span>
+  <span class=p>...</span><span class=nx>CXK</span><span class=p>,</span>
+  <span class=nx>gender</span><span class=o>:</span> <span class=s2>&#34;Man&#34;</span><span class=p>,</span>
+  <span class=nx>hair</span><span class=o>:</span> <span class=s2>&#34;白发苍苍&#34;</span><span class=p>,</span>
+<span class=p>};</span>
+</code></pre></td></tr></table></div></div><p><img class=lazyload src=/svg/loading.min.svg data-src=https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/01/0e363daf013eb56e0b1730153195c946.png data-srcset="https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/01/0e363daf013eb56e0b1730153195c946.png, https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/01/0e363daf013eb56e0b1730153195c946.png 1.5x, https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/01/0e363daf013eb56e0b1730153195c946.png 2x" data-sizes=auto alt=https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/01/0e363daf013eb56e0b1730153195c946.png title=image-20200701165728791></p><h3 id=数组展开>数组展开</h3><p>与对象展开类似。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-javascript data-lang=javascript><span class=kd>let</span> <span class=nx>arr1</span> <span class=o>=</span> <span class=p>[</span><span class=mi>10</span><span class=p>,</span> <span class=mi>20</span><span class=p>,</span> <span class=mi>30</span><span class=p>];</span>
+<span class=kd>let</span> <span class=nx>arr2</span> <span class=o>=</span> <span class=p>[</span><span class=mi>40</span><span class=p>,</span> <span class=mi>50</span><span class=p>,</span> <span class=mi>60</span><span class=p>];</span>
+<span class=kd>let</span> <span class=nx>arr3</span> <span class=o>=</span> <span class=p>[...</span><span class=nx>arr1</span><span class=p>,</span> <span class=p>...</span><span class=nx>arr2</span><span class=p>,</span> <span class=mi>70</span><span class=p>];</span>
+<span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>arr3</span><span class=p>);</span>
+</code></pre></td></tr></table></div></div><p><img class=lazyload src=/svg/loading.min.svg data-src=https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/01/96171c6b1f190a712cdb67b256d0c429.png data-srcset="https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/01/96171c6b1f190a712cdb67b256d0c429.png, https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/01/96171c6b1f190a712cdb67b256d0c429.png 1.5x, https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/01/96171c6b1f190a712cdb67b256d0c429.png 2x" data-sizes=auto alt=https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/01/96171c6b1f190a712cdb67b256d0c429.png title=image-20200701170324837></p><p>使用场景：</p><ol><li><p>数组的拼接</p></li><li><p>求最大/小值</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-javascript data-lang=javascript><span class=kd>let</span> <span class=nx>arr1</span> <span class=o>=</span> <span class=p>[</span><span class=mi>10</span><span class=p>,</span> <span class=mi>23</span><span class=p>,</span> <span class=mi>54</span><span class=p>,</span> <span class=mi>446</span><span class=p>,</span> <span class=mi>56</span><span class=p>,</span> <span class=mi>2</span><span class=p>];</span>
+<span class=kd>let</span> <span class=nx>max</span> <span class=o>=</span> <span class=nb>Math</span><span class=p>.</span><span class=nx>max</span><span class=p>(...</span><span class=nx>arr1</span><span class=p>);</span>
+<span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>max</span><span class=p>);</span>
+</code></pre></td></tr></table></div></div></li></ol><h2 id=数据类型set>数据类型set</h2><p>作用和数组类型，和数组不同的是set不能存放重复的元素。</p><ol><li><p>基本使用</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-javascript data-lang=javascript><span class=kd>let</span> <span class=nx>set1</span> <span class=o>=</span> <span class=k>new</span> <span class=nx>Set</span><span class=p>([</span><span class=mi>10</span><span class=p>,</span> <span class=mi>20</span><span class=p>,</span> <span class=mi>30</span><span class=p>,</span> <span class=mi>40</span><span class=p>,</span> <span class=mi>10</span><span class=p>,</span> <span class=mi>20</span><span class=p>,</span> <span class=mi>30</span><span class=p>,</span> <span class=mi>40</span><span class=p>,</span> <span class=mi>50</span><span class=p>]);</span>
+<span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>set1</span><span class=p>);</span>
+</code></pre></td></tr></table></div></div><p><img class=lazyload src=/svg/loading.min.svg data-src=https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/01/d5ae978f996078c7560e6516938da7a1.png data-srcset="https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/01/d5ae978f996078c7560e6516938da7a1.png, https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/01/d5ae978f996078c7560e6516938da7a1.png 1.5x, https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/01/d5ae978f996078c7560e6516938da7a1.png 2x" data-sizes=auto alt=https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/01/d5ae978f996078c7560e6516938da7a1.png title=image-20200701170935727></p></li><li><p>数组去重</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-javascript data-lang=javascript><span class=kd>let</span> <span class=nx>arr</span> <span class=o>=</span> <span class=p>[</span><span class=mi>10</span><span class=p>,</span> <span class=mi>20</span><span class=p>,</span> <span class=mi>30</span><span class=p>,</span> <span class=mi>10</span><span class=p>,</span> <span class=mi>20</span><span class=p>,</span> <span class=mi>30</span><span class=p>,</span> <span class=mi>20</span><span class=p>,</span> <span class=mi>10</span><span class=p>,</span> <span class=mi>33</span><span class=p>,</span> <span class=mi>200</span><span class=p>];</span>
+<span class=kd>let</span> <span class=nx>set</span> <span class=o>=</span> <span class=k>new</span> <span class=nx>Set</span><span class=p>(</span><span class=nx>arr</span><span class=p>);</span>
+<span class=kd>let</span> <span class=nx>arrNew</span> <span class=o>=</span> <span class=p>[...</span><span class=nx>set</span><span class=p>];</span>
+<span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>arrNew</span><span class=p>);</span>
+</code></pre></td></tr></table></div></div><p><img class=lazyload src=/svg/loading.min.svg data-src=https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/01/48c3fd8692f6dafec708633916ad0442.png data-srcset="https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/01/48c3fd8692f6dafec708633916ad0442.png, https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/01/48c3fd8692f6dafec708633916ad0442.png 1.5x, https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/01/48c3fd8692f6dafec708633916ad0442.png 2x" data-sizes=auto alt=https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/01/48c3fd8692f6dafec708633916ad0442.png title=image-20200701171115524></p><p>也可以改写为如下：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-javascript data-lang=javascript><span class=kd>let</span> <span class=nx>arr</span> <span class=o>=</span> <span class=p>[</span><span class=mi>10</span><span class=p>,</span> <span class=mi>20</span><span class=p>,</span> <span class=mi>30</span><span class=p>,</span> <span class=mi>10</span><span class=p>,</span> <span class=mi>20</span><span class=p>,</span> <span class=mi>30</span><span class=p>,</span> <span class=mi>20</span><span class=p>,</span> <span class=mi>10</span><span class=p>,</span> <span class=mi>33</span><span class=p>,</span> <span class=mi>200</span><span class=p>];</span>
+<span class=kd>let</span> <span class=nx>arrNew</span> <span class=o>=</span> <span class=p>[...</span><span class=k>new</span> <span class=nx>Set</span><span class=p>(</span><span class=nx>arr</span><span class=p>)];</span>
+<span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>arrNew</span><span class=p>);</span>
+</code></pre></td></tr></table></div></div></li></ol><h2 id=模板字符串>模板字符串</h2><p>模板字符串会保留原样字符串格式，以及可以占位。其语法为反引号``</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-javascript data-lang=javascript><span class=kd>let</span> <span class=nx>author</span> <span class=o>=</span> <span class=s2>&#34;波波&#34;</span><span class=p>;</span>
+<span class=kd>let</span> <span class=nx>str1</span> <span class=o>=</span> <span class=sb>`
+</span><span class=sb>静夜思
+</span><span class=sb>    </span><span class=si>${</span><span class=nx>author</span><span class=si>}</span><span class=sb>
+</span><span class=sb>哈哈哈
+</span><span class=sb>`</span><span class=p>;</span>
+<span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>str1</span><span class=p>);</span>
+
+</code></pre></td></tr></table></div></div><p><img class=lazyload src=/svg/loading.min.svg data-src=https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/01/d349721ecd546da9a624b2e4ed1571cd.png data-srcset="https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/01/d349721ecd546da9a624b2e4ed1571cd.png, https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/01/d349721ecd546da9a624b2e4ed1571cd.png 1.5x, https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/01/d349721ecd546da9a624b2e4ed1571cd.png 2x" data-sizes=auto alt=https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/01/d349721ecd546da9a624b2e4ed1571cd.png title=image-20200701171652048></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-javascript data-lang=javascript><span class=kd>let</span> <span class=nx>name</span> <span class=o>=</span> <span class=s2>&#34;xiaokang&#34;</span><span class=p>;</span>
+<span class=kd>let</span> <span class=nx>age</span> <span class=o>=</span> <span class=mi>12</span><span class=p>;</span>
+<span class=kd>function</span> <span class=nx>test</span><span class=p>()</span> <span class=p>{</span>
+  <span class=k>return</span> <span class=s2>&#34;test&#34;</span><span class=p>;</span>
+<span class=p>}</span>
+<span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=sb>`my name is </span><span class=si>${</span><span class=nx>name</span><span class=si>}</span><span class=sb> and age is </span><span class=si>${</span><span class=nx>age</span><span class=si>}</span><span class=sb>. </span><span class=si>${</span><span class=nx>test</span><span class=p>()</span><span class=si>}</span><span class=sb>`</span><span class=p>);</span>
+</code></pre></td></tr></table></div></div><p><img class=lazyload src=/svg/loading.min.svg data-src=https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/01/bb1783e1985de82b379400274da15c89.png data-srcset="https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/01/bb1783e1985de82b379400274da15c89.png, https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/01/bb1783e1985de82b379400274da15c89.png 1.5x, https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/01/bb1783e1985de82b379400274da15c89.png 2x" data-sizes=auto alt=https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/01/bb1783e1985de82b379400274da15c89.png title=image-20200701172133560></p><h2 id=补充数组的方法>补充数组的方法</h2><ol><li><p><code>forEach</code></p><p>无返回值</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-javascript data-lang=javascript><span class=kd>let</span> <span class=nx>arr</span> <span class=o>=</span> <span class=p>[</span><span class=mi>10</span><span class=p>,</span> <span class=mi>20</span><span class=p>,</span> <span class=mi>30</span><span class=p>,</span> <span class=mi>40</span><span class=p>];</span>
+<span class=nx>arr</span><span class=p>.</span><span class=nx>forEach</span><span class=p>(</span><span class=kd>function</span> <span class=p>(</span><span class=nx>item</span><span class=p>,</span> <span class=nx>index</span><span class=p>)</span> <span class=p>{</span>
+  <span class=c1>// item 遍历出的每一项
+</span><span class=c1></span>  <span class=c1>// index 遍历出来的每一项对应的索引
+</span><span class=c1></span>  <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>item</span><span class=p>,</span> <span class=nx>index</span><span class=p>);</span>
+<span class=p>});</span>
+</code></pre></td></tr></table></div></div></li><li><p><code>map</code></p><p>有返回值。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-javascript data-lang=javascript><span class=kd>let</span> <span class=nx>arr</span> <span class=o>=</span> <span class=p>[</span><span class=mi>10</span><span class=p>,</span> <span class=mi>20</span><span class=p>,</span> <span class=mi>30</span><span class=p>,</span> <span class=mi>40</span><span class=p>];</span>
+<span class=kd>let</span> <span class=nx>arrNew</span> <span class=o>=</span> <span class=nx>arr</span><span class=p>.</span><span class=nx>map</span><span class=p>(</span><span class=kd>function</span> <span class=p>(</span><span class=nx>item</span><span class=p>,</span> <span class=nx>index</span><span class=p>)</span> <span class=p>{</span>
+  <span class=c1>// item 遍历出的每一项
+</span><span class=c1></span>  <span class=c1>// index 遍历出来的每一项对应的索引
+</span><span class=c1></span>  <span class=c1>//   console.log(item, index);
+</span><span class=c1></span>  <span class=k>return</span> <span class=nx>item</span> <span class=o>*</span> <span class=nx>item</span><span class=p>;</span>
+<span class=p>});</span>
+<span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>arrNew</span><span class=p>);</span>
+</code></pre></td></tr></table></div></div></li><li><p><code>filter</code></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-javascript data-lang=javascript><span class=kd>let</span> <span class=nx>arr</span> <span class=o>=</span> <span class=p>[</span><span class=mi>10</span><span class=p>,</span> <span class=mi>20</span><span class=p>,</span> <span class=mi>11</span><span class=p>,</span> <span class=mi>21</span><span class=p>,</span> <span class=mi>30</span><span class=p>,</span> <span class=mi>31</span><span class=p>,</span> <span class=mi>23</span><span class=p>,</span> <span class=mi>43</span><span class=p>];</span>
+<span class=kd>let</span> <span class=nx>arrNew</span> <span class=o>=</span> <span class=nx>arr</span><span class=p>.</span><span class=nx>filter</span><span class=p>((</span><span class=nx>item</span><span class=p>,</span> <span class=nx>index</span><span class=p>)</span> <span class=p>=&gt;</span> <span class=p>{</span>
+  <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>item</span><span class=p>,</span> <span class=nx>index</span><span class=p>);</span>
+  <span class=c1>// 如果条件成立,返回当前项
+</span><span class=c1></span>  <span class=k>return</span> <span class=nx>item</span> <span class=o>%</span> <span class=mi>2</span> <span class=o>==</span> <span class=mi>0</span><span class=p>;</span>
+<span class=p>});</span>
+<span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>arrNew</span><span class=p>);</span> <span class=c1>//[ 10, 20, 30 ]
+</span></code></pre></td></tr></table></div></div></li></ol><p><span class="inline-tag green">数组的其他应用</span></p><ol><li><p>数组降维</p><p>将二维数组降维为一维数组</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-javascript data-lang=javascript><span class=c1>// 将二维数组将为一维数组
+</span><span class=c1></span><span class=kd>var</span> <span class=nx>arr</span> <span class=o>=</span> <span class=p>[[</span><span class=mi>10</span><span class=p>,</span> <span class=mi>20</span><span class=p>],</span> <span class=p>[</span><span class=mi>30</span><span class=p>,</span> <span class=mi>40</span><span class=p>,</span> <span class=mi>50</span><span class=p>],</span> <span class=p>[</span><span class=mi>60</span><span class=p>,</span> <span class=mi>79</span><span class=p>,</span> <span class=mi>80</span><span class=p>]]</span>
+<span class=kd>var</span> <span class=nx>arrNew</span> <span class=o>=</span> <span class=p>[]</span>
+<span class=nx>arr</span><span class=p>.</span><span class=nx>forEach</span><span class=p>(</span><span class=nx>v</span> <span class=p>=&gt;</span> <span class=p>{</span>
+    <span class=nx>arrNew</span><span class=p>.</span><span class=nx>push</span><span class=p>(...</span><span class=nx>v</span><span class=p>)</span>
+<span class=p>})</span>
+<span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>arrNew</span><span class=p>);</span> <span class=c1>// [10, 20, 30, 40, 50, 60, 79, 80]
+</span></code></pre></td></tr></table></div></div></li><li><p>数组的去重（排序法）</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-javascript data-lang=javascript><span class=kd>var</span> <span class=nx>arr</span> <span class=o>=</span> <span class=p>[</span><span class=mi>10</span><span class=p>,</span> <span class=mi>20</span><span class=p>,</span> <span class=mi>30</span><span class=p>,</span> <span class=mi>23</span><span class=p>,</span> <span class=mi>4</span><span class=p>,</span> <span class=mi>512</span><span class=p>,</span> <span class=mi>20</span><span class=p>,</span> <span class=mi>10</span><span class=p>];</span>
+<span class=kd>var</span> <span class=nx>arrNew</span> <span class=o>=</span> <span class=p>[];</span>
+<span class=nx>arr</span><span class=p>.</span><span class=nx>sort</span><span class=p>((</span><span class=nx>a</span><span class=p>,</span> <span class=nx>b</span><span class=p>)</span> <span class=p>=&gt;</span> <span class=p>{</span>
+  <span class=k>return</span> <span class=nx>a</span> <span class=o>-</span> <span class=nx>b</span><span class=p>;</span>
+<span class=p>});</span>
+<span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>arr</span><span class=p>);</span> <span class=c1>// [4, 10, 10, 20, 20, 23, 30, 512];
+</span><span class=c1></span><span class=nx>arr</span><span class=p>.</span><span class=nx>forEach</span><span class=p>((</span><span class=nx>v</span><span class=p>,</span> <span class=nx>i</span><span class=p>)</span> <span class=p>=&gt;</span> <span class=p>{</span>
+  <span class=k>if</span> <span class=p>(</span><span class=nx>v</span> <span class=o>!=</span> <span class=nx>arr</span><span class=p>[</span><span class=nx>i</span> <span class=o>+</span> <span class=mi>1</span><span class=p>])</span> <span class=p>{</span>
+    <span class=nx>arrNew</span><span class=p>.</span><span class=nx>push</span><span class=p>(</span><span class=nx>v</span><span class=p>);</span>
+  <span class=p>}</span>
+<span class=p>});</span>
+<span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>arrNew</span><span class=p>);</span> <span class=c1>// [ 4, 10, 20, 23, 30, 512 ]
+</span></code></pre></td></tr></table></div></div></li><li><p>数组去重（对象法）</p><p>原理：利用对象属性不能同名。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-javascript data-lang=javascript><span class=c1>// 使用对象法
+</span><span class=c1></span><span class=kd>var</span> <span class=nx>obj</span> <span class=o>=</span> <span class=p>{};</span>
+<span class=kd>var</span> <span class=nx>arrNew</span> <span class=o>=</span> <span class=p>[];</span>
+<span class=c1>// 遍历要去重的数组
+</span><span class=c1></span><span class=nx>arrNew</span><span class=p>.</span><span class=nx>forEach</span><span class=p>((</span><span class=nx>v</span><span class=p>)</span> <span class=p>=&gt;</span> <span class=p>{</span>
+  <span class=k>if</span> <span class=p>(</span><span class=nx>obj</span><span class=p>[</span><span class=nx>v</span><span class=p>]</span> <span class=o>==</span> <span class=kc>undefined</span><span class=p>)</span> <span class=p>{</span>
+    <span class=nx>arrNew</span><span class=p>.</span><span class=nx>push</span><span class=p>(</span><span class=nx>v</span><span class=p>);</span> <span class=c1>// 不存在九江这个v存起来
+</span><span class=c1></span>    <span class=nx>obj</span><span class=p>[</span><span class=nx>v</span><span class=p>]</span> <span class=o>=</span> <span class=mi>1</span><span class=p>;</span> <span class=c1>// 随意写，作为属性的值（避免undefined）
+</span><span class=c1></span>  <span class=p>}</span>
+<span class=p>});</span>
+</code></pre></td></tr></table></div></div></li><li><p>数组升维</p><p>假设从后端拿到的数据为如下格式：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span><span class=lnt>9
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-javascript data-lang=javascript><span class=kd>var</span> <span class=nx>arr</span> <span class=o>=</span> <span class=p>[</span>
+    <span class=p>{</span> <span class=nx>type</span><span class=o>:</span> <span class=s2>&#34;电子产品&#34;</span><span class=p>,</span> <span class=nx>name</span><span class=o>:</span> <span class=s2>&#34;iPhone&#34;</span><span class=p>,</span> <span class=nx>price</span><span class=o>:</span> <span class=mi>8888</span> <span class=p>},</span>
+    <span class=p>{</span> <span class=nx>type</span><span class=o>:</span> <span class=s2>&#34;家具&#34;</span><span class=p>,</span> <span class=nx>name</span><span class=o>:</span> <span class=s2>&#34;桌子&#34;</span><span class=p>,</span> <span class=nx>price</span><span class=o>:</span> <span class=mi>100</span> <span class=p>},</span>
+    <span class=p>{</span> <span class=nx>type</span><span class=o>:</span> <span class=s2>&#34;食品&#34;</span><span class=p>,</span> <span class=nx>name</span><span class=o>:</span> <span class=s2>&#34;瓜子&#34;</span><span class=p>,</span> <span class=nx>price</span><span class=o>:</span> <span class=mi>10</span> <span class=p>},</span>
+    <span class=p>{</span> <span class=nx>type</span><span class=o>:</span> <span class=s2>&#34;家具&#34;</span><span class=p>,</span> <span class=nx>name</span><span class=o>:</span> <span class=s2>&#34;椅子&#34;</span><span class=p>,</span> <span class=nx>price</span><span class=o>:</span> <span class=mi>380</span> <span class=p>},</span>
+    <span class=p>{</span> <span class=nx>type</span><span class=o>:</span> <span class=s2>&#34;电子产品&#34;</span><span class=p>,</span> <span class=nx>name</span><span class=o>:</span> <span class=s2>&#34;小米手机&#34;</span><span class=p>,</span> <span class=nx>price</span><span class=o>:</span> <span class=mi>1380</span> <span class=p>},</span>
+    <span class=p>{</span> <span class=nx>type</span><span class=o>:</span> <span class=s2>&#34;食品&#34;</span><span class=p>,</span> <span class=nx>name</span><span class=o>:</span> <span class=s2>&#34;辣条&#34;</span><span class=p>,</span> <span class=nx>price</span><span class=o>:</span> <span class=mi>5</span> <span class=p>},</span>
+    <span class=p>{</span> <span class=nx>type</span><span class=o>:</span> <span class=s2>&#34;食品&#34;</span><span class=p>,</span> <span class=nx>name</span><span class=o>:</span> <span class=s2>&#34;咖啡&#34;</span><span class=p>,</span> <span class=nx>price</span><span class=o>:</span> <span class=mi>50</span> <span class=p>},</span>
+<span class=p>];</span>
+</code></pre></td></tr></table></div></div><p>第一种：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-javascript data-lang=javascript><span class=kd>var</span> <span class=nx>obj</span> <span class=o>=</span> <span class=p>{};</span> <span class=c1>//将测type有没有重复的
+</span><span class=c1></span><span class=kd>var</span> <span class=nx>arrNew</span> <span class=o>=</span> <span class=p>[];</span> <span class=c1>// 升级后的二维数组
+</span><span class=c1>// 1. 将type去重，找出所有的产品类型
+</span><span class=c1>// 遍历这个arr一维数组
+</span><span class=c1></span><span class=nx>arr</span><span class=p>.</span><span class=nx>forEach</span><span class=p>((</span><span class=nx>v</span><span class=p>)</span> <span class=p>=&gt;</span> <span class=p>{</span>
+  <span class=k>if</span> <span class=p>(</span><span class=nx>obj</span><span class=p>[</span><span class=nx>v</span><span class=p>.</span><span class=nx>type</span><span class=p>]</span> <span class=o>==</span> <span class=kc>undefined</span><span class=p>)</span> <span class=p>{</span>
+    <span class=nx>obj</span><span class=p>[</span><span class=nx>v</span><span class=p>.</span><span class=nx>type</span><span class=p>]</span> <span class=o>=</span> <span class=mi>1</span><span class=p>;</span>
+    <span class=c1>//   把这个数组放到arrNew中
+</span><span class=c1></span>    <span class=nx>arrNew</span><span class=p>.</span><span class=nx>push</span><span class=p>({</span>
+      <span class=nx>type</span><span class=o>:</span> <span class=nx>v</span><span class=p>.</span><span class=nx>type</span><span class=p>,</span>
+      <span class=nx>data</span><span class=o>:</span> <span class=p>[</span><span class=nx>v</span><span class=p>],</span>
+    <span class=p>});</span>
+  <span class=p>}</span> <span class=k>else</span> <span class=p>{</span>
+    <span class=c1>// 判断当前v输入arrNew中的哪一类
+</span><span class=c1></span>    <span class=nx>arrNew</span><span class=p>.</span><span class=nx>forEach</span><span class=p>((</span><span class=nx>v2</span><span class=p>,</span> <span class=nx>j</span><span class=p>)</span> <span class=p>=&gt;</span> <span class=p>{</span>
+      <span class=k>if</span> <span class=p>(</span><span class=nx>v</span><span class=p>.</span><span class=nx>type</span> <span class=o>==</span> <span class=nx>v2</span><span class=p>.</span><span class=nx>type</span><span class=p>)</span> <span class=p>{</span>
+        <span class=nx>arrNew</span><span class=p>[</span><span class=nx>j</span><span class=p>].</span><span class=nx>data</span><span class=p>.</span><span class=nx>push</span><span class=p>(</span><span class=nx>v</span><span class=p>);</span>
+      <span class=p>}</span>
+    <span class=p>});</span>
+  <span class=p>}</span>
+<span class=p>});</span>
+<span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>arrNew</span><span class=p>);</span>
+</code></pre></td></tr></table></div></div><p>第二种：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-javascript data-lang=javascript><span class=kd>var</span> <span class=nx>obj</span> <span class=o>=</span> <span class=p>{};</span> <span class=c1>//将测type有没有重复的
+</span><span class=c1></span><span class=kd>var</span> <span class=nx>arrNew</span> <span class=o>=</span> <span class=p>[];</span> <span class=c1>// 升级后的二维数组
+</span><span class=c1></span><span class=kd>var</span> <span class=nx>index</span> <span class=o>=</span> <span class=mi>0</span><span class=p>;</span> <span class=c1>// 用于记录索引
+</span><span class=c1></span><span class=nx>arr</span><span class=p>.</span><span class=nx>forEach</span><span class=p>((</span><span class=nx>v</span><span class=p>)</span> <span class=p>=&gt;</span> <span class=p>{</span>
+  <span class=k>if</span> <span class=p>(</span><span class=nx>obj</span><span class=p>[</span><span class=nx>v</span><span class=p>.</span><span class=nx>type</span><span class=p>]</span> <span class=o>==</span> <span class=kc>undefined</span><span class=p>)</span> <span class=p>{</span>
+    <span class=nx>obj</span><span class=p>[</span><span class=nx>v</span><span class=p>.</span><span class=nx>type</span><span class=p>]</span> <span class=o>=</span> <span class=nx>index</span><span class=o>++</span><span class=p>;</span>
+    <span class=c1>//   把这个数组放到arrNew中
+</span><span class=c1></span>    <span class=nx>arrNew</span><span class=p>.</span><span class=nx>push</span><span class=p>({</span>
+      <span class=nx>type</span><span class=o>:</span> <span class=nx>v</span><span class=p>.</span><span class=nx>type</span><span class=p>,</span>
+      <span class=nx>data</span><span class=o>:</span> <span class=p>[</span><span class=nx>v</span><span class=p>],</span>
+    <span class=p>});</span>
+  <span class=p>}</span> <span class=k>else</span> <span class=p>{</span>
+    <span class=kd>var</span> <span class=nx>_index</span> <span class=o>=</span> <span class=nx>obj</span><span class=p>[</span><span class=nx>v</span><span class=p>.</span><span class=nx>type</span><span class=p>];</span>
+    <span class=nx>arrNew</span><span class=p>[</span><span class=nx>_index</span><span class=p>].</span><span class=nx>data</span><span class=p>.</span><span class=nx>push</span><span class=p>(</span><span class=nx>v</span><span class=p>);</span>
+  <span class=p>}</span>
+<span class=p>});</span>
+<span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>arrNew</span><span class=p>);</span>
+   
+</code></pre></td></tr></table></div></div><p><img class=lazyload src=/svg/loading.min.svg data-src=https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/02/ca2a6774a5f313d1b2f6a544a198182a.png data-srcset="https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/02/ca2a6774a5f313d1b2f6a544a198182a.png, https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/02/ca2a6774a5f313d1b2f6a544a198182a.png 1.5x, https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/02/ca2a6774a5f313d1b2f6a544a198182a.png 2x" data-sizes=auto alt=https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/02/ca2a6774a5f313d1b2f6a544a198182a.png title=image-20200702112619895></p></li></ol><h2 id=babel将es6代码转为es5>babel将ES6代码转为ES5</h2><p><a href=https://www.babeljs.cn/ target=_blank rel="noopener noreffer">https://www.babeljs.cn/</a></p></div><div class=post-footer id=post-footer><div class=post-info><div class=post-info-line><div class=post-info-mod><span>Updated on 2020-07-02&nbsp;<a class=git-hash href=https://github.com/dillonzq/LoveIt/commit/a8ccac99e92d1237d641bd4fe298c42b20ac8acd target=_blank title="commit by Antmoe(antmoe@163.com) a8ccac99e92d1237d641bd4fe298c42b20ac8acd: 自动提交">
+<i class="fas fa-hashtag fa-fw"></i>a8ccac9</a></span></div><div class=post-info-license></div></div><div class=post-info-line><div class=post-info-md><span><a class=link-to-markdown href=/posts/notes/20200701/20200701-2/index.md target=_blank>Read Markdown</a></span></div><div class=post-info-share><span><a href=javascript:void(0); title="Share on Twitter" data-sharer=twitter data-url=https://antmoe.gitee.io/posts/notes/20200701/20200701-2/ data-title=二、ES6新语法 data-hashtags=ES6><i class="fab fa-twitter fa-fw"></i></a><a href=javascript:void(0); title="Share on Facebook" data-sharer=facebook data-url=https://antmoe.gitee.io/posts/notes/20200701/20200701-2/ data-hashtag=ES6><i class="fab fa-facebook-square fa-fw"></i></a><a href=javascript:void(0); title="Share on Hacker News" data-sharer=hackernews data-url=https://antmoe.gitee.io/posts/notes/20200701/20200701-2/ data-title=二、ES6新语法><i class="fab fa-hacker-news fa-fw"></i></a><a href=javascript:void(0); title="Share on Line" data-sharer=line data-url=https://antmoe.gitee.io/posts/notes/20200701/20200701-2/ data-title=二、ES6新语法><i data-svg-src=https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg></i></a><a href=javascript:void(0); title="Share on 微博" data-sharer=weibo data-url=https://antmoe.gitee.io/posts/notes/20200701/20200701-2/ data-title=二、ES6新语法><i class="fab fa-weibo fa-fw"></i></a></span></div></div></div><div class=post-info-more><section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=/tags/es6/>ES6</a></section><section><span><a href=javascript:void(0); onclick=window.history.back();>Back</a></span>&nbsp;|&nbsp;<span><a href=/>Home</a></span></section></div><div class=post-nav><a href=/posts/notes/20200701/20200701-1/ class=prev rel=prev title=一、Node.js入门><i class="fas fa-angle-left fa-fw"></i>一、Node.js入门</a></div></div><div id=comments><div id=valine class=comment></div><noscript>Please enable JavaScript to view the comments powered by <a href=https://valine.js.org/>Valine</a>.</noscript></div></article></div></main><footer class=footer><div class=footer-container><div class=footer-line>Powered by <a href=https://gohugo.io/ target=_blank rel="noopener noreffer" title="Hugo 0.70.0">Hugo</a> | Theme - <a href=https://github.com/dillonzq/LoveIt target=_blank rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i>LoveIt</a></div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2020</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=https://antmoe.gitee.io target=_blank>Dreamy.TZK</a></span>&nbsp;|&nbsp;<span class=license><a rel="license external nofollow noopener noreffer" href=https://creativecommons.org/licenses/by-nc/4.0/ target=_blank>CC BY-NC 4.0</a></span></div></div></footer></div><div id=fixed-buttons><a href=# id=back-to-top class=fixed-button title="Back to Top"><i class="fas fa-arrow-up fa-fw"></i></a><a href=# id=view-comments class=fixed-button title="View Comments"><i class="fas fa-comment fa-fw"></i></a></div><link rel=stylesheet href=/lib/valine/valine.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/lightgallery.js@1.2.0/dist/css/lightgallery.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/copy-tex.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/gh/sviptzk/StaticFile_HEXO@v1.3/butterfly/css/pool.min.css><script type=text/javascript src=https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/lunr@2.3.8/lunr.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/twemoji@13.0.0/dist/twemoji.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/lightgallery.js@1.2.0/dist/js/lightgallery.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/lg-thumbnail.js@1.2.0/dist/lg-thumbnail.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/lg-zoom.js@1.2.0/dist/lg-zoom.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/copy-tex.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/mhchem.min.js></script><script type=text/javascript>window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{"valine":{"appId":"MSrsml5TjC3t4RglJVU0PO0K-MdYXbMMI","appKey":"XrcCUv4pMAYuY973iEM37zLq","avatar":"mp","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-facebook@5.0.1/img/facebook/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":true,"highlight":true,"lang":"zh-CN","pageSize":10,"placeholder":"建议在上方留下昵称和邮箱等信息，以便收到回复通知（以下三选一）\t\n1、仅在昵称中留下QQ号（系统自动获取QQ昵称、QQ邮箱、QQ头像等信息）\t\n2、自定义填写昵称、邮箱、网址信息（系统自动匹配头像）\t\n3、匿名留言（不会收到留言回复通知，不推荐）","recordIP":true,"requiredFields":["nick","mail"],"visitor":true}},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"},"twemoji":true};</script><script type=text/javascript src=/js/theme.min.js></script></body></html>
