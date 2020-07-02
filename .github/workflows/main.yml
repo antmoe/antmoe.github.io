@@ -1,19 +1,16 @@
-# workflow name
-name: Hugo Blog CI
+name: Hugo
 
-# master branch on push, auto run
 on:
   push:
     branches:
       - code
-
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
       - name: checkout
-        uses: actions/checkout@code
+        uses: actions/checkout@master
         with:
           submodules: true
       - name: Setup Hugo
