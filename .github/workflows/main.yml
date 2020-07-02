@@ -30,3 +30,4 @@ jobs:
           git add .
           git commit -m "Update"
           git push --force https://${{ secrets.GH_TOKEN }}@${{ secrets.GH_REPO }} master:master
+          git push --force https://${{ secrets.CODING_TOKEN }}@${{ secrets.CODING_REPO }} master:master

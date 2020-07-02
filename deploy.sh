@@ -1,6 +1,5 @@
 #! /bin/bash
-hugo --minify
-git add .
-git commit -m '自动提交'
-git push -f origin master
+git add . 
+git commit -m 'auto push'
+git push origin code
 cmd /k
