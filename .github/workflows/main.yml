@@ -1,0 +1,35 @@
+# workflow name
+name: Hugo Blog CI
+
+# master branch on push, auto run
+on:
+  push:
+    branches:
+      - code
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout
+        uses: actions/checkout@code
+        with:
+          submodules: true
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2.2.2
+        with:
+          hugo-version: "0.59.1"
+          extended: true
+      - name: Build
+        run: hugo --minify
+      - name: Deploy
+        run: |
+          cd ./public
+          ls
+          git init
+          git config --global user.name '${{ secrets.GIT_USER }}' 
+          git config --global user.email '${{ secrets.GIT_MAIL }}'
+          git add .
+          git commit -m "Update"
+          git push --force https://${{ secrets.GH_TOKEN }}@${{ secrets.GH_REPO }} master:master
