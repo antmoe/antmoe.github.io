@@ -1,9 +1,5 @@
----
-title: 五、express实战-英雄管理系统
-date: 2020-07-03T14:55:50+08:00
-categories: ["notes"]
-tags: ["Node"]
----
+# 五、express实战-英雄管理系统
+
 
 
 
@@ -256,4 +252,5 @@ app.use((req, res) => {
   res.end();
 });
 ```
+
 
