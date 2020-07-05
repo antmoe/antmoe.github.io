@@ -61,4 +61,4 @@ Disallow: /
 User-agent: ZoominfoBot
 Disallow: /
 
-Sitemap: https://antmoe.gitee.io/zh-cn/sitemap.xml
+Sitemap: https://study.tzki.cn/zh-cn/sitemap.xml

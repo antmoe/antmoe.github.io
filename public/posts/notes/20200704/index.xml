@@ -1,0 +1,49 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>All 2020年07月04日笔记汇总 - 小康的学习记录</title>
+        <link>https://study.tzki.cn/posts/notes/20200704/</link>
+        <description>All 2020年07月04日笔记汇总 | 小康的学习记录</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>sviptzk@163.com (Dreamy.TZK)</managingEditor>
+            <webMaster>sviptzk@163.com (Dreamy.TZK)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sat, 04 Jul 2020 17:03:50 &#43;0800</lastBuildDate><atom:link href="https://study.tzki.cn/posts/notes/20200704/" rel="self" type="application/rss+xml" /><item>
+    <title>八、NPM包管理</title>
+    <link>https://study.tzki.cn/posts/notes/20200704/20200704-3/</link>
+    <pubDate>Sat, 04 Jul 2020 18:17:50 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://study.tzki.cn/posts/notes/20200704/20200704-3/</guid>
+    <description><![CDATA[如何写NodeJs模块  遵守commentjs规范。  导入模块 暴露出去（导出）    一个简单的示例：
+1 2 3 4 5 6 7 8 9 10 11 12 13  // 定义一个对象 let db = { baseUrl: &#34;http://127.0.0.1:3000/&#34;, insert: function () { console.log(&#34;插入方法&#34;); }, delete: function () { console.log(&#34;删除方法&#34;); }, }; // 将其暴露出去 module.exports = db;   在我们的模块中定义一个对象，并将其暴露出去。接下来在我们自己的js文件中去使用这个对象。
+1 2  const myMoudle = require(&#34;./01-自己写的模块.js&#34;); myMoudle.insert();   写一个自己的模块 NPM发布包   进入待发布的目录，然后初始化目录npm init。并依次填入包名、版本、描述等信息。如果没有可以跳过（回车）。
+  注册NPM账号]]></description>
+</item><item>
+    <title>七、NodeJs数据库管理</title>
+    <link>https://study.tzki.cn/posts/notes/20200704/20200704-2/</link>
+    <pubDate>Sat, 04 Jul 2020 15:56:50 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://study.tzki.cn/posts/notes/20200704/20200704-2/</guid>
+    <description><![CDATA[建表 MySQL程序可以使用PHP study集成工具。链接、操作数据库可以使用phpstudy自带的工具也可以使用navicat工具。
+SQL语句-增删改查   插入数据
+1  insert into 表名(字段名1，字段名2) values(值1，值2);   例如：
+1  insert into user(name,description) values(&#39;陈浩南&#39;,&#39;铜锣湾扛把子&#39;);     删除数据
+1  delete from 表名 where 条件;   条件一定要写，如果不写则会删除该表中所有的数据删除。
+例如：
+1  delete from user where id&gt;3;     修改数据
+1  update 表名 set 字段名1=新值1,字段名2=新值2 where 条件;   条件一定要写，如果不写则会修改数据表中的全部数据
+例如：
+1  update user set name=&#39;子风兄&#39;,description=&#39;比波波还骚&#39; where id=3;     查询数据]]></description>
+</item><item>
+    <title>六、中间件与跨域</title>
+    <link>https://study.tzki.cn/posts/notes/20200704/20200704-1/</link>
+    <pubDate>Sat, 04 Jul 2020 11:01:50 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://study.tzki.cn/posts/notes/20200704/20200704-1/</guid>
+    <description><![CDATA[什么是中间件 在路由相应之前就会执行中间件的内容，例如在中间件中进行赋值，这种就可以在路由执行时使用这个值。
+所以中间件就是服务器开启之后和路由响应之前执行的一个函数。这个函数可以操作req与res。使用next()向下传递到下一个中间件，最后传到路由。
+例如开启三个中间件的写法：
+1 2 3 4 5 6 7 8 9 10 11 12 13 14  app.use((req, res, next) =&gt; { console.log(&#34;中间件1&#34;); req.requestTime = Date.now(); next(); }); app.use((req, res, next) =&gt; { console.log(&#34;中间件2&#34;); next(); }); app.get(&#34;/&#34;, (req, res) =&gt; { console.log(Date.now() - req.requestTime); res.send(&#34;Hello World!&#34;); });   什么是跨域   浏览器使用ajax时，如果请求的接口地址和当前打开的页面地址不同源称之为跨域。
+协议和地址、端口都一样成为同源。有一个不同则为不同源。
+  同源与不同源的意义
+浏览器安全策略。
+  设置响应头允许跨域 只需要在响应头处设置Access-Control-Allow-Origin为*即可。
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17  app.]]></description>
+</item></channel>
+</rss>

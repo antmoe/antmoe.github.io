@@ -1,90 +1,86 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>All 我的笔记汇总 - 小康的学习记录</title>
-        <link>https://antmoe.gitee.io/posts/notes/</link>
+        <link>https://study.tzki.cn/posts/notes/</link>
         <description>All 我的笔记汇总 | 小康的学习记录</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>sviptzk@163.com (Dreamy.TZK)</managingEditor>
-            <webMaster>sviptzk@163.com (Dreamy.TZK)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 10 May 2020 21:35:50 &#43;0800</lastBuildDate><atom:link href="https://antmoe.gitee.io/posts/notes/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>sviptzk@163.com (Dreamy.TZK)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 10 May 2020 21:35:50 &#43;0800</lastBuildDate><atom:link href="https://study.tzki.cn/posts/notes/" rel="self" type="application/rss+xml" /><item>
+    <title>2020年07月04日笔记汇总</title>
+    <link>https://study.tzki.cn/posts/notes/20200704/</link>
+    <pubDate>Sat, 04 Jul 2020 17:03:50 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://study.tzki.cn/posts/notes/20200704/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
     <title>2020年07月03日笔记汇总</title>
-    <link>https://antmoe.gitee.io/posts/notes/20200703/</link>
+    <link>https://study.tzki.cn/posts/notes/20200703/</link>
     <pubDate>Fri, 03 Jul 2020 17:03:50 &#43;0800</pubDate>
     <author>Author</author>
-    <guid>https://antmoe.gitee.io/posts/notes/20200703/</guid>
+    <guid>https://study.tzki.cn/posts/notes/20200703/</guid>
     <description><![CDATA[]]></description>
 </item><item>
     <title>2020年07月02日笔记汇总</title>
-    <link>https://antmoe.gitee.io/posts/notes/20200702/</link>
+    <link>https://study.tzki.cn/posts/notes/20200702/</link>
     <pubDate>Thu, 02 Jul 2020 17:03:50 &#43;0800</pubDate>
     <author>Author</author>
-    <guid>https://antmoe.gitee.io/posts/notes/20200702/</guid>
+    <guid>https://study.tzki.cn/posts/notes/20200702/</guid>
     <description><![CDATA[]]></description>
 </item><item>
     <title>2020年07月01日笔记汇总</title>
-    <link>https://antmoe.gitee.io/posts/notes/20200701/</link>
+    <link>https://study.tzki.cn/posts/notes/20200701/</link>
     <pubDate>Wed, 01 Jul 2020 17:03:50 &#43;0800</pubDate>
     <author>Author</author>
-    <guid>https://antmoe.gitee.io/posts/notes/20200701/</guid>
+    <guid>https://study.tzki.cn/posts/notes/20200701/</guid>
     <description><![CDATA[]]></description>
 </item><item>
     <title>2020年06月24日笔记汇总</title>
-    <link>https://antmoe.gitee.io/posts/notes/20200624/</link>
+    <link>https://study.tzki.cn/posts/notes/20200624/</link>
     <pubDate>Wed, 24 Jun 2020 17:03:50 &#43;0800</pubDate>
     <author>Author</author>
-    <guid>https://antmoe.gitee.io/posts/notes/20200624/</guid>
+    <guid>https://study.tzki.cn/posts/notes/20200624/</guid>
     <description><![CDATA[]]></description>
 </item><item>
     <title>jQuery原理（DOM操作相关方法）</title>
-    <link>https://antmoe.gitee.io/posts/notes/20200623/</link>
+    <link>https://study.tzki.cn/posts/notes/20200623/</link>
     <pubDate>Tue, 23 Jun 2020 11:35:00 &#43;0800</pubDate>
     <author>Author</author>
-    <guid>https://antmoe.gitee.io/posts/notes/20200623/</guid>
+    <guid>https://study.tzki.cn/posts/notes/20200623/</guid>
     <description><![CDATA[empty方法 清空指定元素中的所有内容。也就是遍历内容，然后将其innerHTML清空。
 1 2 3 4 5 6 7 8 9 10  kjQuery.prototype.extend({ empty: function () { // 遍历所有找到的元素  this.each(function (k, v) { v.innerHTML = &#39;&#39;; }); // 返回this对象为了方便链式编程  return this; }, })   remove方法 删除所有的元素或指定元素。判断是否传入参数，如果传入参数，则删除指定元素，否则删除全部。
  JavaScript元素不能自己删除自己，只能通过上级元素删除。
  1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28  remove: function (sele) { if (arguments.]]></description>
 </item><item>
     <title>jQuery原理（原型上的属性、方法）</title>
-    <link>https://antmoe.gitee.io/posts/notes/20200622/</link>
+    <link>https://study.tzki.cn/posts/notes/20200622/</link>
     <pubDate>Mon, 22 Jun 2020 11:35:00 &#43;0800</pubDate>
     <author>Author</author>
-    <guid>https://antmoe.gitee.io/posts/notes/20200622/</guid>
+    <guid>https://study.tzki.cn/posts/notes/20200622/</guid>
     <description><![CDATA[jQuery原型上的属性 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16  kjQuery.prototype = { constructor: kjQuery, init: function (selector) {}, // 版本号  jquery: &#34;1.1.0&#34;, // 实例默认的选择器取值  selector: &#34;&#34;, // 实例默认的长度  length: 0, // 给实例添加新元素  push: [].push, // 对实例中的元素进行排序  sort: [].sort, // 按照指定下标指定数量删除元素，也可以替换删除的元素  splice: [].splice, };   关于三个方法（push,sort,splice）以push为例：
  通过[].push找到数组的push方法 但是对象的push方法由对象调用，那么this就指向了对象（jQuery） 所以也就相当于[].push.apply(this)将元素添加到对象身上  jQuery原型上的方法 toArray 把实例转换为数组返回
 1 2 3  toArray: function () { return [].]]></description>
 </item><item>
     <title>jQuery原理（入口函数）</title>
-    <link>https://antmoe.gitee.io/posts/notes/20200621/</link>
+    <link>https://study.tzki.cn/posts/notes/20200621/</link>
     <pubDate>Sun, 21 Jun 2020 19:42:00 &#43;0800</pubDate>
     <author>Author</author>
-    <guid>https://antmoe.gitee.io/posts/notes/20200621/</guid>
+    <guid>https://study.tzki.cn/posts/notes/20200621/</guid>
     <description><![CDATA[基本结构 jQuery的基本结构如下：
 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25  (function (window, undefiend) { var jQuery = function () { return new jQuery.fn.init() } jQuery.prototype = { constructor: jQuery } jQuery.fn.init.prototype = jQuery.prototype window.jQuery = window.$ = jQuery })(window); /* 其中fn指代的是原型，因此以上结构可以转换成以下结构 */ (function (window, undefiend) { var jQuery = function () { return new kjQuery.]]></description>
 </item><item>
     <title>八、jQuery的QQ音乐播放器</title>
-    <link>https://antmoe.gitee.io/posts/notes/20200620/</link>
+    <link>https://study.tzki.cn/posts/notes/20200620/</link>
     <pubDate>Sat, 20 Jun 2020 19:24:00 &#43;0800</pubDate>
     <author>Author</author>
-    <guid>https://antmoe.gitee.io/posts/notes/20200620/</guid>
+    <guid>https://study.tzki.cn/posts/notes/20200620/</guid>
     <description><![CDATA[项目资料  查看源码 在线Demo基本框架及顶部布局 1 2 3 4 5 6 7 8 9 10 11 12 13  &lt;div class=&#34;header&#34;&gt; &lt;h1 class=&#34;logo&#34;&gt;&lt;a href=&#34;#&#34;&gt;&lt;/a&gt;&lt;/h1&gt; &lt;ul class=&#34;register&#34;&gt; &lt;li&gt;注册&lt;/li&gt; &lt;li&gt;登陆&lt;/li&gt; &lt;/ul&gt; &lt;/div&gt; &lt;div class=&#34;content&#34;&gt; &lt;div class=&#34;content_in&#34;&gt;&lt;/div&gt; &lt;/div&gt; &lt;div class=&#34;footer&#34;&gt; &lt;div class=&#34;footer_in&#34;&gt;&lt;/div&gt; &lt;/div&gt;   1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63  * { margin: 0; padding: 0; } .]]></description>
 </item><item>
     <title>七、jQuery狂拍大灰狼案例</title>
-    <link>https://antmoe.gitee.io/posts/notes/20200618/</link>
+    <link>https://study.tzki.cn/posts/notes/20200618/</link>
     <pubDate>Thu, 18 Jun 2020 15:26:50 &#43;0800</pubDate>
     <author>Author</author>
-    <guid>https://antmoe.gitee.io/posts/notes/20200618/</guid>
+    <guid>https://study.tzki.cn/posts/notes/20200618/</guid>
     <description><![CDATA[在线案例显示：狂拍灰太狼
 首页布局 基本布局 完成首页的布局，背景使用了一张图片。其余元素，图中已经标出。
 1 2 3 4 5 6  &lt;div class=&#34;container&#34;&gt; &lt;h1&gt;0&lt;/h1&gt; &lt;div class=&#34;progress&#34;&gt;&lt;/div&gt; &lt;button class=&#34;start&#34;&gt;开始游戏&lt;/button&gt; &lt;div class=&#34;rules&#34;&gt;游戏规则&lt;/div&gt; &lt;/div&gt;   1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54  * { margin: 0; height: 0; } .]]></description>
-</item><item>
-    <title>六、jQuery节点操作</title>
-    <link>https://antmoe.gitee.io/posts/notes/20200617/</link>
-    <pubDate>Wed, 17 Jun 2020 17:49:50 &#43;0800</pubDate>
-    <author>Author</author>
-    <guid>https://antmoe.gitee.io/posts/notes/20200617/</guid>
-    <description><![CDATA[添加节点相关方法 内部插入   插入到节点最前面
-1 2 3 4  // 方法1 $li.prependTo(&#39;ul&#39;) // 方法2（常用） $(&#39;ul&#39;).prepend($li)     添加到节点最后边
-1 2 3 4  // 方法1 $li.appendTo(&#39;ul&#39;) // 方法2（常用） $(&#39;ul&#39;).append($li)     外部插入   将元素添加到指定元素外部的后面
-1 2 3 4  // 方法1 $li.insertAfter(&#39;ul&#39;) // 方法2（常用） $(&#39;ul&#39;).after($li)     会将元素添加到指定元素外部的前面
-1 2 3 4  // 方法1 $li.insertBefore(&#39;ul&#39;) // 方法2（常用） $(&#39;ul&#39;).before($li)     删除节点相关方法   remove()或detach()]]></description>
 </item></channel>
 </rss>

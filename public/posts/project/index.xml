@@ -1,15 +1,15 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>All 我的项目汇总 - 小康的学习记录</title>
-        <link>https://antmoe.gitee.io/posts/project/</link>
+        <link>https://study.tzki.cn/posts/project/</link>
         <description>All 我的项目汇总 | 小康的学习记录</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>sviptzk@163.com (Dreamy.TZK)</managingEditor>
-            <webMaster>sviptzk@163.com (Dreamy.TZK)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 10 May 2020 21:35:50 &#43;0800</lastBuildDate><atom:link href="https://antmoe.gitee.io/posts/project/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>sviptzk@163.com (Dreamy.TZK)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 10 May 2020 21:35:50 &#43;0800</lastBuildDate><atom:link href="https://study.tzki.cn/posts/project/" rel="self" type="application/rss+xml" /><item>
     <title>基于面向对象的工具库练习</title>
-    <link>https://antmoe.gitee.io/posts/project/20200603/</link>
+    <link>https://study.tzki.cn/posts/project/20200603/</link>
     <pubDate>Wed, 03 Jun 2020 21:12:50 &#43;0800</pubDate>
     <author>Author</author>
-    <guid>https://antmoe.gitee.io/posts/project/20200603/</guid>
+    <guid>https://study.tzki.cn/posts/project/20200603/</guid>
     <description><![CDATA[前期准备 全局作用域问题
 解决这个问题是通过匿名函数，然后在匿名函数内创建对象，将window作为参数传入匿名函数，并将此对象赋值与window
 1 2 3 4 5 6 7 8 9 10  (function (global) { // 判断global对象是否真的存在  if (!global) { console.error(&#34;当前环境不是浏览器环境！&#34;); return false; } // 定义一个统一对外开放的对象  var mytool = new Object(); global.mytool = mytool; })(window);   此时在全局作用域中便存在了一个对象mytool。
@@ -18,10 +18,10 @@
  对于id选择器或class选择器来说，传入形参为#id或.class。那么只需要去匹配第一个字符即可。 如果不匹配以上两种情况，那么可以视为TagName。  1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28  mytool.]]></description>
 </item><item>
     <title>模仿一个在线文档</title>
-    <link>https://antmoe.gitee.io/posts/project/20200518/</link>
+    <link>https://study.tzki.cn/posts/project/20200518/</link>
     <pubDate>Mon, 18 May 2020 21:54:50 &#43;0800</pubDate>
     <author>Author</author>
-    <guid>https://antmoe.gitee.io/posts/project/20200518/</guid>
+    <guid>https://study.tzki.cn/posts/project/20200518/</guid>
     <description><![CDATA[项目需求  在线输入多行文字 选择文本可设置字体大小、加粗、斜体、下划线、删除线、字体颜色和背景颜色 允许输入无序列表和有序列表 允许设置1~6级标题 允许插入图片  项目开发历史 完整的项目地址：https://antmoe.gitee.io/project/2020/05/OnlineDoc/
   2020-05-19
 https://antmoe.gitee.io/project/2020/05/OnlineDoc/
