@@ -5,6 +5,18 @@ categories: ["notes"]
 tags: ["Node"]
 ---
 
+title: 七、NodeJs数据库管理
+categories:
+
+  - 大前端
+  - NodeJs
+    tags:
+  - 大前端
+  - NodeJs
+  - mysql
+  - 笔记
+    date: 2020-07-04 15:56:58
+
 ## 建表
 
 MySQL程序可以使用PHP study集成工具。链接、操作数据库可以使用phpstudy自带的工具也可以使用navicat工具。
@@ -110,6 +122,104 @@ connection.query("select * from user", (error, result, fields) => {
 <span class="inline-tag yellow">fields</span>
 
 ![image-20200704170635370](https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/04/e18098d70f800365cb4acef534872c2c.png)
+
+### 其他查询方法
+
+1. 以什么开头
+
+   ```sql
+   select * from hero where heroName like "马%";
+   ```
+
+   ![image-20200706192609590](https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/06/dc7db35db5e1a3bc220fe8c9f7dd2543.png)
+
+2. 以什么结尾
+
+   ```sql
+   select * from hero where heroName like "%韦";
+   ```
+
+   ![image-20200706192724093](https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/06/7d602da456d1bfc3ca64d1425c3a4a6d.png)
+
+3. 包含什么内容
+
+   ```sql
+   select * from hero where heroName like "%魔%";
+   ```
+
+   ![image-20200706192800250](https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/06/24e9f208bb0c675aa799ff53e4fd8741.png)
+
+4. 并且条件
+
+   ```sql
+   select * from hero where heroName like "%魔%" and isDelete='false';
+   ```
+
+   可用`and`链接多个条件。
+
+   ![image-20200706193125673](https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/06/d2d5d94d61fff9c08a67bef1d35535e7.png)
+
+5. 或条件
+
+   ```sql
+   select * from hero where heroName like "%魔%" or heroName like "%信%";
+   ```
+
+   ![image-20200706193321722](https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/06/8ca36b9567f43057c428bb026fab0bc3.png)
+
+6. 排序
+
+   - 降序
+
+     ```sql
+     select * from hero where heroName like "%魔%" or heroName like "%信%" order by id desc;
+     ```
+
+     ![image-20200706193441568](https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/06/5d2e0fe766376a39b4192203d29e9634.png)
+
+   - 升序
+
+     默认为升序
+
+     ```sql
+     select * from hero where heroName like "%魔%" or heroName like "%信%" order by id asc;
+     ```
+
+     ![image-20200706193535578](https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/06/7d51fd678197bc5c259488b7f582273e.png)
+
+   - 分页
+
+     倒序情况下拿到前20条数据
+
+     ```javascript
+     select * from hero  order by id desc limit 0,20;
+     ```
+
+     ![image-20200706193830578](https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/06/1250da7213b0e113211d08705e414ead.png)
+
+   - 连表查询
+
+     ```sql
+     select 字段 from 表1 inner join 表2 on 对应关系
+     ```
+
+     ```sql
+     select * from horder inner join customer on horder.cid = custom.id;
+     ```
+
+     可对两个表设置别名，但是后边也要设置别名。
+
+     ```sql
+     select * from horder h inner join customer c on h.cid = c.id;
+     ```
+
+     也可以只查询某个字段。
+
+     ```sql
+     select h.id,h.oname,c.price,c.id,c.cname,c.age from horder h inner join customer c on h.cid = c.id;
+     ```
+
+     
 
 ### 增
 
