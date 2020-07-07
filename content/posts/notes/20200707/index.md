@@ -1,5 +1,5 @@
 ---
-title: 六、中间件与跨域
+title: 十、Promise的使用
 date: 2020-07-07T16:17:50+08:00
 categories: ["notes"]
 tags: ["Node"]
