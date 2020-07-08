@@ -1,5 +1,5 @@
 ---
-title: 一、Django连接与建立数据库
+title: 一、MongoDB的安装
 date: 2020-07-08T11:01:50+08:00
 categories: ["notes"]
 tags: ["Node"]
