@@ -196,5 +196,314 @@ categories: ["project"]
     
        
 
+## 注册接口
 
+1. 用户注册时请求注册接口
+   - 判断账号密码是否合法
+   - 判断用户是否存在
+2. 根据判断做出相应的相应
+
+```javascript
+router.post("/user/register", (req, res, next) => {
+    let { username, password } = req.body;
+    console.log(username, password);
+    if (username != "" && password != "") {
+        console.log(respondseData);
+        // 验证用户是否被注册
+        User.findOne({ username: username })
+            .then((userinfo) => {
+            if (userinfo) {
+                // 数据库中有此数据
+                respondseData.code = 4;
+                respondseData.message = "用户已被注册";
+                console.log(respondseData);
+            } else {
+                // 数据库中无此数据
+                var user = new User({
+                    username: username,
+                    password: password,
+                });
+                respondseData.code = 200;
+                respondseData.message = "注册成功";
+                return user.save();
+            }
+        })
+            .then((newUserInfo) => {
+            res.send(respondseData);
+            console.log(newUserInfo);
+        });
+    } else {
+        respondseData.message = "你输入的内容似乎不对哦！";
+        res.send(respondseData);
+    }
+});
+```
+
+## 登陆接口及Cookie保存
+
+1. 判断用户名及密码是否符合规范
+2. 判断数据库是否存在这个用户以及密码是否一致
+3. 登陆后，保存Cookie
+
+主程序`app.js`
+
+```javascript
+app.use(function (req, res, next) {
+  req.cookies = new Cookies(req, res);
+  if (req.cookies.get("userInfo")) {
+    req.userinfo = JSON.parse(req.cookies.get("userInfo"));
+    try {
+      // 获取当前登陆用户的类型，是否是管理员
+      User.findById(req.userinfo._id).then(function (userInfo) {
+        req.userinfo.isAdmin = userInfo.isAdmin;
+        next();
+      });
+    } catch (e) {
+      req.userinfo = {};
+      next();
+    }
+  } else {
+    next();
+  }
+});
+```
+
+用户表结构`schema`
+
+```javascript
+var mongoose = require("mongoose");
+// 用户的表结构
+
+module.exports = new mongoose.Schema({
+  // 用户名
+  username: String,
+  // 密码
+  password: String,
+  // 管理员权限
+  isAdmin: { type: Boolean, default: false },
+});
+
+```
+
+登陆接口的实现
+
+```javascript
+router.post("/user/login", (req, res) => {
+  let { username, password } = req.body;
+  if (username != "" && password != "") {
+    // 判断数据库是否存在此用户
+    User.findOne({
+      username: username,
+      password: password,
+    }).then((userInfo) => {
+      if (!userInfo) {
+        // 没有合适的用户
+        respondseData.message = "用户名或密码错误";
+      } else {
+        // 有合适的用户
+        respondseData.code = 200;
+        respondseData.message = "登陆成功";
+        req.cookies.set(
+          "userInfo",
+          JSON.stringify({
+            _id: userInfo._id,
+            username: userInfo.username,
+          })
+        );
+      }
+      res.send(respondseData);
+    });
+  } else {
+    respondseData.message = "你输入的好像不合法哦！";
+    res.send(respondseData);
+  }
+});
+```
+
+
+
+## 后台开发
+
+### 基本框架
+
+首先我们定义一个公用模板，用于每个模块（首页等）的调用。
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <title>后台管理</title>
+</head>
+<body>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">后台管理</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li ><a href="/admin/user">用户管理</a></li>
+                <!--<li ><a href="/admin/category">分类管理</a></li>-->
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">分类管理 <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/admin/category">分类首页</a></li>
+                        <li><a href="/admin/category/add">添加分类</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">内容管理 <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/admin/content">内容管理首页</a></li>
+                        <li><a href="/admin/content/add">添加内容</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">文章管理 <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">Separated link</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">One more separated link</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">评论</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <!--<li><a href="#">Link</a></li>-->
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{userinfo.username}} <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">退出</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+<div class="container-fluid">
+    <!--模板中的此部分可能不同，使用block占位-->
+   {% block main%} {endblock}
+</div>
+
+</body>
+</html>
+```
+
+其中，`{% block main%} {endblock}`表示占位。在其他模板页面中只需要重写这个区块即可。
+
+例如`index.html`页面。
+
+```html
+<!--layout.html是公用的模板，可以使用继承-->
+{% extends 'layout.html' %}
+
+{% block main %}
+<div class="jumbotron">
+    <h1>Hello, {{userinfo.username}}</h1>
+    <p>欢迎进入破梨博客后台管理</p>
+    <!--<p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>-->
+</div>
+{% endblock%}
+```
+
+### 注册用户列表展示
+
+![image-20200709184322951](https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/09/e194a55c8d4f293a3dfdd68bc008844f.png)
+
+<span class="inline-tag green">路由规则</span>
+
+```javascript
+router.get("/user", (req, res, next) => {
+  var page = Number(req.query.page || 1);
+  var limit = 10;
+  var pages = 0;
+  User.count().then((count) => {
+    pages = Math.ceil(count / limit);
+    page = Math.min(page, pages);
+    page = Math.max(page, 1);
+    console.log(page);
+    var skip = (page - 1) * limit;
+    User.find()
+      .skip(skip)
+      .limit(limit)
+      .then((result) => {
+        res.render("admin/user_index", {
+          users: result,
+          page: page,
+          pages: pages,
+        });
+      });
+  });
+});
+```
+
+<span class="inline-tag green">HTML模板</span>
+
+```html
+<!--layout.html是公用的模板，可以使用继承-->
+{% extends 'layout.html' %}
+
+{% block main %}
+<ol class="breadcrumb">
+    <li><a href="/admin">管理首页</a></li>
+    <li><a href="#">用户列表</a></li>
+    <!--<li class="active">Data</li>-->
+</ol>
+<h3>用户列表</h3>
+<table class="table table-hover table-bordered table-striped">
+    <tr>
+        <th>ID</th>
+        <th>用户名</th>
+        <th>密码</th>
+        <th>管理员</th>
+    </tr>
+
+    {% for item in users%}
+    <tr>
+        <td>{{item._id.toString()}}</td>
+        <td>{{item.username}}</td>
+        <td>{{item.password}}</td>
+        {% if item.isAdmin%}
+        <td style="color: green;">是</td>
+        {% else %}
+        <td style="color: red;">否</td>
+        {% endif %}
+    </tr>
+    {% endfor %}
+</table>
+<!--分页功能在page.html中，因为很多地方都会用到，所以封装成模板，调用即可-->
+{% include 'page.html' %}
+{% endblock%}
+```
+
+分页模板
+
+```html
+<nav aria-label="Page navigation">
+    <ul class="pager">
+        <li class="previous"><a href="/admin/user?page={{page-1}}"><span aria-hidden="true">&larr;</span> 上一页</a></li>
+        <!--<li>一共{{pages}}页,当前第{{page}}页</li>-->
+        <li class="next"><a href="/admin/user?page={{page+1}}">下一页 <span aria-hidden="true">&rarr;</span></a></li>
+        <li>一共{{pages}}页,当前第{{page}}页</li>
+    </ul>
+</nav>
+```
 

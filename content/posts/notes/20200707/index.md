@@ -372,7 +372,7 @@ pRace.then((data) => {
      export { addFn1, addFn2 };
      ```
 
-<span class="inline-tag blue">通过`inport`导入</span>
+<span class="inline-tag blue">通过`import`导入</span>
 
 导入的变量只能读不能修改。
 
