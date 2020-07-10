@@ -4,6 +4,8 @@ date: 2020-07-07T19:52:50+08:00
 categories: ["project"]
 ---
 
+<div class="btns rounded grid5"><a href="https://gitee.com/antmoe/project/tree/master/2020/07/blog" title="下载源码"><i class="fa fa-download"></i> 下载源码</a></div>
+
 ## 开发前的准备
 
 1. 安装插件
@@ -505,5 +507,383 @@ router.get("/user", (req, res, next) => {
         <li>一共{{pages}}页,当前第{{page}}页</li>
     </ul>
 </nav>
+```
+
+### 分类
+
+1. 首页
+
+   用于展示所有分类，为每个分类设置删除与修改的功能。以及将最新添加的分类按照索引降序将其排列。
+
+   ```javascript
+   router.get("/category", (req, res, next) => {
+     var page = Number(req.query.page || 1);
+     var limit = 10;
+     var pages = 0;
+     Categories.count().then((count) => {
+       pages = Math.ceil(count / limit);
+       page = Math.min(page, pages);
+       page = Math.max(page, 1);
+       console.log(page);
+       var skip = (page - 1) * limit;
+       Categories.find()
+         .sort({ _id: -1 })
+         .skip(skip)
+         .limit(limit)
+         .then((result) => {
+           res.render("admin/category_index", {
+             categories: result,
+             page: page,
+             pages: pages,
+           });
+         });
+     });
+   });
+   ```
+
+   
+
+2. 修改分类
+
+   须判断修改的分类是否存在。
+
+   ```javascript
+   // 添加分类页面
+   router.get("/category/add", (req, res, next) => {
+       res.render("admin/category_add", {
+           userinfo: req.userinfo,
+       });
+   });
+   // 分类保存
+   router.post("/category/add", (req, res, next) => {
+       let { name } = req.body || null;
+       if (name == "") {
+           console.log("分类名称必须填写");
+           res.render("admin/error", {
+               userinfo: req.userinfo,
+               message: "分类名称必须填写",
+           });
+       } else {
+           Categories.findOne({
+               name: name,
+           })
+               .then(function (rs) {
+               if (rs) {
+                   res.render("admin/error", {
+                       userinfo: req.userinfo,
+                       message: "分类已经存在",
+                   });
+                   return Promise.reject();
+               } else {
+                   return new Categories({
+                       name: name,
+                   }).save();
+               }
+           })
+               .then(function (newCategory) {
+               res.render("admin/success", {
+                   userinfo: req.userinfo,
+                   message: "分类保存成功",
+                   url: "/admin/category",
+               });
+           });
+       }
+   });
+   // 分类修改页面
+   router.get("/category/edit", function (req, res) {
+       var id = req.query.id || "";
+       Categories.findOne({ _id: id }).then(function (category) {
+           console.log(category);
+           if (!category) {
+               res.render("admin/error", {
+                   userinfo: req.userinfo,
+                   message: "此分类不存在",
+               });
+           } else {
+               res.render("admin/category_edit", {
+                   userinfo: req.userinfo,
+                   message: category.name,
+               });
+           }
+       });
+   });
+   router.post("/category/edit", function (req, res) {
+       var id = req.query.id || "";
+       var name = req.body.name || "";
+       Categories.findOne({ _id: id })
+           .then(function (category) {
+           if (!category) {
+               res.render("admin/error", {
+                   userinfo: req.userinfo,
+                   message: "此分类不存在",
+               });
+               return Promise.reject();
+           } else {
+               // 是否存在此数据
+               if (name == category.name) {
+                   res.render("admin/success", {
+                       userinfo: req.userinfo,
+                       message: "修改成功",
+                       url: "/admin/category",
+                   });
+                   return Promise.reject();
+               } else {
+                   return Categories.findOne({
+                       _id: { $ne: id },
+                       name: name,
+                   });
+               }
+           }
+       })
+           .then(function (sameCategory) {
+           if (sameCategory) {
+               res.render("admin/error", {
+                   userinfo: req.userinfo,
+                   message: "分类已存在！",
+               });
+               return Promise.reject();
+           } else {
+               return Categories.update(
+                   {
+                       _id: id,
+                   },
+                   { name: name }
+               );
+           }
+       })
+           .then(function () {
+           res.render("admin/success", {
+               userinfo: req.userinfo,
+               message: "修改成功",
+               url: "/admin/category",
+           });
+       });
+   });
+   ```
+
+   
+
+3. 删除分类 
+
+   直接删除即可
+
+   ```javascript
+   // 分类删除
+   router.get("/category/delete", function (req, res) {
+     var id = req.query.id || "";
+     Categories.remove({
+       _id: id,
+     }).then(function () {
+       res.render("admin/success", {
+         userinfo: req.userinfo,
+         message: "删除成功",
+         url: "/admin/category",
+       });
+     });
+   });
+   ```
+
+   
+
+### 文章
+
+1. 文章模型的创建
+
+   - 模型
+
+     ```javascript
+     var mongoose = require("mongoose");
+     // 用户的表结构
+     
+     var contentSchema = require("../schemas/content");
+     
+     module.exports = mongoose.model("Content", contentSchema);
+     ```
+
+   - schema
+
+     ```javascript
+     var mongoose = require("mongoose");
+     // 用户的表结构
+     
+     module.exports = new mongoose.Schema({
+       // 关联字段
+       category: {
+         // 类型
+         type: mongoose.Schema.Types.ObjectId,
+         // 引用另一张表的模型
+         ref: "categories",
+       },
+       // 关联字段
+       user: {
+         // 类型
+         type: mongoose.Schema.Types.ObjectId,
+         // 引用另一张表的模型
+         ref: "User",
+       },
+       // 添加时间
+       addTime: {
+         type: Date,
+         default: new Date(),
+       },
+       // 阅读数量
+       views: {
+         type: Number,
+         default: 0,
+       },
+       // 用户名
+       title: String,
+       // 简介
+       description: {
+         type: String,
+         default: "",
+       },
+       content: {
+         type: String,
+         default: "",
+       },
+     });
+     
+     ```
+
+2. 添加文章
+
+   ```javascript
+   router.post("/content/add", function (req, res) {
+     if (req.body.category == "") {
+       res.render("admin/error", {
+         userinfo: req.userinfo,
+         message: "分类不能为空",
+       });
+       return;
+     }
+     // 保存到数据库
+     console.log(req.userinfo);
+     new Content({
+       category: req.body.category,
+       title: req.body.title,
+       description: req.body.description,
+       content: req.body.content,
+       user: req.userinfo._id,
+     })
+       .save()
+       .then(function () {
+         res.render("admin/success", {
+           userinfo: req.userinfo,
+           message: "内容保存成功",
+         });
+       });
+   });
+   
+   ```
+
+3. 显示文章
+
+   ```javascript
+   router.get("/content", function (req, res) {
+     var page = Number(req.query.page || 1);
+     var limit = 10;
+     var pages = 0;
+     Content.count().then((count) => {
+       pages = Math.ceil(count / limit);
+       page = Math.min(page, pages);
+       page = Math.max(page, 1);
+       console.log(page);
+       var skip = (page - 1) * limit;
+       Content.find()
+         .sort({ _id: -1 })
+         .skip(skip)
+         .limit(limit)
+         .populate(["category", "user"])
+         .then((result) => {
+           res.render("admin/content_index", {
+             userinfo: req.userinfo,
+             page: page,
+             pages: pages,
+             contents: result,
+             user: req.userinfo,
+           });
+         });
+     });
+   });
+   ```
+
+   
+
+### 首页
+
+```javascript
+router.get("/", (req, res, next) => {
+  var data = {
+    page: Number(req.query.page || 1),
+    limit: 10,
+    pages: 1,
+    userinfo: req.userinfo,
+    navinfo: [],
+    count: 0,
+  };
+  console.log(req.userinfo);
+  Categories.find()
+    .then(function (result) {
+      data.navinfo = result;
+      return Content.count();
+    })
+    .then(function (count) {
+      data.count = count;
+      pages = Math.ceil(data.count / data.limit);
+      page = Math.min(data.page, data.pages);
+      page = Math.max(data.page, 1);
+      var skip = (data.page - 1) * data.limit;
+      return Content.find()
+        .limit(data.limit)
+        .skip(skip)
+        .populate(["category", "user"])
+        .sort({ _id: -1 });
+    })
+
+    .then(function (contents) {
+      data.contents = contents;
+      console.log(data);
+      navinfo = data.navinfo;
+      res.render("main/index", data);
+    });
+});
+```
+
+### 评论
+
+```javascript
+// 评论提交
+router.post("/comment", function (req, res) {
+  // 评论的ID
+  var contentid = req.body.contentid || "";
+  var postData = {
+    username: req.userinfo.username,
+    postTime: new Date(),
+    content: req.body.content,
+  };
+  Content.findOne({
+    _id: contentid,
+  })
+    .then(function (content) {
+      console.log(content);
+      content.comments.push(postData);
+      return content.save();
+    })
+    .then(function (newContent) {
+      respondseData.data = newContent;
+      res.send(respondseData);
+    });
+});
+router.get("/comment", function (req, res) {
+  // 评论的ID
+  var contentid = req.query.contentid || "";
+  Content.findOne({
+    _id: contentid,
+  }).then(function (newContent) {
+    respondseData.data = newContent;
+    res.send(respondseData);
+  });
+});
 ```
 
