@@ -6,35 +6,33 @@
         <meta name="robots" content="noodp" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
         <title>七、NodeJs数据库管理 - 小康的学习记录</title><meta name="Description" content="一个收藏回忆与分享技术的地方！"><meta property="og:title" content="七、NodeJs数据库管理" />
-<meta property="og:description" content="建表 MySQL程序可以使用PHP study集成工具。链接、操作数据库可以使用phpstudy自带的工具也可以使用navicat工具。
+<meta property="og:description" content="title: 七、NodeJs数据库管理 categories:
+ 大前端 NodeJs tags: 大前端 NodeJs mysql 笔记 date: 2020-07-04 15:56:58  建表 MySQL程序可以使用PHP study集成工具。链接、操作数据库可以使用phpstudy自带的工具也可以使用navicat工具。
 SQL语句-增删改查   插入数据
 1  insert into 表名(字段名1，字段名2) values(值1，值2);   例如：
 1  insert into user(name,description) values(&#39;陈浩南&#39;,&#39;铜锣湾扛把子&#39;);     删除数据
 1  delete from 表名 where 条件;   条件一定要写，如果不写则会删除该表中所有的数据删除。
 例如：
 1  delete from user where id&gt;3;     修改数据
-1  update 表名 set 字段名1=新值1,字段名2=新值2 where 条件;   条件一定要写，如果不写则会修改数据表中的全部数据
-例如：
-1  update user set name=&#39;子风兄&#39;,description=&#39;比波波还骚&#39; where id=3;     查询数据" />
+1  update 表名 set 字段名1=新值1,字段名2=新值2 where 条件;   条件一定要写，如果不写则会修改数据表中的全部数据" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://study.tzki.cn/posts/notes/20200704/20200704-2/" />
 <meta property="og:image" content="https://study.tzki.cn/logo.png"/>
 <meta property="article:published_time" content="2020-07-04T15:56:50+08:00" />
-<meta property="article:modified_time" content="2020-07-04T21:55:50+08:00" />
+<meta property="article:modified_time" content="2020-07-06T19:52:24+08:00" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://study.tzki.cn/logo.png"/>
 
 <meta name="twitter:title" content="七、NodeJs数据库管理"/>
-<meta name="twitter:description" content="建表 MySQL程序可以使用PHP study集成工具。链接、操作数据库可以使用phpstudy自带的工具也可以使用navicat工具。
+<meta name="twitter:description" content="title: 七、NodeJs数据库管理 categories:
+ 大前端 NodeJs tags: 大前端 NodeJs mysql 笔记 date: 2020-07-04 15:56:58  建表 MySQL程序可以使用PHP study集成工具。链接、操作数据库可以使用phpstudy自带的工具也可以使用navicat工具。
 SQL语句-增删改查   插入数据
 1  insert into 表名(字段名1，字段名2) values(值1，值2);   例如：
 1  insert into user(name,description) values(&#39;陈浩南&#39;,&#39;铜锣湾扛把子&#39;);     删除数据
 1  delete from 表名 where 条件;   条件一定要写，如果不写则会删除该表中所有的数据删除。
 例如：
 1  delete from user where id&gt;3;     修改数据
-1  update 表名 set 字段名1=新值1,字段名2=新值2 where 条件;   条件一定要写，如果不写则会修改数据表中的全部数据
-例如：
-1  update user set name=&#39;子风兄&#39;,description=&#39;比波波还骚&#39; where id=3;     查询数据"/>
+1  update 表名 set 字段名1=新值1,字段名2=新值2 where 条件;   条件一定要写，如果不写则会修改数据表中的全部数据"/>
 <meta name="application-name" content="Dreamy.tzk&#39;s blog">
 <meta name="apple-mobile-web-app-title" content="Dreamy.tzk&#39;s blog"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -47,8 +45,8 @@ SQL语句-增删改查   插入数据
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/study.tzki.cn\/posts\/notes\/20200704\/20200704-2\/"
-        },"image": ["https:\/\/cdn.jsdelivr.net\/gh\/sviptzk\/StaticFile_HEXO@latest\/butterfly\/img\/favicon.ico"],"genre": "posts","keywords": "Node","wordcount":  675 ,
-        "url": "https:\/\/study.tzki.cn\/posts\/notes\/20200704\/20200704-2\/","datePublished": "2020-07-04T15:56:50+08:00","dateModified": "2020-07-04T21:55:50+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+        },"image": ["https:\/\/cdn.jsdelivr.net\/gh\/sviptzk\/StaticFile_HEXO@latest\/butterfly\/img\/favicon.ico"],"genre": "posts","keywords": "Node","wordcount":  850 ,
+        "url": "https:\/\/study.tzki.cn\/posts\/notes\/20200704\/20200704-2\/","datePublished": "2020-07-04T15:56:50+08:00","dateModified": "2020-07-06T19:52:24+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "Dreamy.TZK","logo": "https:\/\/cdn.jsdelivr.net\/gh\/sviptzk\/HexoStaticFile@latest\/avatar.jpg"},"author": {
                 "@type": "Person",
@@ -128,7 +126,7 @@ SQL语句-增删改查   插入数据
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">七、NodeJs数据库管理</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://antmoe.gitee.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Dreamy.TZK</a></span>&nbsp;<span class="post-category">included in <a href="/categories/notes/"><i class="far fa-folder fa-fw"></i>notes</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-07-04">2020-07-04</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;675 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-07-04">2020-07-04</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;850 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;4 minutes&nbsp;<span id="/posts/notes/20200704/20200704-2/" class="leancloud_visitors" data-flag-title="七、NodeJs数据库管理">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;views
                     </span>&nbsp;</div>
@@ -144,6 +142,7 @@ SQL语句-增删改查   插入数据
     <li><a href="#nodejs操作数据库">NodeJs操作数据库</a>
       <ul>
         <li><a href="#查">查</a></li>
+        <li><a href="#其他查询方法">其他查询方法</a></li>
         <li><a href="#增">增</a></li>
         <li><a href="#删">删</a></li>
         <li><a href="#改">改</a></li>
@@ -154,7 +153,19 @@ SQL语句-增删改查   插入数据
     <li><a href="#完整代码">完整代码</a></li>
   </ul>
 </nav></div>
-            </div><div class="content" id="content"><h2 id="建表">建表</h2>
+            </div><div class="content" id="content"><p>title: 七、NodeJs数据库管理
+categories:</p>
+<ul>
+<li>大前端</li>
+<li>NodeJs
+tags:</li>
+<li>大前端</li>
+<li>NodeJs</li>
+<li>mysql</li>
+<li>笔记
+date: 2020-07-04 15:56:58</li>
+</ul>
+<h2 id="建表">建表</h2>
 <p>MySQL程序可以使用PHP study集成工具。链接、操作数据库可以使用phpstudy自带的工具也可以使用navicat工具。</p>
 <h2 id="sql语句-增删改查">SQL语句-增删改查</h2>
 <ol>
@@ -338,6 +349,206 @@ SQL语句-增删改查   插入数据
         data-sizes="auto"
         alt="https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/04/e18098d70f800365cb4acef534872c2c.png"
         title="image-20200704170635370" /></p>
+<h3 id="其他查询方法">其他查询方法</h3>
+<ol>
+<li>
+<p>以什么开头</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sql" data-lang="sql"><span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">hero</span> <span class="k">where</span> <span class="n">heroName</span> <span class="k">like</span> <span class="s2">&#34;马%&#34;</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/06/dc7db35db5e1a3bc220fe8c9f7dd2543.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/06/dc7db35db5e1a3bc220fe8c9f7dd2543.png, https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/06/dc7db35db5e1a3bc220fe8c9f7dd2543.png 1.5x, https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/06/dc7db35db5e1a3bc220fe8c9f7dd2543.png 2x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/06/dc7db35db5e1a3bc220fe8c9f7dd2543.png"
+        title="image-20200706192609590" /></p>
+</li>
+<li>
+<p>以什么结尾</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sql" data-lang="sql"><span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">hero</span> <span class="k">where</span> <span class="n">heroName</span> <span class="k">like</span> <span class="s2">&#34;%韦&#34;</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/06/7d602da456d1bfc3ca64d1425c3a4a6d.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/06/7d602da456d1bfc3ca64d1425c3a4a6d.png, https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/06/7d602da456d1bfc3ca64d1425c3a4a6d.png 1.5x, https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/06/7d602da456d1bfc3ca64d1425c3a4a6d.png 2x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/06/7d602da456d1bfc3ca64d1425c3a4a6d.png"
+        title="image-20200706192724093" /></p>
+</li>
+<li>
+<p>包含什么内容</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sql" data-lang="sql"><span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">hero</span> <span class="k">where</span> <span class="n">heroName</span> <span class="k">like</span> <span class="s2">&#34;%魔%&#34;</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/06/24e9f208bb0c675aa799ff53e4fd8741.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/06/24e9f208bb0c675aa799ff53e4fd8741.png, https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/06/24e9f208bb0c675aa799ff53e4fd8741.png 1.5x, https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/06/24e9f208bb0c675aa799ff53e4fd8741.png 2x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/06/24e9f208bb0c675aa799ff53e4fd8741.png"
+        title="image-20200706192800250" /></p>
+</li>
+<li>
+<p>并且条件</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sql" data-lang="sql"><span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">hero</span> <span class="k">where</span> <span class="n">heroName</span> <span class="k">like</span> <span class="s2">&#34;%魔%&#34;</span> <span class="k">and</span> <span class="n">isDelete</span><span class="o">=</span><span class="s1">&#39;false&#39;</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>可用<code>and</code>链接多个条件。</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/06/d2d5d94d61fff9c08a67bef1d35535e7.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/06/d2d5d94d61fff9c08a67bef1d35535e7.png, https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/06/d2d5d94d61fff9c08a67bef1d35535e7.png 1.5x, https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/06/d2d5d94d61fff9c08a67bef1d35535e7.png 2x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/06/d2d5d94d61fff9c08a67bef1d35535e7.png"
+        title="image-20200706193125673" /></p>
+</li>
+<li>
+<p>或条件</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sql" data-lang="sql"><span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">hero</span> <span class="k">where</span> <span class="n">heroName</span> <span class="k">like</span> <span class="s2">&#34;%魔%&#34;</span> <span class="k">or</span> <span class="n">heroName</span> <span class="k">like</span> <span class="s2">&#34;%信%&#34;</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/06/8ca36b9567f43057c428bb026fab0bc3.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/06/8ca36b9567f43057c428bb026fab0bc3.png, https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/06/8ca36b9567f43057c428bb026fab0bc3.png 1.5x, https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/06/8ca36b9567f43057c428bb026fab0bc3.png 2x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/06/8ca36b9567f43057c428bb026fab0bc3.png"
+        title="image-20200706193321722" /></p>
+</li>
+<li>
+<p>排序</p>
+<ul>
+<li>
+<p>降序</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sql" data-lang="sql"><span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">hero</span> <span class="k">where</span> <span class="n">heroName</span> <span class="k">like</span> <span class="s2">&#34;%魔%&#34;</span> <span class="k">or</span> <span class="n">heroName</span> <span class="k">like</span> <span class="s2">&#34;%信%&#34;</span> <span class="k">order</span> <span class="k">by</span> <span class="n">id</span> <span class="k">desc</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/06/5d2e0fe766376a39b4192203d29e9634.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/06/5d2e0fe766376a39b4192203d29e9634.png, https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/06/5d2e0fe766376a39b4192203d29e9634.png 1.5x, https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/06/5d2e0fe766376a39b4192203d29e9634.png 2x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/06/5d2e0fe766376a39b4192203d29e9634.png"
+        title="image-20200706193441568" /></p>
+</li>
+<li>
+<p>升序</p>
+<p>默认为升序</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sql" data-lang="sql"><span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">hero</span> <span class="k">where</span> <span class="n">heroName</span> <span class="k">like</span> <span class="s2">&#34;%魔%&#34;</span> <span class="k">or</span> <span class="n">heroName</span> <span class="k">like</span> <span class="s2">&#34;%信%&#34;</span> <span class="k">order</span> <span class="k">by</span> <span class="n">id</span> <span class="k">asc</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/06/7d51fd678197bc5c259488b7f582273e.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/06/7d51fd678197bc5c259488b7f582273e.png, https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/06/7d51fd678197bc5c259488b7f582273e.png 1.5x, https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/06/7d51fd678197bc5c259488b7f582273e.png 2x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/06/7d51fd678197bc5c259488b7f582273e.png"
+        title="image-20200706193535578" /></p>
+</li>
+<li>
+<p>分页</p>
+<p>倒序情况下拿到前20条数据</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">select</span> <span class="o">*</span> <span class="nx">from</span> <span class="nx">hero</span>  <span class="nx">order</span> <span class="nx">by</span> <span class="nx">id</span> <span class="nx">desc</span> <span class="nx">limit</span> <span class="mi">0</span><span class="p">,</span><span class="mi">20</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/06/1250da7213b0e113211d08705e414ead.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/06/1250da7213b0e113211d08705e414ead.png, https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/06/1250da7213b0e113211d08705e414ead.png 1.5x, https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/06/1250da7213b0e113211d08705e414ead.png 2x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/06/1250da7213b0e113211d08705e414ead.png"
+        title="image-20200706193830578" /></p>
+</li>
+<li>
+<p>连表查询</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sql" data-lang="sql"><span class="k">select</span> <span class="err">字段</span> <span class="k">from</span> <span class="err">表</span><span class="mi">1</span> <span class="k">inner</span> <span class="k">join</span> <span class="err">表</span><span class="mi">2</span> <span class="k">on</span> <span class="err">对应关系</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sql" data-lang="sql"><span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">horder</span> <span class="k">inner</span> <span class="k">join</span> <span class="n">customer</span> <span class="k">on</span> <span class="n">horder</span><span class="p">.</span><span class="n">cid</span> <span class="o">=</span> <span class="n">custom</span><span class="p">.</span><span class="n">id</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>可对两个表设置别名，但是后边也要设置别名。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sql" data-lang="sql"><span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">horder</span> <span class="n">h</span> <span class="k">inner</span> <span class="k">join</span> <span class="n">customer</span> <span class="k">c</span> <span class="k">on</span> <span class="n">h</span><span class="p">.</span><span class="n">cid</span> <span class="o">=</span> <span class="k">c</span><span class="p">.</span><span class="n">id</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>也可以只查询某个字段。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sql" data-lang="sql"><span class="k">select</span> <span class="n">h</span><span class="p">.</span><span class="n">id</span><span class="p">,</span><span class="n">h</span><span class="p">.</span><span class="n">oname</span><span class="p">,</span><span class="k">c</span><span class="p">.</span><span class="n">price</span><span class="p">,</span><span class="k">c</span><span class="p">.</span><span class="n">id</span><span class="p">,</span><span class="k">c</span><span class="p">.</span><span class="n">cname</span><span class="p">,</span><span class="k">c</span><span class="p">.</span><span class="n">age</span> <span class="k">from</span> <span class="n">horder</span> <span class="n">h</span> <span class="k">inner</span> <span class="k">join</span> <span class="n">customer</span> <span class="k">c</span> <span class="k">on</span> <span class="n">h</span><span class="p">.</span><span class="n">cid</span> <span class="o">=</span> <span class="k">c</span><span class="p">.</span><span class="n">id</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+</li>
+</ol>
 <h3 id="增">增</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -708,8 +919,8 @@ SQL语句-增删改查   插入数据
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
-                <span>Updated on 2020-07-04&nbsp;<a class="git-hash" href="https://github.com/dillonzq/LoveIt/commit/a73b16cd167a7b4f2665ce6c5c1b1da51579edb7" target="_blank" title="commit by Antmoe(antmoe@163.com) a73b16cd167a7b4f2665ce6c5c1b1da51579edb7: auto push">
-                                    <i class="fas fa-hashtag fa-fw"></i>a73b16c</a></span>
+                <span>Updated on 2020-07-06&nbsp;<a class="git-hash" href="https://github.com/dillonzq/LoveIt/commit/b56c5476d8102a5eae7297ef9747dc72605261bc" target="_blank" title="commit by Antmoe(antmoe@163.com) b56c5476d8102a5eae7297ef9747dc72605261bc: auto push">
+                                    <i class="fas fa-hashtag fa-fw"></i>b56c547</a></span>
             </div>
             <div class="post-info-license"></div>
         </div>

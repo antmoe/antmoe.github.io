@@ -4,7 +4,78 @@
         <link>https://study.tzki.cn/categories/notes/</link>
         <description>notes - Category - 小康的学习记录</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>sviptzk@163.com (Dreamy.TZK)</managingEditor>
-            <webMaster>sviptzk@163.com (Dreamy.TZK)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sat, 04 Jul 2020 18:17:50 &#43;0800</lastBuildDate><atom:link href="https://study.tzki.cn/categories/notes/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>sviptzk@163.com (Dreamy.TZK)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Wed, 08 Jul 2020 11:01:50 &#43;0800</lastBuildDate><atom:link href="https://study.tzki.cn/categories/notes/" rel="self" type="application/rss+xml" /><item>
+    <title>一、MongoDB的安装</title>
+    <link>https://study.tzki.cn/posts/notes/20200708/20200708-1/</link>
+    <pubDate>Wed, 08 Jul 2020 11:01:50 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://study.tzki.cn/posts/notes/20200708/20200708-1/</guid>
+    <description><![CDATA[Windows系统 由于二进制包安装了半个小时，还是卡在进度条不动。因此决定使用压缩包进行安装。
+  下载安装包
+下载地址
+  下载完成后将其解压，例如我解压到了F:\MongoDB文件下。
+  接下来进入该文件创建data与logs文件
+  以管理员身份启动终端，然后输入如下命令
+1  mongod --install --dbpath F:\MongoDB\data --logpath F:\MongoDB\logs\mongo.log     开启数据库服务
+1  net start mongodb     链接数据库
+1  mongo     其他命令
+  删除服务
+1  mongod --remove     关闭服务
+1  net stop mongodb     Linux系统 ]]></description>
+</item><item>
+    <title>三、MongoDB高级操作</title>
+    <link>https://study.tzki.cn/posts/notes/20200708/20200708-3/</link>
+    <pubDate>Wed, 08 Jul 2020 11:01:50 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://study.tzki.cn/posts/notes/20200708/20200708-3/</guid>
+    <description><![CDATA[排序&amp;分页 准备数据
+1 2 3 4 5 6 7 8  use test3 db.c1.insert({_id:1,name:&#34;a&#34;,sex:1,age:1}) db.c1.insert({_id:2,name:&#34;a&#34;,sex:1,age:2}) db.c1.insert({_id:3,name:&#34;b&#34;,sex:2,age:3}) db.c1.insert({_id:4,name:&#34;c&#34;,sex:2,age:4}) db.c1.insert({_id:5,name:&#34;d&#34;,sex:2,age:5}) db.c1.find()   排序 1  db.集合名.find().sort(JSON数据)   Limit与Skip方法 1  db.集合名.find().sort().skip(数字).limit(数字)    skip跳过指定数量（可选） limit限制查询的数量   使用.count()可以统计数量
+ 实例练习   跳过0条数据，查询两条
+1 2  db.c1.find().sort({age:-1}).skip(0).limit(2) db.c1.find().sort({age:-1}).limit(2)     跳过两条数据，查询两条数据
+1  db.c1.find().sort({age:-1}).skip(2).limit(2)     数据库1-10数据，每页显示两条
+1  db.集合名.find().skip().limit(2)    skip计算公式：（当前页-1）* 每页显示条数]]></description>
+</item><item>
+    <title>二、MongoDB基本操作及增删改查</title>
+    <link>https://study.tzki.cn/posts/notes/20200708/20200708-2/</link>
+    <pubDate>Wed, 08 Jul 2020 11:01:50 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://study.tzki.cn/posts/notes/20200708/20200708-2/</guid>
+    <description><![CDATA[基本操作 登陆数据库
+1  mongo   查看数据库 语法
+1  show databases;   选择数据库 1  use 数据库名   如果切换到一个没有的数据库，例如use admin2，那么会隐式创建这个数据库。（后期当该数据库有数据时，系统自动创建）
+1  use admin2   查看集合 1  show collections   创建集合 1  db.createCollection(&#39;集合名&#39;)   删除集合 1  db.集合名.drop()   删除数据库  通过use语法选择数据 通过db.dropDataBase()删除数据库  增删改查 C增 1  db.集合名.insert(JSON数据)   如果集合存在，那么直接插入数据。如果集合不存在，那么会隐式创建。
+ 在test2数据库的c1集合中插入数据（姓名叫webopenfather年龄18岁）
+1 2  use test2 db.c1.insert({uname:&#34;webopenfather&#34;,age:18})    数据库和集合不存在都隐式创建 对象的键统一不加引号（方便看），但是查看集合数据时系统会自动加 mongodb会给每条数据增加一个全球唯一的_id键     _id键的组成]]></description>
+</item><item>
+    <title>四、mongoose的使用</title>
+    <link>https://study.tzki.cn/posts/notes/20200708/20200708-4/</link>
+    <pubDate>Wed, 08 Jul 2020 11:01:50 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://study.tzki.cn/posts/notes/20200708/20200708-4/</guid>
+    <description><![CDATA[mongoose 核心概念
+  schema
+约束字段/列数据
+  model模型
+对应 集合 后期用它来实现数据增删改查
+  简介   安装
+1  npm i mongoose     schema
+英文网： http://mongoosejs.com
+中文网： http://mongoosejs.net/
+作用：用来约束MongoDB文档数据（哪些字段必须，哪些字段可选的）
+  model
+一个模型对应一个集合。后面通过模型管理集合中的数据。
+  使用 基本模型
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24  // 一、导入模块 const mongoose = require(&#34;mongoose&#34;); // 二、连接数据库 const db = mongoose.]]></description>
+</item><item>
+    <title>十、Promise的使用</title>
+    <link>https://study.tzki.cn/posts/notes/20200707/</link>
+    <pubDate>Tue, 07 Jul 2020 16:17:50 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://study.tzki.cn/posts/notes/20200707/</guid>
+    <description><![CDATA[Promise用来做什么 用来解决回调地狱。回调地狱也就是回调函数中嵌套了回调函数，代码阅读性低。
+例如如下代码：
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27  const fs = require(&#34;fs&#34;); // 读A文件 fs.readFile(`${__dirname}/etc/a.txt`, &#34;utf-8&#34;, (err, data) =&gt; { if (err) { console.log(err); } else { console.log(data); // 读B文件  fs.readFile(`${__dirname}/etc/b.txt`, &#34;utf-8&#34;, (err, data) =&gt; { if (err) { console.log(err); } else { console.log(data); // 读C文件  fs.]]></description>
+</item><item>
     <title>八、NPM包管理</title>
     <link>https://study.tzki.cn/posts/notes/20200704/20200704-3/</link>
     <pubDate>Sat, 04 Jul 2020 18:17:50 &#43;0800</pubDate>
@@ -20,16 +91,15 @@
     <pubDate>Sat, 04 Jul 2020 15:56:50 &#43;0800</pubDate>
     <author>Author</author>
     <guid>https://study.tzki.cn/posts/notes/20200704/20200704-2/</guid>
-    <description><![CDATA[建表 MySQL程序可以使用PHP study集成工具。链接、操作数据库可以使用phpstudy自带的工具也可以使用navicat工具。
+    <description><![CDATA[title: 七、NodeJs数据库管理 categories:
+ 大前端 NodeJs tags: 大前端 NodeJs mysql 笔记 date: 2020-07-04 15:56:58  建表 MySQL程序可以使用PHP study集成工具。链接、操作数据库可以使用phpstudy自带的工具也可以使用navicat工具。
 SQL语句-增删改查   插入数据
 1  insert into 表名(字段名1，字段名2) values(值1，值2);   例如：
 1  insert into user(name,description) values(&#39;陈浩南&#39;,&#39;铜锣湾扛把子&#39;);     删除数据
 1  delete from 表名 where 条件;   条件一定要写，如果不写则会删除该表中所有的数据删除。
 例如：
 1  delete from user where id&gt;3;     修改数据
-1  update 表名 set 字段名1=新值1,字段名2=新值2 where 条件;   条件一定要写，如果不写则会修改数据表中的全部数据
-例如：
-1  update user set name=&#39;子风兄&#39;,description=&#39;比波波还骚&#39; where id=3;     查询数据]]></description>
+1  update 表名 set 字段名1=新值1,字段名2=新值2 where 条件;   条件一定要写，如果不写则会修改数据表中的全部数据]]></description>
 </item><item>
     <title>六、中间件与跨域</title>
     <link>https://study.tzki.cn/posts/notes/20200704/20200704-1/</link>
@@ -63,54 +133,5 @@ SQL语句-增删改查   插入数据
     <description><![CDATA[什么是端口 一台电脑可以部署多个服务器，根据端口不同找到不同的服务器。
 默认的http端口为80端口。
 web服务器读取网页并返回  使用http模块开启一个服务器 在服务器内部读取文件，将读取到的字符串内容作为服务器的响应返回  1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19  const http = require(&#34;http&#34;); const fs = require(&#34;fs&#34;); const path = require(&#34;path&#34;); const server = http.createServer((req, res) =&gt; { // 拼接路径  const filePath = path.join(__dirname, &#34;index.html&#34;); fs.readFile(filePath, &#34;utf-8&#34;, (err, data) =&gt; { if (err == null) { // 返回页面  res.end(data); } else { res.]]></description>
-</item><item>
-    <title>三、NodeJs模块化</title>
-    <link>https://study.tzki.cn/posts/notes/20200702/20200702-1/</link>
-    <pubDate>Thu, 02 Jul 2020 17:04:50 &#43;0800</pubDate>
-    <author>Author</author>
-    <guid>https://study.tzki.cn/posts/notes/20200702/20200702-1/</guid>
-    <description><![CDATA[内置模块的基本使用(删除文件) 1 2 3 4 5 6 7 8 9 10 11 12  const fs = require(&#34;fs&#34;); /** * 删除文件 * @param {string} &#34;./temp/test.txt&#34; 被删除文件的路径 * @param {function} (err) 回调函数，将错误信息传入其中 */ fs.unlink(&#34;./temp/test.txt&#34;, (err) =&gt; { if (err) throw err; console.log(&#34;已成功删除 test&#34;); });   fs模块读文件 1 2 3 4 5 6 7 8 9 10 11 12 13 14  const fs = require(&#34;fs&#34;); /** * 读取文件信息 * @date 2020-07-01 * @param {sting} &#34;.]]></description>
-</item><item>
-    <title>二、ES6新语法</title>
-    <link>https://study.tzki.cn/posts/notes/20200701/20200701-2/</link>
-    <pubDate>Wed, 01 Jul 2020 17:05:00 &#43;0800</pubDate>
-    <author>Author</author>
-    <guid>https://study.tzki.cn/posts/notes/20200701/20200701-2/</guid>
-    <description><![CDATA[let关键字    特点 var关键字 let关键字     变量提升 √ ×   作用域 没有块级作用域，是函数作用域 有块级作用域   重复声明 √ ×   重新赋值 √ √      变量提升
-1 2  console.log(age); let age = 38;     作用域
-1 2 3 4 5  for (var i = 0; i &lt; 10; i++) {} console.log(i); for (let n = 0; i &lt; 10; i++) {} console.]]></description>
-</item><item>
-    <title>一、Node.js入门</title>
-    <link>https://study.tzki.cn/posts/notes/20200701/20200701-1/</link>
-    <pubDate>Wed, 01 Jul 2020 17:04:50 &#43;0800</pubDate>
-    <author>Author</author>
-    <guid>https://study.tzki.cn/posts/notes/20200701/20200701-1/</guid>
-    <description><![CDATA[什么是NodeJs NodeJs是一个基于谷歌V8引擎的运行环境。(服务器上的v8引擎就是node.js)
-其作用是让js拥有开发服务端的功能
-环境安装 官方地址：https://nodejs.org/zh-cn/
-安装完成后，添加环境变量。命令行终端输入node -v即可输出版本号。
-同样的，安装完NodeJs之后会自动安装npm（node package manager）。输入npm -v也会出现版本号。
- npm可以到NPM去寻找包，类似GitHub。
- 运行NodeJs   VSCode中使用RunCoder插件
-  终端
-注意路径问题，执行命令为node 文件名
- VSCode中的终端同理。
-   双击node.exe，在其内编写代码
-  服务器端与浏览器端 服务端的JavaScript只有ECMAScript，也就意味着在NodeJs]]></description>
-</item><item>
-    <title>jQuery原理（事件操作相关方法）</title>
-    <link>https://study.tzki.cn/posts/notes/20200624/20200615-2/</link>
-    <pubDate>Wed, 24 Jun 2020 17:05:00 &#43;0800</pubDate>
-    <author>Author</author>
-    <guid>https://study.tzki.cn/posts/notes/20200624/20200615-2/</guid>
-    <description><![CDATA[on方法 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25  // 事件操作相关方法 kjQuery.prototype.extend({ on: function (name, callBack) { this.each(function (key, ele) { // 2. 判断当前元素中是否有保存所有事件的对象  if (!ele.eventsCache) { ele.eventsCache = {}; } // 3. 判断对象中有没有对应类型的数组  if (!ele.eventsCache[name]) { ele.eventsCache[name] = []; // 4. 将回调函数添加到数组中  ele.eventsCache[name].push(callBack); // 5. 添加对应类型的事件  kjQuery.addEvent(ele, name, function () { kjQuery.]]></description>
-</item><item>
-    <title>jQuery原理（属性操作相关方法）</title>
-    <link>https://study.tzki.cn/posts/notes/20200624/20200615-1/</link>
-    <pubDate>Wed, 24 Jun 2020 17:04:50 &#43;0800</pubDate>
-    <author>Author</author>
-    <guid>https://study.tzki.cn/posts/notes/20200624/20200615-1/</guid>
-    <description><![CDATA[attr方法 设置或者获取元素的属性节点值
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27  //属性操作相关的方法 kjQuery.prototype.extend({ attr: function (attr, value) { // 1. 判断是否是字符串  if (kjQuery.isString(attr)) { if (arguments.length == 1) { return this[0].getAttribute(attr); } else { this.each(function (key, ele) { ele.setAttribute(attr, value); }); } } // 2. 判断是否是对象  else if (kjQuery.isObject(attr)) { var $this = this; // 遍历取出所有属性节点的名称和对应值  $.]]></description>
 </item></channel>
 </rss>

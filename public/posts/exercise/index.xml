@@ -5,9 +5,21 @@
         <description>All 我的练习汇总 | 小康的学习记录</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>sviptzk@163.com (Dreamy.TZK)</managingEditor>
             <webMaster>sviptzk@163.com (Dreamy.TZK)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 10 May 2020 21:35:50 &#43;0800</lastBuildDate><atom:link href="https://study.tzki.cn/posts/exercise/" rel="self" type="application/rss+xml" /><item>
+    <title>九、英雄管理系统</title>
+    <link>https://study.tzki.cn/posts/exercise/20200705-cqmanager/</link>
+    <pubDate>Sun, 05 Jul 2020 22:16:50 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://study.tzki.cn/posts/exercise/20200705-cqmanager/</guid>
+    <description><![CDATA[查看源代码
+ 准备 mysql-ithm的使用   安装npm i mysql-ithm
+  使用
+参照文档即可。
+  简单示例
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43  // 导入模块 const hm = require(&#34;mysql-ithm&#34;); //2.连接数据库 //如果数据库存在则连接，不存在则会自动创建数据库 hm.connect({ host: &#34;localhost&#34;, //数据库地址  port: &#34;3306&#34;, user: &#34;root&#34;, //用户名，没有可不填  password: &#34;root&#34;, //密码，没有可不填  database: &#34;cqmanager502&#34;, //数据库名称 }); //3.]]></description>
+</item><item>
     <title>左右滑动式轮播图</title>
     <link>https://study.tzki.cn/posts/exercise/20200517/</link>
-    <pubDate>Sun, 17 May 2020 16:39:50 &#43;0800</pubDate>
+    <pubDate>Sun, 17 May 2020 22:16:50 &#43;0800</pubDate>
     <author>Author</author>
     <guid>https://study.tzki.cn/posts/exercise/20200517/</guid>
     <description><![CDATA[描述 https://antmoe.gitee.io/project/2020/05/17/1_轮播图切换动画.html

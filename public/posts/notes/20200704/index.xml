@@ -20,16 +20,15 @@
     <pubDate>Sat, 04 Jul 2020 15:56:50 &#43;0800</pubDate>
     <author>Author</author>
     <guid>https://study.tzki.cn/posts/notes/20200704/20200704-2/</guid>
-    <description><![CDATA[建表 MySQL程序可以使用PHP study集成工具。链接、操作数据库可以使用phpstudy自带的工具也可以使用navicat工具。
+    <description><![CDATA[title: 七、NodeJs数据库管理 categories:
+ 大前端 NodeJs tags: 大前端 NodeJs mysql 笔记 date: 2020-07-04 15:56:58  建表 MySQL程序可以使用PHP study集成工具。链接、操作数据库可以使用phpstudy自带的工具也可以使用navicat工具。
 SQL语句-增删改查   插入数据
 1  insert into 表名(字段名1，字段名2) values(值1，值2);   例如：
 1  insert into user(name,description) values(&#39;陈浩南&#39;,&#39;铜锣湾扛把子&#39;);     删除数据
 1  delete from 表名 where 条件;   条件一定要写，如果不写则会删除该表中所有的数据删除。
 例如：
 1  delete from user where id&gt;3;     修改数据
-1  update 表名 set 字段名1=新值1,字段名2=新值2 where 条件;   条件一定要写，如果不写则会修改数据表中的全部数据
-例如：
-1  update user set name=&#39;子风兄&#39;,description=&#39;比波波还骚&#39; where id=3;     查询数据]]></description>
+1  update 表名 set 字段名1=新值1,字段名2=新值2 where 条件;   条件一定要写，如果不写则会修改数据表中的全部数据]]></description>
 </item><item>
     <title>六、中间件与跨域</title>
     <link>https://study.tzki.cn/posts/notes/20200704/20200704-1/</link>
