@@ -5,31 +5,35 @@
         <description>project - Category - 小康的学习记录</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>sviptzk@163.com (Dreamy.TZK)</managingEditor>
             <webMaster>sviptzk@163.com (Dreamy.TZK)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 12 Jul 2020 21:52:50 &#43;0800</lastBuildDate><atom:link href="https://study.tzki.cn/categories/project/" rel="self" type="application/rss+xml" /><item>
-    <title>NodeJs博客系统开发</title>
-    <link>https://study.tzki.cn/posts/project/20200708/</link>
+    <title>Express框架实现一个简单的博客系统</title>
+    <link>https://study.tzki.cn/posts/project/20200712/</link>
     <pubDate>Sun, 12 Jul 2020 21:52:50 &#43;0800</pubDate>
     <author>Author</author>
-    <guid>https://study.tzki.cn/posts/project/20200708/</guid>
+    <guid>https://study.tzki.cn/posts/project/20200712/</guid>
     <description><![CDATA[下载源码前言 这篇文章是记录一下自己动手完成一个博客开发的历程。
-2020-07-12 到目前为止博客完成内容
-前台
-首页及某个文章的显示
-评论的发表
-登陆与注册
-分类的显示
+一个前台靠扒别人页面后端靠layui实现的博客。
+至此博客开坑任务基本完成2020-07-13 前台
+文章支持markdown解析及代码高亮（highlight）
+文章置顶
+文章分页显示
+分类文章
+修改登陆注册的UI
 后台
-文章管理（新增、修改、删除）
-评论管理（删除）
-用户管理（密码修改）
-全局配置（标题等全局信息）
-分类管理（新增、修改、删除）
-未完成（待完成）
-前台分类获取文章
-前台文章分页显示
-用户头像、昵称
-markdown解析
-...
-layui模板动态表格 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98  layui.]]></description>
+可以修改用户头像以及昵称
+前台
+根据登陆用户头像显示头像
+根据用户昵称显示作者（文章）昵称
+Aplayer播放器
+待完善评论虽然可以分页，但存在小bug
+由于开始时考虑不周，导致置顶无法自定义顺序
+由于前期不了解layui，因此导致一些布局等出现了小问题
+其他问题发现中。。。
+功能开坑
+前台可以修改个人信息
+设置某个字段查询不显示 1 2 3 4  password:{ type:String, select:false },   置顶文章 置顶文章需要设置一个字段，用于记录这篇文章是否置顶。然后按时间排序。
+1  sort({hot:-1,_id: -1})   得益于可以传入多个参数。
+markdown解析及代码高亮（highlight） markdown解析借助于marked插件得以实现；highlight则是借助于highlight.js得以实现。
+1 2 3 4 5 6  marked.setOptions({ highlight: function (code) { return require(&#39;highlight.]]></description>
 </item><item>
     <title>NodeJs博客系统开发</title>
     <link>https://study.tzki.cn/posts/project/20200707/</link>

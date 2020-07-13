@@ -1,8 +1,5 @@
----
-title: Express框架实现一个简单的博客系统
-date: 2020-07-12T21:52:50+08:00
-categories: ["project"]
----
+# Express框架实现一个简单的博客系统
+
 
 <div class="btns rounded grid5"><a href="https://gitee.com/antmoe/project/tree/master/2020/07/blog2" title="下载源码"><i class="fa fa-download"></i> 下载源码</a></div>
 
@@ -430,4 +427,5 @@ deleteComment:function(id){
     })
 },
 ```
+
 
