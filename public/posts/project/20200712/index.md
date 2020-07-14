@@ -11,9 +11,9 @@
 
 ![首页](https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/13/244442f2e505ab0d8b1bc032725e2504.png)
 
-![后台](https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/13/49574772fdacf33b668bf170ffbb5bdb.png)
+![image-20200714194648159](https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/14/a1090a1fdc3aa727169d60dbefe48f64.png)
 
-![后台](https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/13/0dfcb8eacce591db63b28e70f1b00803.png)
+![image-20200714194728055](https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/14/aae763ed824cb73a9ec0eb0b71e950e0.png)
 
 ![代码高亮](https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/13/e15ccca249be19620ef4bb3cf6dcec2a.png)
 
@@ -21,7 +21,143 @@
 
 至此博客开坑任务基本完成![doge-小康博客](https://cdn.jsdelivr.net/gh/blogimg/emotion/bili_tv_gif/doge.gif)
 
+## 2020-07-14
 
+![image-20200714192957395](https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/14/6bbadafe8244df6cee5005e668f8089a.png)
+
+![image-20200714193549647](https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/14/6ade24c88fae1fb67d8fe24a66d9713c.png)
+
+![image-20200714193640122](https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/14/b59cf27ea7db1e1553334e25183d362e.png)
+
+
+
+<div class="checkbox green checked">
+  <input type="checkbox" checked />
+  <p>一个404页面</p>
+</div>
+
+<div class="checkbox green checked">
+  <input type="checkbox" checked />
+  <p>后台部分列表可以进行搜索</p>
+</div>
+
+<div class="checkbox green checked">
+  <input type="checkbox" checked />
+  <p>修改了部分逻辑，略微减少代码量</p>
+</div>
+
+<div class="checkbox green checked">
+  <input type="checkbox" checked />
+  <p>文章可指定显示顺序</p>
+</div>
+
+<div class="checkbox green checked">
+  <input type="checkbox" checked />
+  <p>去除了部分不必要的页面</p>
+</div>
+
+<div class="checkbox green checked">
+  <input type="checkbox" checked />
+  <p>前台可以修改个人信息</p>
+</div>
+
+<div class="checkbox red checked">
+  <input type="checkbox"  checked/>
+  <p>下次更新可能要等8月3日之后了！！！</p>
+</div>
+
+### 模糊搜索及表格重载
+
+利用layui的表格重载进行模糊搜索。（实现这个着实麻烦）
+
+1. 在头部工具条添加搜索框
+
+   ```pug
+   script#toolbarDemo(type='text/html').
+   <div>搜索配置：
+   <div class="layui-inline">
+   <input class="layui-input" id="search" name="search" autocomplete="off">
+   </div>
+   <button class="layui-btn layui-btn-sm"  data-type="reload" id="search-btn">搜索</button>
+   <a class="layui-btn layui-btn-sm" lay-event="addConfig">添加配置</a>
+   </div>
+   ```
+
+2. 为表格绑定重载事件
+
+   ```javascript
+   layui.use('table', function () {
+       ....
+       , id: "configTable"
+       $('body').delegate('#search-btn', 'click', function () {
+           // 获取输入框的值
+           var val  =$('#search').val()
+           // 重载的表格，也就是上边的ID
+           table.reload('configTable', {
+               page: {
+                   curr: 1 //重新从第 1 页开始
+               }
+               // where表示附加的条件
+               , where: {
+                   search: val
+               },
+           }, 'data');
+       })
+   }
+   ```
+
+3. 重写获取数据的接口
+
+   方法
+
+   ```javascript
+   getConfig: function (page, limit,search) {
+       obj = {}
+       var find = {}
+       // 需要判断search是否传入从而设置是否需要查询条件
+       if(search){
+           find={
+               $or:[
+                   {configdesc:{$regex:search}},
+                   {configname:{$regex:search}},
+                   {configvalue:{$regex:search}},
+               ]}
+       }
+       return Config.countDocuments().then((count) => {
+           return Config.find(find)
+               .skip((parseInt(page) - 1) * parseInt(limit))
+               .limit(parseInt(limit))
+               .sort({configname: -1})
+               .then(result => {
+               obj['data'] = result
+               obj['count'] = count
+               return obj
+           })
+       })
+   
+   },
+   ```
+
+   调用
+
+   ```javascript
+   // 获取配置接口
+   router.get('/pages/setting/config', (req, res) => {
+       let {page, limit,search} = req.query
+       console.log(page, limit,search)
+       configUtils.getConfig(page, limit,search)
+           .then((result) => {
+           res.send({
+               code: 0,
+               count: result.count,
+               data: result.data,
+               message: ''
+           })
+       })
+   })
+   ```
+
+   
 
 ## 2020-07-13
 

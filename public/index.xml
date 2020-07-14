@@ -14,28 +14,17 @@
     <guid>https://study.tzki.cn/posts/project/20200712/</guid>
     <description><![CDATA[下载源码前言 这篇文章是记录一下自己动手完成一个博客开发的历程。
 一个前台靠扒别人页面后端靠layui实现的博客。
-至此博客开坑任务基本完成2020-07-13 前台
-文章支持markdown解析及代码高亮（highlight）
-文章置顶
-文章分页显示
-分类文章
-修改登陆注册的UI
-后台
-可以修改用户头像以及昵称
-前台
-根据登陆用户头像显示头像
-根据用户昵称显示作者（文章）昵称
-Aplayer播放器
-待完善评论虽然可以分页，但存在小bug
-由于开始时考虑不周，导致置顶无法自定义顺序
-由于前期不了解layui，因此导致一些布局等出现了小问题
-其他问题发现中。。。
-功能开坑
-前台可以修改个人信息
-设置某个字段查询不显示 1 2 3 4  password:{ type:String, select:false },   置顶文章 置顶文章需要设置一个字段，用于记录这篇文章是否置顶。然后按时间排序。
-1  sort({hot:-1,_id: -1})   得益于可以传入多个参数。
-markdown解析及代码高亮（highlight） markdown解析借助于marked插件得以实现；highlight则是借助于highlight.js得以实现。
-1 2 3 4 5 6  marked.setOptions({ highlight: function (code) { return require(&#39;highlight.]]></description>
+至此博客开坑任务基本完成2020-07-14 一个404页面
+后台部分列表可以进行搜索
+修改了部分逻辑，略微减少代码量
+文章可指定显示顺序
+去除了部分不必要的页面
+前台可以修改个人信息
+下次更新可能要等8月3日之后了！！！
+模糊搜索及表格重载 利用layui的表格重载进行模糊搜索。（实现这个着实麻烦）
+  在头部工具条添加搜索框
+1 2 3 4 5 6 7 8  script#toolbarDemo(type=&#39;text/html&#39;). &lt;div&gt;搜索配置： &lt;div class=&#34;layui-inline&#34;&gt; &lt;input class=&#34;layui-input&#34; id=&#34;search&#34; name=&#34;search&#34; autocomplete=&#34;off&#34;&gt; &lt;/div&gt; &lt;button class=&#34;layui-btn layui-btn-sm&#34; data-type=&#34;reload&#34; id=&#34;search-btn&#34;&gt;搜索&lt;/button&gt; &lt;a class=&#34;layui-btn layui-btn-sm&#34; lay-event=&#34;addConfig&#34;&gt;添加配置&lt;/a&gt; &lt;/div&gt;     为表格绑定重载事件
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18  layui.]]></description>
 </item><item>
     <title>一、MongoDB的安装</title>
     <link>https://study.tzki.cn/posts/notes/20200708/20200708-1/</link>
