@@ -24,6 +24,75 @@ categories: ["project"]
 
 至此博客开坑任务基本完成![doge-小康博客](https://cdn.jsdelivr.net/gh/blogimg/emotion/bili_tv_gif/doge.gif)
 
+## 2020-07-15
+
+
+
+<div class="checkbox green checked">
+  <input type="checkbox" checked />
+  <p>图片懒加载</p>
+</div>
+
+<div class="checkbox green checked">
+  <input type="checkbox" checked />
+  <p>fancybox预览图像</p>
+</div>
+
+### 图片懒加载与fancybox
+
+在此项目中无论是图片懒加载还是fancybox预览图像都需要对img标签进行处理。其次在本项目中渲染markdown使用的插件为`marked`，只需要重写渲染img标签的方法即可（都需要提前引入jQuery）。
+
+```javascript
+var renderer = new marked.Renderer();
+renderer.image = function(url,title,text){
+    return `<img class='test' src={url} title='${title}' alt='${text}'>`
+}
+```
+
+如以上代码，会在渲染img标签时加入一个class名为`test`的属性。因此加入图片懒加载与fancybox就只需要在这个方法上做文章就好了。
+
+1. 图片懒加载
+
+   ![](https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/15/1faf128dcf2c95928bd7f42dbfd6a5cf.png)
+
+   引入`https://cdn.jsdelivr.net/npm/lazyload@2.0.0-rc.2/lazyload.js`一个js库，然后将图片加入一个类名或者id名，用于表示哪些图片需要懒加载。然后将src属性改成没有被加载时图片，`data-src`为真实的图片地址。
+
+   ```javascript
+   renderer.image = function(url,title,text){
+       return `<img class='lazyload' src='https://cdn.jsdelivr.net/gh/sviptzk/StaticFile_HEXO@v3.2.8/butterfly/img/loading8.gif' title='${title}' alt='${text}' data-src=${url}>`
+   }
+   ```
+
+   接下来调用方法即可，由于是jQuery的插件，因此只需要用jQuery的入口函数找到需要懒加载的图片，然后调用方法即可。
+
+   ```javascript
+   $(".lazyload").lazyload();
+   ```
+
+2. fancybox
+
+   ![](http://d0.ananas.chaoxing.com/download/6f5c8954ab4e6962d424e862bb28ec62?fn=d029015d-ebef-4766-a977-f8c274290a45+%281%29)
+
+   同样的引入js文件与css文件
+
+   - js
+
+     `https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js`
+
+   - css
+
+     `https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css`
+
+   加下来只需要给原本的img标签外边套一个a标签即可。其`href`属性就是图片的地址，`data-caption`属性就是图片的描述（alt），但还有一个标识属性`data-fancybox`
+
+   ```javascript
+   renderer.image = function(url,title,text){
+       return `<a style="cursor: zoom-in" data-caption="${text}" data-fancybox="gallery" href=${url}><img class="lazyload" src=${returnObj.configs.lazyloadImg} data-src=${url} alt="${text}"></a>`
+   }
+   ```
+
+   
+
 ## 2020-07-14
 
 ![image-20200714192957395](https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile2@latest/2020/07/14/6bbadafe8244df6cee5005e668f8089a.png)
