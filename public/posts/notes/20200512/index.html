@@ -1,90 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
         <title>BOM编程艺术 - 小康的学习记录</title><meta name="Description" content="一个收藏回忆与分享技术的地方！"><meta property="og:title" content="BOM编程艺术" />
-<meta property="og:description" content="BOM编程艺术 日考错题   以下哪些选项是可以用来获取select元素中所有的option元素？
- selectElement.getElementsByTagName(&lsquo;option&rsquo;) selectElement.options selectElement.getElemnetsByName(&lsquo;option&rsquo;) selectElement.length   我的选择：
-selectElement.options
-selectElement.getElementsByTagName(&lsquo;option&rsquo;)
-selectElement.getElemnetsByName(&lsquo;option&rsquo;)
-  正确答案
-selectElement.options
-selectElement.length
-selectElement.getElementsByTagName(&lsquo;option&rsquo;)
-  为什么做错？
-对于selectElement.getElemnetsByName(&#39;option&#39;) 选项看错了，以为是className。
-没有选择selectElement.length是因为只认为他是取长度，审题不清。
-   如何可以获取那个option元素被选中两列？
- optionElement.selected属性值为value optionElement.value属性值为非空字符串 selectElement.optionSelected selectElement.selectedIndex   我的选择：
-selectElement.selectedIndex
-selectElement.optionSelected
-  正确答案：
-selectElement.selectedIndex
-optionElement.selected属性值为value
-  为什么做错？
-selectElement对象根本就没有optionSelected属性。而是selected属性。
-   如何获取option元素的值？
- optionElement.value optionElement.getAttribute(&lsquo;value&rsquo;) optionElement.textValue optionElment.text   我的选择：
-optionElement.value
-optionElement.getAttribute(&lsquo;value&rsquo;)
-optionElment.text
-  正确答案：
-optionElement.value" />
+<meta property="og:description" content="BOM编程艺术 日考错题 以下哪些选项是可以用来获取select元素中所有的option元素？ selectElement.getElementsByTagName(&lsquo;option&rsquo;) selectElement.options selectElement.getElemnetsByName(&lsquo;option&rsquo;) selectElement.length 我的选择： selectElement.options selectElement.getElementsByTagName(&lsquo;option&rsquo;) selectElement.getElemnetsByName(&lsquo;option&rsquo;) 正确答案 selectElement.options selectElement.length selectElement.getElementsByTagName(&lsquo;option&rsquo;) 为什么做错？" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://study.tzki.cn/posts/notes/20200512/" />
 <meta property="og:image" content="https://study.tzki.cn/logo.png"/>
 <meta property="article:published_time" content="2020-05-12T21:05:50+08:00" />
-<meta property="article:modified_time" content="2020-07-02T22:26:30+08:00" />
+<meta property="article:modified_time" content="2020-05-12T21:05:50+08:00" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://study.tzki.cn/logo.png"/>
 
 <meta name="twitter:title" content="BOM编程艺术"/>
-<meta name="twitter:description" content="BOM编程艺术 日考错题   以下哪些选项是可以用来获取select元素中所有的option元素？
- selectElement.getElementsByTagName(&lsquo;option&rsquo;) selectElement.options selectElement.getElemnetsByName(&lsquo;option&rsquo;) selectElement.length   我的选择：
-selectElement.options
-selectElement.getElementsByTagName(&lsquo;option&rsquo;)
-selectElement.getElemnetsByName(&lsquo;option&rsquo;)
-  正确答案
-selectElement.options
-selectElement.length
-selectElement.getElementsByTagName(&lsquo;option&rsquo;)
-  为什么做错？
-对于selectElement.getElemnetsByName(&#39;option&#39;) 选项看错了，以为是className。
-没有选择selectElement.length是因为只认为他是取长度，审题不清。
-   如何可以获取那个option元素被选中两列？
- optionElement.selected属性值为value optionElement.value属性值为非空字符串 selectElement.optionSelected selectElement.selectedIndex   我的选择：
-selectElement.selectedIndex
-selectElement.optionSelected
-  正确答案：
-selectElement.selectedIndex
-optionElement.selected属性值为value
-  为什么做错？
-selectElement对象根本就没有optionSelected属性。而是selected属性。
-   如何获取option元素的值？
- optionElement.value optionElement.getAttribute(&lsquo;value&rsquo;) optionElement.textValue optionElment.text   我的选择：
-optionElement.value
-optionElement.getAttribute(&lsquo;value&rsquo;)
-optionElment.text
-  正确答案：
-optionElement.value"/>
-<meta name="application-name" content="Dreamy.tzk&#39;s blog">
-<meta name="apple-mobile-web-app-title" content="Dreamy.tzk&#39;s blog"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+<meta name="twitter:description" content="BOM编程艺术 日考错题 以下哪些选项是可以用来获取select元素中所有的option元素？ selectElement.getElementsByTagName(&lsquo;option&rsquo;) selectElement.options selectElement.getElemnetsByName(&lsquo;option&rsquo;) selectElement.length 我的选择： selectElement.options selectElement.getElementsByTagName(&lsquo;option&rsquo;) selectElement.getElemnetsByName(&lsquo;option&rsquo;) 正确答案 selectElement.options selectElement.length selectElement.getElementsByTagName(&lsquo;option&rsquo;) 为什么做错？"/>
+<meta name="application-name" content="LoveIt">
+<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://study.tzki.cn/posts/notes/20200512/" /><link rel="prev" href="https://study.tzki.cn/posts/notes/20200511/" /><link rel="next" href="https://study.tzki.cn/posts/notes/20200513/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
         "headline": "BOM编程艺术",
-        "inLanguage": "en",
+        "inLanguage": "zh-CN",
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/study.tzki.cn\/posts\/notes\/20200512\/"
-        },"image": ["https:\/\/cdn.jsdelivr.net\/gh\/sviptzk\/StaticFile_HEXO@latest\/butterfly\/img\/favicon.ico"],"genre": "posts","wordcount":  1467 ,
-        "url": "https:\/\/study.tzki.cn\/posts\/notes\/20200512\/","datePublished": "2020-05-12T21:05:50+08:00","dateModified": "2020-07-02T22:26:30+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+        },"image": ["https:\/\/cdn.jsdelivr.net\/gh\/sviptzk\/StaticFile_HEXO@latest\/butterfly\/img\/favicon.ico"],"genre": "posts","wordcount":  6367 ,
+        "url": "https:\/\/study.tzki.cn\/posts\/notes\/20200512\/","datePublished": "2020-05-12T21:05:50+08:00","dateModified": "2020-05-12T21:05:50+08:00","publisher": {
             "@type": "Organization",
             "name": "Dreamy.TZK","logo": "https:\/\/cdn.jsdelivr.net\/gh\/sviptzk\/HexoStaticFile@latest\/avatar.jpg"},"author": {
                 "@type": "Person",
@@ -100,20 +46,18 @@ optionElement.value"/>
             <a href="/" title="小康的学习记录"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span>小康博客</a>
         </div>
         <div class="menu">
-            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/about/"> About </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item language" title="Select Language">English<i class="fas fa-chevron-right fa-fw"></i>
-                        <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/posts/notes/20200512/" selected>English</option></select>
-                    </a><span class="menu-item search" id="search-desktop">
-                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
-                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
                             <i class="fas fa-search fa-fw"></i>
                         </a>
-                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
                             <i class="fas fa-times-circle fa-fw"></i>
                         </a>
                         <span class="search-button search-loading" id="search-loading-desktop">
                             <i class="fas fa-spinner fa-fw fa-spin"></i>
                         </span>
-                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
                     <i class="fas fa-adjust fa-fw"></i>
                 </a>
             </div>
@@ -131,11 +75,11 @@ optionElement.value"/>
         </div>
         <div class="menu" id="menu-mobile"><div class="search-wrapper">
                     <div class="search mobile" id="search-mobile">
-                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
-                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
                             <i class="fas fa-search fa-fw"></i>
                         </a>
-                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
                             <i class="fas fa-times-circle fa-fw"></i>
                         </a>
                         <span class="search-button search-loading" id="search-loading-mobile">
@@ -143,13 +87,11 @@ optionElement.value"/>
                         </span>
                     </div>
                     <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
-                        Cancel
+                        取消
                     </a>
-                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/about/" title="">About</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                </div><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
                 <i class="fas fa-adjust fa-fw"></i>
-            </a><a href="javascript:void(0);" class="menu-item" title="Select Language">English<i class="fas fa-chevron-right fa-fw"></i>
-                    <select class="language-select" onchange="location = this.value;"><option value="/posts/notes/20200512/" selected>English</option></select>
-                </a></div>
+            </a></div>
     </div>
 </header>
 <div class="search-dropdown desktop">
@@ -160,17 +102,17 @@ optionElement.value"/>
 </div>
 <main class="main">
                 <div class="container"><div class="toc" id="toc-auto">
-            <h2 class="toc-title">Contents</h2>
+            <h2 class="toc-title">目录</h2>
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">BOM编程艺术</h1><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author"><a href="https://antmoe.gitee.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Dreamy.TZK</a></span>&nbsp;<span class="post-category">included in <a href="/categories/notes/"><i class="far fa-folder fa-fw"></i>notes</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-05-12">2020-05-12</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1467 words&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;7 minutes&nbsp;<span id="/posts/notes/20200512/" class="leancloud_visitors" data-flag-title="BOM编程艺术">
-                        <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;views
+            <div class="post-meta-line"><span class="post-author"><a href="https://antmoe.gitee.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Dreamy.TZK</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/notes/"><i class="far fa-folder fa-fw"></i>notes</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-05-12">2020-05-12</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 6367 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 13 分钟&nbsp;<span id="/posts/notes/20200512/" class="leancloud_visitors" data-flag-title="BOM编程艺术">
+                        <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
-                    <span>Contents</span>
+                    <span>目录</span>
                     <span><i class="details-icon fas fa-angle-right"></i></span>
                 </div>
                 <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
@@ -471,14 +413,12 @@ optionElement.value"/>
 <p>BOM的全称为 Browser Object Model，被译为浏览器对象模型</p>
 <p>BOM提供了独立于HTML页面内容，而与浏览器相关的一系列对象。主要被用于管理浏览器窗口及与测览器窗口之间通信等功能。</p>
 <p>BOM由一系列对象构成，这些对象可以简单理解为是由各个览器所提供的，例如 Window对象等。</p>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
+<p><a href="https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/12/a5739405c9abe805c30f207590c01f81.png" data-fancybox="group" data-caption="https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/12/a5739405c9abe805c30f207590c01f81.png">
+    <img class="lazyload" src="/svg/loading.min.svg"
         data-src="https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/12/a5739405c9abe805c30f207590c01f81.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/12/a5739405c9abe805c30f207590c01f81.png, https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/12/a5739405c9abe805c30f207590c01f81.png 1.5x, https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/12/a5739405c9abe805c30f207590c01f81.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/12/a5739405c9abe805c30f207590c01f81.png"
-        title="https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/12/a5739405c9abe805c30f207590c01f81.png" /></p>
+        data-srcset="https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/12/a5739405c9abe805c30f207590c01f81.png, https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/12/a5739405c9abe805c30f207590c01f81.png 1.5x, https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/12/a5739405c9abe805c30f207590c01f81.png 2x" data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/12/a5739405c9abe805c30f207590c01f81.png" title="https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/12/a5739405c9abe805c30f207590c01f81.png"  />
+</a></p>
 <h2 id="window对象">Window对象</h2>
 <p>window对象是BOM中最核心的对象</p>
 <h3 id="全局作用域">全局作用域</h3>
@@ -521,14 +461,12 @@ optionElement.value"/>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;删除test后windows.test的值:&#39;</span><span class="p">,</span> <span class="nb">window</span><span class="p">.</span><span class="nx">test</span><span class="p">)</span>
 </code></pre></td></tr></table>
 </div>
-</div><p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
+</div><p><a href="https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/12/fedb4decebf4344fd2aa96c28a3360de.png" data-fancybox="group" data-caption="https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/12/fedb4decebf4344fd2aa96c28a3360de.png">
+    <img class="lazyload" src="/svg/loading.min.svg"
         data-src="https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/12/fedb4decebf4344fd2aa96c28a3360de.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/12/fedb4decebf4344fd2aa96c28a3360de.png, https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/12/fedb4decebf4344fd2aa96c28a3360de.png 1.5x, https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/12/fedb4decebf4344fd2aa96c28a3360de.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/12/fedb4decebf4344fd2aa96c28a3360de.png"
-        title="https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/12/fedb4decebf4344fd2aa96c28a3360de.png" /></p>
+        data-srcset="https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/12/fedb4decebf4344fd2aa96c28a3360de.png, https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/12/fedb4decebf4344fd2aa96c28a3360de.png 1.5x, https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/12/fedb4decebf4344fd2aa96c28a3360de.png 2x" data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/12/fedb4decebf4344fd2aa96c28a3360de.png" title="https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/12/fedb4decebf4344fd2aa96c28a3360de.png"  />
+</a></p>
 </li>
 <li>
 <p>根据以上测试结果，可以很清楚的发现：删除是不起作用的。</p>
@@ -544,14 +482,12 @@ optionElement.value"/>
 <li>
 <p><code>outterWidth</code>和<code>outterHeight</code>属性</p>
 <p>只读属性，返回当前浏览器窗口的整个宽度和高度。</p>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
+<p><a href="https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/12/6d47ca8ad57d938b38e9102eb243d5b5.png" data-fancybox="group" data-caption="https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/12/6d47ca8ad57d938b38e9102eb243d5b5.png">
+    <img class="lazyload" src="/svg/loading.min.svg"
         data-src="https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/12/6d47ca8ad57d938b38e9102eb243d5b5.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/12/6d47ca8ad57d938b38e9102eb243d5b5.png, https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/12/6d47ca8ad57d938b38e9102eb243d5b5.png 1.5x, https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/12/6d47ca8ad57d938b38e9102eb243d5b5.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/12/6d47ca8ad57d938b38e9102eb243d5b5.png"
-        title="https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/12/6d47ca8ad57d938b38e9102eb243d5b5.png" /></p>
+        data-srcset="https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/12/6d47ca8ad57d938b38e9102eb243d5b5.png, https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/12/6d47ca8ad57d938b38e9102eb243d5b5.png 1.5x, https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/12/6d47ca8ad57d938b38e9102eb243d5b5.png 2x" data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/12/6d47ca8ad57d938b38e9102eb243d5b5.png" title="https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/12/6d47ca8ad57d938b38e9102eb243d5b5.png"  />
+</a></p>
 </li>
 </ul>
 <p><a href="https://antmoe.gitee.io/project/2020/05/12/02_%e5%9b%be%e7%89%87%e8%b7%9f%e9%9a%8f%e7%aa%97%e5%8f%a3%e5%8f%98%e5%8c%96.html" target="_blank" rel="noopener noreffer">https://antmoe.gitee.io/project/2020/05/12/02_图片跟随窗口变化.html</a></p>
@@ -954,14 +890,12 @@ optionElement.value"/>
 <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </code></pre></td></tr></table>
 </div>
-</div><p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
+</div><p><a href="https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/12/caced2bccf50eed9466f4425635c7a09.png" data-fancybox="group" data-caption="https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/12/caced2bccf50eed9466f4425635c7a09.png">
+    <img class="lazyload" src="/svg/loading.min.svg"
         data-src="https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/12/caced2bccf50eed9466f4425635c7a09.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/12/caced2bccf50eed9466f4425635c7a09.png, https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/12/caced2bccf50eed9466f4425635c7a09.png 1.5x, https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/12/caced2bccf50eed9466f4425635c7a09.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/12/caced2bccf50eed9466f4425635c7a09.png"
-        title="https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/12/caced2bccf50eed9466f4425635c7a09.png" /></p>
+        data-srcset="https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/12/caced2bccf50eed9466f4425635c7a09.png, https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/12/caced2bccf50eed9466f4425635c7a09.png 1.5x, https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/12/caced2bccf50eed9466f4425635c7a09.png 2x" data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/12/caced2bccf50eed9466f4425635c7a09.png" title="https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/12/caced2bccf50eed9466f4425635c7a09.png"  />
+</a></p>
 <h3 id="history对象">History对象</h3>
 <p>History对象包含用户在测览器中访问过的URL（网址）。</p>
 <ul>
@@ -998,14 +932,12 @@ optionElement.value"/>
 <h3 id="location对象">Location对象</h3>
 <p>Location对象包含了浏览器的地址栏中的信息，该对象主要用于获取和设置地址。
 Location对象很特别，因为该对象既是 Window对象的属性，又是 Document对象的属性。</p>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
+<p><a href="https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/12/90837555b1f310080e40ef73f3e5f4d3.png" data-fancybox="group" data-caption="https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/12/90837555b1f310080e40ef73f3e5f4d3.png">
+    <img class="lazyload" src="/svg/loading.min.svg"
         data-src="https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/12/90837555b1f310080e40ef73f3e5f4d3.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/12/90837555b1f310080e40ef73f3e5f4d3.png, https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/12/90837555b1f310080e40ef73f3e5f4d3.png 1.5x, https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/12/90837555b1f310080e40ef73f3e5f4d3.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/12/90837555b1f310080e40ef73f3e5f4d3.png"
-        title="https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/12/90837555b1f310080e40ef73f3e5f4d3.png" /></p>
+        data-srcset="https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/12/90837555b1f310080e40ef73f3e5f4d3.png, https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/12/90837555b1f310080e40ef73f3e5f4d3.png 1.5x, https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/12/90837555b1f310080e40ef73f3e5f4d3.png 2x" data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/12/90837555b1f310080e40ef73f3e5f4d3.png" title="https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/12/90837555b1f310080e40ef73f3e5f4d3.png"  />
+</a></p>
 <table>
 <thead>
 <tr>
@@ -1173,14 +1105,12 @@ Location对象很特别，因为该对象既是 Window对象的属性，又是 D
 </code></pre></td></tr></table>
 </div>
 </div><p class="div-border yellow"">以上代码的测试如图所示，可以看到延迟制行会打乱代码执行的顺序。即*延迟10秒执行*语句并不会导致下边的语句不执行。</p>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
+<p><a href="https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/13/7f6f24419b2cd126d9c11402bc394cd2.png" data-fancybox="group" data-caption="https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/13/7f6f24419b2cd126d9c11402bc394cd2.png">
+    <img class="lazyload" src="/svg/loading.min.svg"
         data-src="https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/13/7f6f24419b2cd126d9c11402bc394cd2.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/13/7f6f24419b2cd126d9c11402bc394cd2.png, https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/13/7f6f24419b2cd126d9c11402bc394cd2.png 1.5x, https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/13/7f6f24419b2cd126d9c11402bc394cd2.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/13/7f6f24419b2cd126d9c11402bc394cd2.png"
-        title="https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/13/7f6f24419b2cd126d9c11402bc394cd2.png" /></p>
+        data-srcset="https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/13/7f6f24419b2cd126d9c11402bc394cd2.png, https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/13/7f6f24419b2cd126d9c11402bc394cd2.png 1.5x, https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/13/7f6f24419b2cd126d9c11402bc394cd2.png 2x" data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/13/7f6f24419b2cd126d9c11402bc394cd2.png" title="https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/13/7f6f24419b2cd126d9c11402bc394cd2.png"  />
+</a></p>
 <p><a href="https://antmoe.gitee.io/project/2020/05/13/01_%e5%bb%b6%e8%bf%9f%e5%88%b6%e8%a1%8c.html" target="_blank" rel="noopener noreffer">https://antmoe.gitee.io/project/2020/05/13/01_延迟制行.html</a></p>
 <h4 id="周期执行">周期执行</h4>
 <p>语法：<code>var timeoutID =scope.setInterval(function/code[,delay]) </code></p>
@@ -1230,14 +1160,12 @@ Location对象很特别，因为该对象既是 Window对象的属性，又是 D
 </code></pre></td></tr></table>
 </div>
 </div><p class="div-border yellow"">可以看到，几乎与延迟执行相同。执行顺序不会受到延迟的影响。清除定时器同样导致定时消失。</p>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
+<p><a href="https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/13/a10bc5ed2a33b513ea735b9a114ed74c.png" data-fancybox="group" data-caption="https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/13/a10bc5ed2a33b513ea735b9a114ed74c.png">
+    <img class="lazyload" src="/svg/loading.min.svg"
         data-src="https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/13/a10bc5ed2a33b513ea735b9a114ed74c.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/13/a10bc5ed2a33b513ea735b9a114ed74c.png, https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/13/a10bc5ed2a33b513ea735b9a114ed74c.png 1.5x, https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/13/a10bc5ed2a33b513ea735b9a114ed74c.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/13/a10bc5ed2a33b513ea735b9a114ed74c.png"
-        title="https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/13/a10bc5ed2a33b513ea735b9a114ed74c.png" /></p>
+        data-srcset="https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/13/a10bc5ed2a33b513ea735b9a114ed74c.png, https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/13/a10bc5ed2a33b513ea735b9a114ed74c.png 1.5x, https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/13/a10bc5ed2a33b513ea735b9a114ed74c.png 2x" data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/13/a10bc5ed2a33b513ea735b9a114ed74c.png" title="https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/13/a10bc5ed2a33b513ea735b9a114ed74c.png"  />
+</a></p>
 <div class="note info icon"><p>将延迟执行改写为周期执行</p></div>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -1327,14 +1255,12 @@ Location对象很特别，因为该对象既是 Window对象的属性，又是 D
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;this is a message2 &#39;</span><span class="p">)</span>
 </code></pre></td></tr></table>
 </div>
-</div><p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
+</div><p><a href="https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/13/a8c6a01b2df34da1e528302532012d5c.png" data-fancybox="group" data-caption="https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/13/a8c6a01b2df34da1e528302532012d5c.png">
+    <img class="lazyload" src="/svg/loading.min.svg"
         data-src="https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/13/a8c6a01b2df34da1e528302532012d5c.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/13/a8c6a01b2df34da1e528302532012d5c.png, https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/13/a8c6a01b2df34da1e528302532012d5c.png 1.5x, https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/13/a8c6a01b2df34da1e528302532012d5c.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/13/a8c6a01b2df34da1e528302532012d5c.png"
-        title="https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/13/a8c6a01b2df34da1e528302532012d5c.png" /></p>
+        data-srcset="https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/13/a8c6a01b2df34da1e528302532012d5c.png, https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/13/a8c6a01b2df34da1e528302532012d5c.png 1.5x, https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/13/a8c6a01b2df34da1e528302532012d5c.png 2x" data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/13/a8c6a01b2df34da1e528302532012d5c.png" title="https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/13/a8c6a01b2df34da1e528302532012d5c.png"  />
+</a></p>
 <p class="div-border yellow"">类似于延迟执行，执行一次就不会在执行了。</p>
 <div class="note warning icon"><p>兼容性问题</p></div>
 <div class="highlight"><div class="chroma">
@@ -1349,14 +1275,12 @@ Location对象很特别，因为该对象既是 Window对象的属性，又是 D
 <h2 id="小案例">小案例</h2>
 <p><strong>以下两个案例需要注意的点就是周期函数的返回值需要在全局作用域声明。在时间内部进行赋值。</strong></p>
 <h3 id="动态时间显示">动态时间显示</h3>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
+<p><a href="https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/13/c4c9019ee634867da087d76ba1583efd.png" data-fancybox="group" data-caption="https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/13/c4c9019ee634867da087d76ba1583efd.png">
+    <img class="lazyload" src="/svg/loading.min.svg"
         data-src="https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/13/c4c9019ee634867da087d76ba1583efd.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/13/c4c9019ee634867da087d76ba1583efd.png, https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/13/c4c9019ee634867da087d76ba1583efd.png 1.5x, https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/13/c4c9019ee634867da087d76ba1583efd.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/13/c4c9019ee634867da087d76ba1583efd.png"
-        title="https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/13/c4c9019ee634867da087d76ba1583efd.png" /></p>
+        data-srcset="https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/13/c4c9019ee634867da087d76ba1583efd.png, https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/13/c4c9019ee634867da087d76ba1583efd.png 1.5x, https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/13/c4c9019ee634867da087d76ba1583efd.png 2x" data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/13/c4c9019ee634867da087d76ba1583efd.png" title="https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/13/c4c9019ee634867da087d76ba1583efd.png"  />
+</a></p>
 <p>整体来说，这是一个非常简单的小案例。其基本逻辑用一个周期定时器包裹起来即可。</p>
 <p><a href="https://antmoe.gitee.io/project/2020/05/13/04_%e5%8a%a8%e6%80%81%e6%97%b6%e9%97%b4%e6%98%be%e7%a4%ba.html" target="_blank" rel="noopener noreffer">https://antmoe.gitee.io/project/2020/05/13/04_动态时间显示.html</a></p>
 <div class="highlight"><div class="chroma">
@@ -1448,14 +1372,12 @@ Location对象很特别，因为该对象既是 Window对象的属性，又是 D
 </code></pre></td></tr></table>
 </div>
 </div><h3 id="方块移动">方块移动</h3>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
+<p><a href="https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/13/5f1caa64c4dbb33a31f0ad26ad3635f2.png" data-fancybox="group" data-caption="https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/13/5f1caa64c4dbb33a31f0ad26ad3635f2.png">
+    <img class="lazyload" src="/svg/loading.min.svg"
         data-src="https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/13/5f1caa64c4dbb33a31f0ad26ad3635f2.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/13/5f1caa64c4dbb33a31f0ad26ad3635f2.png, https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/13/5f1caa64c4dbb33a31f0ad26ad3635f2.png 1.5x, https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/13/5f1caa64c4dbb33a31f0ad26ad3635f2.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/13/5f1caa64c4dbb33a31f0ad26ad3635f2.png"
-        title="https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/13/5f1caa64c4dbb33a31f0ad26ad3635f2.png" /></p>
+        data-srcset="https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/13/5f1caa64c4dbb33a31f0ad26ad3635f2.png, https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/13/5f1caa64c4dbb33a31f0ad26ad3635f2.png 1.5x, https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/13/5f1caa64c4dbb33a31f0ad26ad3635f2.png 2x" data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/13/5f1caa64c4dbb33a31f0ad26ad3635f2.png" title="https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/13/5f1caa64c4dbb33a31f0ad26ad3635f2.png"  />
+</a></p>
 <p>这个案例也很简单，同样是使用周期定时器。</p>
 <p><a href="https://antmoe.gitee.io/project/2020/05/13/05_%e6%96%b9%e5%9d%97%e8%87%aa%e5%8a%a8%e7%a7%bb%e5%8a%a8.html" target="_blank" rel="noopener noreffer">https://antmoe.gitee.io/project/2020/05/13/05_方块自动移动.html</a></p>
 <div class="highlight"><div class="chroma">
@@ -1574,17 +1496,16 @@ Location对象很特别，因为该对象既是 Window对象的属性，又是 D
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
-                <span>Updated on 2020-07-02&nbsp;<a class="git-hash" href="https://github.com/dillonzq/LoveIt/commit/75542648f8ebbc8b8a92e1fb2fb7989790e91fa4" target="_blank" title="commit by Antmoe(antmoe@163.com) 75542648f8ebbc8b8a92e1fb2fb7989790e91fa4: test">
-                                    <i class="fas fa-hashtag fa-fw"></i>7554264</a></span>
+                <span>更新于 2020-05-12</span>
             </div>
             <div class="post-info-license"></div>
         </div>
         <div class="post-info-line">
             <div class="post-info-md"><span>
-                            <a class="link-to-markdown" href="/posts/notes/20200512/index.md" target="_blank">Read Markdown</a>
+                            <a class="link-to-markdown" href="/posts/notes/20200512/index.md" target="_blank">阅读原始文档</a>
                         </span></div>
             <div class="post-info-share">
-                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://study.tzki.cn/posts/notes/20200512/" data-title="BOM编程艺术"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://study.tzki.cn/posts/notes/20200512/"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="https://study.tzki.cn/posts/notes/20200512/" data-title="BOM编程艺术"><i class="fab fa-hacker-news fa-fw"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://study.tzki.cn/posts/notes/20200512/" data-title="BOM编程艺术"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://study.tzki.cn/posts/notes/20200512/" data-title="BOM编程艺术"><i class="fab fa-weibo fa-fw"></i></a></span>
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://study.tzki.cn/posts/notes/20200512/" data-title="BOM编程艺术"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://study.tzki.cn/posts/notes/20200512/"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://study.tzki.cn/posts/notes/20200512/" data-title="BOM编程艺术" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://study.tzki.cn/posts/notes/20200512/" data-title="BOM编程艺术"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://study.tzki.cn/posts/notes/20200512/" data-title="BOM编程艺术"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="https://study.tzki.cn/posts/notes/20200512/" data-title="BOM编程艺术" data-description=""><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/myspace.svg"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="https://study.tzki.cn/posts/notes/20200512/" data-title="BOM编程艺术" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://study.tzki.cn/posts/notes/20200512/" data-title="BOM编程艺术"><i class="fab fa-evernote fa-fw"></i></a></span>
             </div>
         </div>
     </div>
@@ -1592,7 +1513,7 @@ Location对象很特别，因为该对象既是 Window对象的属性，又是 D
     <div class="post-info-more">
         <section class="post-tags"></section>
         <section>
-            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
         </section>
     </div>
 
@@ -1600,18 +1521,18 @@ Location对象很特别，因为该对象既是 Window对象的属性，又是 D
             <a href="/posts/notes/20200513/" class="next" rel="next" title="定时器">定时器<i class="fas fa-angle-right fa-fw"></i></a></div>
 </div>
 <div id="comments"><div id="valine" class="comment"></div><noscript>
-        Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
-    </noscript></div></article></div>
+                Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
+            </noscript></div></article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.70.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.70.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
                 </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://antmoe.gitee.io" target="_blank">Dreamy.TZK</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
         </div>
     </footer></div>
 
-        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
                 <i class="fas fa-arrow-up fa-fw"></i>
-            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
                 <i class="fas fa-comment fa-fw"></i>
             </a>
-        </div><link rel="stylesheet" href="/lib/valine/valine.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery.js@1.2.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/copy-tex.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sviptzk/StaticFile_HEXO@v1.3/butterfly/css/pool.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lunr@2.3.8/lunr.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/twemoji@13.0.0/dist/twemoji.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery.js@1.2.0/dist/js/lightgallery.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lg-thumbnail.js@1.2.0/dist/lg-thumbnail.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lg-zoom.js@1.2.0/dist/lg-zoom.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/copy-tex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{"valine":{"appId":"MSrsml5TjC3t4RglJVU0PO0K-MdYXbMMI","appKey":"XrcCUv4pMAYuY973iEM37zLq","avatar":"mp","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-facebook@5.0.1/img/facebook/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":true,"highlight":true,"lang":"zh-CN","pageSize":10,"placeholder":"建议在上方留下昵称和邮箱等信息，以便收到回复通知（以下三选一）\t\n1、仅在昵称中留下QQ号（系统自动获取QQ昵称、QQ邮箱、QQ头像等信息）\t\n2、自定义填写昵称、邮箱、网址信息（系统自动匹配头像）\t\n3、匿名留言（不会收到留言回复通知，不推荐）","recordIP":true,"requiredFields":["nick","mail"],"visitor":true}},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"},"twemoji":true};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+        </div><link rel="stylesheet" href="/lib/valine/valine.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery.js@1.2.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/copy-tex.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sviptzk/StaticFile_HEXO@v1.3/butterfly/css/pool.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lunr@2.3.8/lunr.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/twemoji@13.0.0/dist/twemoji.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery.js@1.2.0/dist/js/lightgallery.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lg-thumbnail.js@1.2.0/dist/lg-thumbnail.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lg-zoom.js@1.2.0/dist/lg-zoom.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/copy-tex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/mhchem.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{"valine":{"appId":"MSrsml5TjC3t4RglJVU0PO0K","appKey":"XrcCUv4pMAYuY973iEM37zLq","avatar":"mp","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-facebook@5.0.1/img/facebook/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":true,"highlight":true,"lang":"zh-CN","pageSize":10,"placeholder":"建议在上方留下昵称和邮箱等信息，以便收到回复通知（以下三选一）\t\n1、仅在昵称中留下QQ号（系统自动获取QQ昵称、QQ邮箱、QQ头像等信息）\t\n2、自定义填写昵称、邮箱、网址信息（系统自动匹配头像）\t\n3、匿名留言（不会收到留言回复通知，不推荐）","recordIP":true,"visitor":true}},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"},"twemoji":true};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
 </html>

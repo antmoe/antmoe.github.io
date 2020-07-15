@@ -1,83 +1,36 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>All 我的项目汇总 - 小康的学习记录</title>
+        <title>所有我的项目汇总 - 小康的学习记录</title>
         <link>https://study.tzki.cn/posts/project/</link>
-        <description>All 我的项目汇总 | 小康的学习记录</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>sviptzk@163.com (Dreamy.TZK)</managingEditor>
-            <webMaster>sviptzk@163.com (Dreamy.TZK)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 10 May 2020 21:35:50 &#43;0800</lastBuildDate><atom:link href="https://study.tzki.cn/posts/project/" rel="self" type="application/rss+xml" /><item>
+        <description>所有我的项目汇总 | 小康的学习记录</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>sviptzk@163.com (Dreamy.TZK)</managingEditor>
+            <webMaster>sviptzk@163.com (Dreamy.TZK)</webMaster><lastBuildDate>Sun, 10 May 2020 21:35:50 &#43;0800</lastBuildDate><atom:link href="https://study.tzki.cn/posts/project/" rel="self" type="application/rss+xml" /><item>
     <title>Express框架实现一个简单的博客系统</title>
     <link>https://study.tzki.cn/posts/project/20200712/</link>
     <pubDate>Sun, 12 Jul 2020 21:52:50 &#43;0800</pubDate>
-    <author>Author</author>
+    <author>作者</author>
     <guid>https://study.tzki.cn/posts/project/20200712/</guid>
-    <description><![CDATA[下载源码前言 这篇文章是记录一下自己动手完成一个博客开发的历程。
-一个前台靠扒别人页面后端靠layui实现的博客。
-至此博客开坑任务基本完成2020-07-14 一个404页面
-后台部分列表可以进行搜索
-修改了部分逻辑，略微减少代码量
-文章可指定显示顺序
-去除了部分不必要的页面
-前台可以修改个人信息
-下次更新可能要等8月3日之后了！！！
-模糊搜索及表格重载 利用layui的表格重载进行模糊搜索。（实现这个着实麻烦）
-  在头部工具条添加搜索框
-1 2 3 4 5 6 7 8  script#toolbarDemo(type=&#39;text/html&#39;). &lt;div&gt;搜索配置： &lt;div class=&#34;layui-inline&#34;&gt; &lt;input class=&#34;layui-input&#34; id=&#34;search&#34; name=&#34;search&#34; autocomplete=&#34;off&#34;&gt; &lt;/div&gt; &lt;button class=&#34;layui-btn layui-btn-sm&#34; data-type=&#34;reload&#34; id=&#34;search-btn&#34;&gt;搜索&lt;/button&gt; &lt;a class=&#34;layui-btn layui-btn-sm&#34; lay-event=&#34;addConfig&#34;&gt;添加配置&lt;/a&gt; &lt;/div&gt;     为表格绑定重载事件
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18  layui.]]></description>
+    <description><![CDATA[下载源码 前言 这篇文章是记录一下自己动手完成一个博客开发的历程。 一个前台靠扒别人页面后端靠layui实现的博客。 至此博客开坑任务基本完成 2020-07-14 一个]]></description>
 </item><item>
     <title>NodeJs博客系统开发</title>
     <link>https://study.tzki.cn/posts/project/20200707/</link>
     <pubDate>Tue, 07 Jul 2020 19:52:50 &#43;0800</pubDate>
-    <author>Author</author>
+    <author>作者</author>
     <guid>https://study.tzki.cn/posts/project/20200707/</guid>
-    <description><![CDATA[下载源码开发前的准备   安装插件
- body-parser cookies express markdown mongoose swig  1  npm i body-parser cookies markdown mongoose swig     基本的目录结构
-1 2 3 4 5 6 7 8 9 10 11  blog ├── app.js 应用（启动）入口文件 ├── db 数据库存储目录 ├── models 数据库模型文件目录 ├── node_modules node第三方模块目录 ├── package-lock.json ├── package.json ├── public 公共文件目录（css、js、image...） ├── routers 路由文件目录 ├── schemas 数据库结构文件（schema）目录 └── views 模板试图文件目录     导入并定义当前使用的模板引擎]]></description>
+    <description><![CDATA[下载源码 开发前的准备 安装插件 body-parser cookies express markdown mongoose swig 1 npm i body-parser cookies markdown mongoose swig 基本的目录结构 1 2 3 4 5 6 7 8 9 10 11 blog ├── app.js 应用（启动）入口文件 ├── db 数据库存储]]></description>
 </item><item>
     <title>基于面向对象的工具库练习</title>
     <link>https://study.tzki.cn/posts/project/20200603/</link>
     <pubDate>Wed, 03 Jun 2020 21:12:50 &#43;0800</pubDate>
-    <author>Author</author>
+    <author>作者</author>
     <guid>https://study.tzki.cn/posts/project/20200603/</guid>
-    <description><![CDATA[前期准备 全局作用域问题
-解决这个问题是通过匿名函数，然后在匿名函数内创建对象，将window作为参数传入匿名函数，并将此对象赋值与window
-1 2 3 4 5 6 7 8 9 10  (function (global) { // 判断global对象是否真的存在  if (!global) { console.error(&#34;当前环境不是浏览器环境！&#34;); return false; } // 定义一个统一对外开放的对象  var mytool = new Object(); global.mytool = mytool; })(window);   此时在全局作用域中便存在了一个对象mytool。
-选择器 实现一个选择器，用于替代getElementById、getElementsByClassName、getElementsByTagName三种获取方式。
-实现方式，将需要搜索的标签名（id，class，tagname）传入方法参数，通过内部处理返回一个数组。
- 对于id选择器或class选择器来说，传入形参为#id或.class。那么只需要去匹配第一个字符即可。 如果不匹配以上两种情况，那么可以视为TagName。  1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28  mytool.]]></description>
+    <description><![CDATA[前期准备 全局作用域问题 解决这个问题是通过匿名函数，然后在匿名函数内创建对象，将window作为参数传入匿名函数，并将此对象赋值与window]]></description>
 </item><item>
     <title>模仿一个在线文档</title>
     <link>https://study.tzki.cn/posts/project/20200518/</link>
     <pubDate>Mon, 18 May 2020 21:54:50 &#43;0800</pubDate>
-    <author>Author</author>
+    <author>作者</author>
     <guid>https://study.tzki.cn/posts/project/20200518/</guid>
-    <description><![CDATA[项目需求  在线输入多行文字 选择文本可设置字体大小、加粗、斜体、下划线、删除线、字体颜色和背景颜色 允许输入无序列表和有序列表 允许设置1~6级标题 允许插入图片  项目开发历史 完整的项目地址：https://antmoe.gitee.io/project/2020/05/OnlineDoc/
-  2020-05-19
-https://antmoe.gitee.io/project/2020/05/OnlineDoc/
-图片插入（本地图片）
-字体颜色、背景颜色
-撤销、取消样式
-  2020-05-18
-https://antmoe.gitee.io/project/2020/05/18/
-多行文字
-字体大小
-加粗、斜体、下划线、删除线
-无序、有序列表
-1~6级标题
-【完成部分】只能插入拥有绝对链接的图片（外链）
-【未完成】字体、背景颜色设置
-  项目开发历程 这里主要说一下完成这个项目的过程中遇到的问题及问题解决方案。
-开发思路
-  需要一个框，用于输入文字，并且这个框可以支持html标签
-iframe实现 参考文章：https://www.cnblogs.com/xiangxs/p/5120574.html
-  选中文本修改其样式
-参考文章：http://16bing.com/2017/04/18/ref-iframe/
-MDN参考：https://developer.mozilla.org/zh-CN/docs/Web/API/Document/execCommand
-  插入图片
-  直接通过input获取后，通过insertImage命令插入。
-由于无法获取真实地址，因此此方法只能插入外链图片即上传图床后插入链接。
-  直接插入HTML标签
-未测试
-    设置颜色
-通过一个div或者颜色版获取到用户选择的颜色，然后进行设置。]]></description>
+    <description><![CDATA[项目需求 在线输入多行文字 选择文本可设置字体大小、加粗、斜体、下划线、删除线、字体颜色和背景颜色 允许输入无序列表和有序列表 允许设置1~6级标题]]></description>
 </item></channel>
 </rss>

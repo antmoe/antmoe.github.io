@@ -1,32 +1,22 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>All 2020年06月16日笔记汇总 - 小康的学习记录</title>
+        <title>所有2020年06月16日笔记汇总 - 小康的学习记录</title>
         <link>https://study.tzki.cn/posts/notes/20200616/</link>
-        <description>All 2020年06月16日笔记汇总 | 小康的学习记录</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>sviptzk@163.com (Dreamy.TZK)</managingEditor>
-            <webMaster>sviptzk@163.com (Dreamy.TZK)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 16 Jun 2020 21:35:50 &#43;0800</lastBuildDate><atom:link href="https://study.tzki.cn/posts/notes/20200616/" rel="self" type="application/rss+xml" /><item>
+        <description>所有2020年06月16日笔记汇总 | 小康的学习记录</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>sviptzk@163.com (Dreamy.TZK)</managingEditor>
+            <webMaster>sviptzk@163.com (Dreamy.TZK)</webMaster><lastBuildDate>Tue, 16 Jun 2020 21:35:50 &#43;0800</lastBuildDate><atom:link href="https://study.tzki.cn/posts/notes/20200616/" rel="self" type="application/rss+xml" /><item>
     <title>五、jQuery动效</title>
     <link>https://study.tzki.cn/posts/notes/20200616/20200615-2/</link>
     <pubDate>Tue, 16 Jun 2020 18:39:51 &#43;0800</pubDate>
-    <author>Author</author>
+    <author>作者</author>
     <guid>https://study.tzki.cn/posts/notes/20200616/20200615-2/</guid>
-    <description><![CDATA[显示隐藏动画 显示show()动画，隐藏动画hide()，切换动画toggle()
-这三个方法都可以传入参数：
-  一个参数
-代表动画完成的时间
-  两个参数
-第一个表示动画完成的时间，第二个参数表示动画完成后执行的回调函数
-  1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18  $(function () { $(&#39;button&#39;).eq(0).click(function () { $(&#39;div&#39;).show(1000, function () { alert(&#39;显示动画执行完毕&#39;) }) }) $(&#39;button&#39;).eq(1).click(function () { $(&#39;div&#39;).hide(1000, function () { alert(&#39;隐藏动画执行完毕&#39;) }) }) $(&#39;button&#39;).eq(2).click(function () { $(&#39;div&#39;).toggle(1000, function () { alert(&#39;切换动画执行完毕&#39;) }) }) })   对联广告案例  监听网页滚动]]></description>
+    <description><![CDATA[显示隐藏动画 显示show()动画，隐藏动画hide()，切换动画toggle() 这三个方法都可以传入参数： 一个参数 代表动画完成的时间 两个参数]]></description>
 </item><item>
     <title>四、jQuery事件相关</title>
     <link>https://study.tzki.cn/posts/notes/20200616/20200615-1/</link>
     <pubDate>Tue, 16 Jun 2020 13:30:50 &#43;0800</pubDate>
-    <author>Author</author>
+    <author>作者</author>
     <guid>https://study.tzki.cn/posts/notes/20200616/20200615-1/</guid>
-    <description><![CDATA[事件绑定 绑定方式有两种：
-  直接通过.eventName(fn)方式绑定。
-1 2 3  $(&#39;button&#39;).click(function () { alert(&#39;hello tzk&#39;) })    编码效率高 部分事件jQuery没有实现    通过on(eventName,function)方式绑定
-1 2 3  $(&#39;button&#39;).on(&#39;click&#39;, function () { alert(&#39;hello tzk&#39;) })    编码效率略低 所有JavaScript事件都可以添加    注意：以上两种绑定方式均不会被覆盖，并且可以添加多个事件。
-1 2 3 4 5 6 7 8 9  $(&#39;button&#39;).click(function () { alert(&#39;hello tzk&#39;) }) $(&#39;button&#39;).click(function () { alert(123) }) $(&#39;button&#39;).mouseleave(function () { alert(mouseleave) })   事件解绑 事件解绑只有一个方法off()，只需要用需要解绑的元素调用此方法即可。]]></description>
+    <description><![CDATA[事件绑定 绑定方式有两种： 直接通过.eventName(fn)方式绑定。 1 2 3 $(&#39;button&#39;).click(function () { alert(&#39;hello tzk&#39;) }) 编码效率高 部分事件jQuery没有实现 通过on(ev]]></description>
 </item></channel>
 </rss>
