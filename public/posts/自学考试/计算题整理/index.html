@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>计算机网络计算题（综合题）整理 - 小康的学习记录</title><meta name="Description" content="整理一下常见的综合题计算题等"><meta property="og:title" content="计算机网络计算题（综合题）整理" />
+<meta property="og:description" content="整理一下常见的综合题计算题等" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://study.tzki.cn/posts/%E8%87%AA%E5%AD%A6%E8%80%83%E8%AF%95/%E8%AE%A1%E7%AE%97%E9%A2%98%E6%95%B4%E7%90%86/" />
+<meta property="og:image" content="https://study.tzki.cn/logo.png"/>
+<meta property="article:published_time" content="2020-07-19T10:13:50+08:00" />
+<meta property="article:modified_time" content="2020-07-19T10:13:50+08:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://study.tzki.cn/logo.png"/>
+
+<meta name="twitter:title" content="计算机网络计算题（综合题）整理"/>
+<meta name="twitter:description" content="整理一下常见的综合题计算题等"/>
+<meta name="application-name" content="LoveIt">
+<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://study.tzki.cn/posts/%E8%87%AA%E5%AD%A6%E8%80%83%E8%AF%95/%E8%AE%A1%E7%AE%97%E9%A2%98%E6%95%B4%E7%90%86/" /><link rel="prev" href="https://study.tzki.cn/posts/%E8%87%AA%E5%AD%A6%E8%80%83%E8%AF%95/%E8%87%AA%E8%80%83%E8%8B%B1%E8%AF%AD%E4%BA%8C%E5%8D%95%E8%AF%8D/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "计算机网络计算题（综合题）整理",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/study.tzki.cn\/posts\/%E8%87%AA%E5%AD%A6%E8%80%83%E8%AF%95\/%E8%AE%A1%E7%AE%97%E9%A2%98%E6%95%B4%E7%90%86\/"
+        },"image": ["https:\/\/cdn.jsdelivr.net\/gh\/sviptzk\/StaticFile_HEXO@latest\/butterfly\/img\/favicon.ico"],"genre": "posts","keywords": "计算机网络","wordcount":  4024 ,
+        "url": "https:\/\/study.tzki.cn\/posts\/%E8%87%AA%E5%AD%A6%E8%80%83%E8%AF%95\/%E8%AE%A1%E7%AE%97%E9%A2%98%E6%95%B4%E7%90%86\/","datePublished": "2020-07-19T10:13:50+08:00","dateModified": "2020-07-19T10:13:50+08:00","publisher": {
+            "@type": "Organization",
+            "name": "Dreamy.TZK","logo": "https:\/\/cdn.jsdelivr.net\/gh\/sviptzk\/HexoStaticFile@latest\/avatar.jpg"},"author": {
+                "@type": "Person",
+                "name": "Dreamy.TZK"
+            },"description": "整理一下常见的综合题计算题等"
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="小康的学习记录"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span>小康博客</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="小康的学习记录"><span class="header-title-pre"><i class='far fa-kiss-wink-heart fa-fw'></i></span>小康博客</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">计算机网络计算题（综合题）整理</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://antmoe.gitee.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Dreamy.TZK</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E8%87%AA%E8%80%83/"><i class="far fa-folder fa-fw"></i>自考</a>&nbsp;<a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"><i class="far fa-folder fa-fw"></i>计算机网络</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-07-19">2020-07-19</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 4024 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 9 分钟&nbsp;<span id="/posts/%E8%87%AA%E5%AD%A6%E8%80%83%E8%AF%95/%E8%AE%A1%E7%AE%97%E9%A2%98%E6%95%B4%E7%90%86/" class="leancloud_visitors" data-flag-title="计算机网络计算题（综合题）整理">
+                        <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
+                    </span>&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#考前模拟卷-001">考前模拟卷-001</a></li>
+    <li><a href="#考前模拟卷-002">考前模拟卷-002</a></li>
+    <li><a href="#考前模拟卷-003">考前模拟卷-003</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="考前模拟卷-001">考前模拟卷-001</h2>
+<ol>
+<li>
+<p>设网络中路由器使用 RIP 协议，路由器 B 的当前路由表如表 1 所示，B 收到从路由器 C 发来的路由信息如表 2 所示。试给出路由器 B 更新后的路由表。</p>
+<p><a href="https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile1/imgbed/2020/03/26/20200326204740.png" data-fancybox="group" data-caption="https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile1/imgbed/2020/03/26/20200326204740.png">
+    <img class="lazyload" src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile1/imgbed/2020/03/26/20200326204740.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile1/imgbed/2020/03/26/20200326204740.png, https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile1/imgbed/2020/03/26/20200326204740.png 1.5x, https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile1/imgbed/2020/03/26/20200326204740.png 2x" data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile1/imgbed/2020/03/26/20200326204740.png" title="https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile1/imgbed/2020/03/26/20200326204740.png"  />
+</a>
+<a href="https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile1/imgbed/2020/03/26/20200326204752.png" data-fancybox="group" data-caption="https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile1/imgbed/2020/03/26/20200326204752.png">
+    <img class="lazyload" src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile1/imgbed/2020/03/26/20200326204752.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile1/imgbed/2020/03/26/20200326204752.png, https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile1/imgbed/2020/03/26/20200326204752.png 1.5x, https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile1/imgbed/2020/03/26/20200326204752.png 2x" data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile1/imgbed/2020/03/26/20200326204752.png" title="https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile1/imgbed/2020/03/26/20200326204752.png"  />
+</a></p>
+<div class="details admonition success">
+    <div class="details-summary admonition-title"><i class="icon fas fa-check-circle fa-fw"></i>答案<i
+            class="details-icon fas fa-angle-right fa-fw"></i></div>
+    <div class=details-content>
+        <div class=admonition-content><img src="https://cdn.jsdelivr.net/gh/blogimg/HexoStaticFile1/imgbed/2020/03/26/20200326212243.png"></div>
+    </div>
+</div>
+</li>
+<li>
+<p>有一个电缆长度为 1Km 的 CSMA/CD 局域网，信号传播速度为光速的 2/3，其最小帧长度为 1000bit。试求出数据传输速率。</p>
+<div class="details admonition success">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-check-circle fa-fw"></i>答案<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><p>信号传输速率 $v=3<em>10^8</em>2/3=2*10^8km/s$</p>
+<p>数据传输速率$R=L_{min}/(2d/v)=1000/(2*1000/(2*10^8))=10^8bit/s$</p>
+</div>
+        </div>
+    </div>
+</li>
+<li>
+<p>假设某子网中的一个主机的 IP 地址是 203.123.1.135，子网掩码是 255.255.255.192。</p>
+<p>（1）那么该子网的子网地址是什么？</p>
+<p>（2）直接广播地址是什么？</p>
+<p>（3）该子网 IP 地址总数是多少？</p>
+<p>（4）该子网的可分配 IP 地址数是多少？</p>
+<p>（5）可分配地址范围是多少？</p>
+<div class="details admonition success">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-check-circle fa-fw"></i>答案<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><p>（1）答案：将 203.123.1.135 与 255.255.255.192 按位与运算，得到：203.123.1.128，为该子网的子网地址，即该子网为 203.123.1.128/26
+解析：只有给出子网地址中的某主机的 IP 地址和子网掩码或网络前缀，才能准确描述一个子网的规模。通过将该地址与子网掩码做按位与运算，就可以得到该子网的子网地址。子网掩码 255.255.255.192 的二进制表示为 11111111.11111111.11111111.11000000，与 203.123.1.135 进行按位与运算后，前 24 位结果与该地址一样，故只需转换后 8 位，该地址后 8 位二进制表示为 10000111，与子网掩码后 8 位 11000000 进行按位与运算结果为 10000000，转化为十进制是 128，故该子网为 203.123.1.128/26。</p>
+<p>（2）答案：该子网的直接广播地址是 203.123.1.191
+解析：利用子网掩码的反码与该地址做按位或运算，就可以得到该子网的直接广 播地址。按位或运算：只要对应的二个二进位有一个为 1 时，结果位就为 1。子 网掩码 255.255.255.192 的 二 进 制 表 示 为 11111111.11111111.11111111.11000000，子网掩码的反码的二进制表示为 00000000.00000000.00000000.00111111，所以与 203.123.1.135 进行按位或运 算后，前 24 位结果与该地址一样，故只需转换后 8 位，该地址后 8 位二进制表 示为 10000111，与 00111111 进行按位或运算的结果为 10111111，即是十进制 的 191，故结果为 203.123.1.191。</p>
+<p>（3）答案：该子网 IP 地址总数是 64
+解析：根据题 1 可得网络前缀有 26 位，故主机位有 32-26=6 位，即有 2^6=64 个 IP 地址总数。</p>
+<p>（4）答案：该子网的可分配 IP 地址数是 64-2=62
+解析：由于主机位全 0 表示本网络，全 1 留作广播地址，故每个网中，第一个 IP 地址（即主机部分全部为 0 的 IP）和最后一个 IP（即主机部分全部为 1 的 IP）不能分配给主机使用，所以每个子网的可用 IP 地址数为总 IP 地址数量减 2。</p>
+<p>（5）答案：可分配 IP 地址范围是：203.123.1.129〜203.123.1.190
+解析：该子网为 203.123.1.128/26，其转化为二进制的后 8 位的取值范围是 10000000~10111111，转化为十进制为 128~191，去掉收尾两个不可用的，故为 203.123.1.129〜203.123.1.190。</p>
+</div>
+        </div>
+    </div>
+</li>
+</ol>
+<h2 id="考前模拟卷-002">考前模拟卷-002</h2>
+<ol>
+<li>
+<p>已知发送方采用 CRC 校验方法，生成多项式$x^4+x^3+1$，若接收方收到的二进制数字序列为 101110110101，请判断数据传输过程中是否出错。</p>
+<div class="details admonition success">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-check-circle fa-fw"></i>答案<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">答案：101110110101/11001 余 110，余数不为 0，所以传输出错。
+解析：CRC 编码的基本思想是：将二进制位串看成是系数为 0 或 1 的多项式的系数。一个 k 位二进制数据可以看作是一个 k-1 次多项式的系数列表，该多项式共有 k 项，从$x^{(k-1)}$到$x^0$。这样的多项式被认为是 k-1 阶多项式。故多项式$x^4+x^3+1$对应的位串是 11001。假设一帧数据有 m 位，对应多项式 M（x），为了计算它的 CRC 编码，该帧必须比生成多项式长。基本思想是在帧的尾部附加一个校验和，使得附加校验和之后的帧所对应的多项式能够被 G（x）除尽。当接收方收到了带校验和的帧之后，用 G（x）去除它，如果余数不为 0，则表明传输过程中有错误，否则无错。故用收到的序列 101110110101 去除多项式对应的位串 11001，余数不为 0，故出错。</div>
+        </div>
+    </div>
+</li>
+<li>
+<p>有一受随机噪声干扰的信道，其带宽为 4KHz，信噪比为 30dB。试求出最大数据传输速率。</p>
+<div class="details admonition success">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-check-circle fa-fw"></i>答案<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">根据信噪比的换算关系$(\frac{S}{N})<em>{db} = 10 \log</em>{10}(\frac{S}{N})<em>{功率}$可得 $(\frac{S}{N})</em>{功率}= 10^{\frac{\frac{S}{N}_{db}}{10}} = 1000$ 带入香农公式可得$C=4000*\log2(1+1000)=4000*\log2(1001)\approx 40$Kbit/s</div>
+        </div>
+    </div>
+</li>
+<li>
+<p>下图是某个 TCP 连接（协议为 TCP-Reno)的拥塞窗口随 RTT 的变化过程。请回 答 如 下 问 题 ：</p>
+<p><a href="https://cdn.jsdelivr.net/gh/blogimg/picbed@master/2020/04/03/dcaf13141f2dc3f6a7e4bdd9efb4c7df.png" data-fancybox="group" data-caption="https://cdn.jsdelivr.net/gh/blogimg/picbed@master/2020/04/03/dcaf13141f2dc3f6a7e4bdd9efb4c7df.png">
+    <img class="lazyload" src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/blogimg/picbed@master/2020/04/03/dcaf13141f2dc3f6a7e4bdd9efb4c7df.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/blogimg/picbed@master/2020/04/03/dcaf13141f2dc3f6a7e4bdd9efb4c7df.png, https://cdn.jsdelivr.net/gh/blogimg/picbed@master/2020/04/03/dcaf13141f2dc3f6a7e4bdd9efb4c7df.png 1.5x, https://cdn.jsdelivr.net/gh/blogimg/picbed@master/2020/04/03/dcaf13141f2dc3f6a7e4bdd9efb4c7df.png 2x" data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/blogimg/picbed@master/2020/04/03/dcaf13141f2dc3f6a7e4bdd9efb4c7df.png" title="https://cdn.jsdelivr.net/gh/blogimg/picbed@master/2020/04/03/dcaf13141f2dc3f6a7e4bdd9efb4c7df.png"  />
+</a></p>
+<p>（1）第 1 个 RTT 时的拥塞窗口阈值是多少？</p>
+<div class="details admonition success">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-check-circle fa-fw"></i>答案<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">答案：16MSS
+解析：阈值（Threshold）：为了防止拥塞窗口增长过快引起网络阻塞，TCP 设置了阈值，用以分隔慢启动阶段和拥塞避免阶段。Threshold 的初值为 16MSS。故 0~10RTT，阈值都为 16MSS。</div>
+        </div>
+    </div>
+<p>（2）说明该过程中哪些时间段为慢启动阶段？</p>
+<div class="details admonition success">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-check-circle fa-fw"></i>答案<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">答案：0~4 和 17~20 时间段为慢启动阶段。
+解析：为了防止拥塞窗口增长过快而引起网络拥塞，TCP 设置一个拥塞窗口阈值 Threshold，“分割”慢启动阶段和拥塞避免阶段。当拥塞窗口小于 Threshold 时，拥塞窗口按慢启动方式增长，当拥塞窗口大于等于 Threshold 时，拥塞窗口切换为按拥塞避免方式增长。
+慢启动：收到一个确认，CongWin 值就加倍，即指数增长的时间段。拥塞避免：每经过一个 RTT，拥塞窗口 CongWin 的值增加 1MSS，即线性增长的时间段。
+故 0~4 和 17~20 时间段为慢启动阶段。</div>
+        </div>
+    </div>
+<p>（3）说明该过程中哪些时间段为拥塞避兔阶段？</p>
+<div class="details admonition success">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-check-circle fa-fw"></i>答案<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">答案：4~10 和 11~16 和 20~25 时间段为拥塞避兔阶段。
+解析：为了防止拥塞窗口增长过快而引起网络拥塞，TCP 设置一个拥塞窗口阈值 Threshold，“分割”慢启动阶段和拥塞避免阶段。当拥塞窗口小于 Threshold 时，拥塞窗口按慢启动方式增长，当拥塞窗口大于等于 Threshold 时，拥塞窗口切换为按拥塞避免方式增长。
+慢启动：收到一个确认，CongWin 值就加倍，即指数增长的时间段。
+拥塞避免：每经过一个 RTT，拥塞窗口 CongWin 的值增加 1MSS，即线性增长的时间段。
+故 4~10 和 11~16 和 20~25 时间段为拥塞避兔阶段。</div>
+        </div>
+    </div>
+<p>（4）第 10 个 RTT 时，发生了什么事件？拥塞窗口及其阈值大小如何变化？</p>
+<div class="details admonition success">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-check-circle fa-fw"></i>答案<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">答案：第 10 个 RTT 时，发送端连续收到 3 次重复确认，阈值 Threshold=22/2=11，拥塞窗口=11。
+解析：快速重传的基本思想是接收端收到 3 次重复确认时，则推断被重复确认的报文段已经丢失，于是立即发送被重复确认的报文段。3 次重复确认可以解读为网络拥塞程度不是很严重。拥塞窗口缩减的做法，不再重新从慢启动阶段开始，而是从新的阈值开始，直接进入拥塞避免阶段，这就是快速恢复的基本思想。快速恢复是配合快速重传使用的算法，具体做法是：当发送端连续收到 3 次重复确认时，将阈值 Threshold 减半，并且将拥塞窗口 CongWin 的值置为减半后的 Threshold，然后开始执行拥塞避免算法，使 CongWin 缓慢地加性增长。故第 10 个 RTT 时，发送端连续收到 3 次重复确认，阈值 Threshold=22/2=11，拥塞窗口=11。</div>
+        </div>
+    </div>
+<p>（5）第 16 个 RTT 时，发生了什么事件？拥塞窗口及其阈值大小如何变化？</p>
+<div class="details admonition success">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-check-circle fa-fw"></i>答案<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">答案：第 16 个 RTT 时，发送端发生了计时器超时，意味着网络发生了拥塞。阈值 Threshold=16/2=8，拥塞窗口=1。</div>
+        </div>
+    </div>
+</li>
+</ol>
+<h2 id="考前模拟卷-003">考前模拟卷-003</h2>
+<ol>
+<li>
+<p>分别计算携带 40 字节和 400 字节数据的以太网帧的最大传输效率。(数据传输效率=数据长度／帧的总长度。要求写出计算过程，计算结果保留 3 位有效数字)</p>
+<div class="details admonition success">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-check-circle fa-fw"></i>答案<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">答案：携带40字节情况下的最大传输效率：$40\div（40+6+18）=62.5%$；携带400字节情况下的最大传输效率：$400\div（400+18）=95.7%$。
+解析：根据 CSMA/CD 协议的工作原理，可以求出以太网的最短帧长为 512 位，即64 字节，这也是为什么以太网帧中的数据字段最少要 46 字节（如果不足 46 字节，则需要填充）的原因。以太网帧结构如图所示
+<a href="https://cdn.jsdelivr.net/gh/blogimg/picbed@master/2020/04/10/b762db1452eb0cc5466b3549faf2ede1.png" data-fancybox="group" data-caption="image-20200410184446227">
+    <img class="lazyload" src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/blogimg/picbed@master/2020/04/10/b762db1452eb0cc5466b3549faf2ede1.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/blogimg/picbed@master/2020/04/10/b762db1452eb0cc5466b3549faf2ede1.png, https://cdn.jsdelivr.net/gh/blogimg/picbed@master/2020/04/10/b762db1452eb0cc5466b3549faf2ede1.png 1.5x, https://cdn.jsdelivr.net/gh/blogimg/picbed@master/2020/04/10/b762db1452eb0cc5466b3549faf2ede1.png 2x" data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/blogimg/picbed@master/2020/04/10/b762db1452eb0cc5466b3549faf2ede1.png" title="image-20200410184446227"  />
+</a>
+若要传输的数据字段为 40 字节，不足 46 字节，故需要填充 6 个字节，再加上以 太网帧结构中必要的字节 $6+6+2+4=18$ 字节，帧的总长度共 64 字节，所以数据传 输效率$=40\div64=62.5%$。若要传输的数据字段为 400 字节，大于 46 字节，故只需 要加上必要的 18 字节，帧的总长度共 418 字节，所以数据传输效率 =$400\div418=95.7%$。</div>
+        </div>
+    </div>
+</li>
+<li>
+<p>有一个电缆长度为 1Km 的 CSMA/CD 局域网，信号传播速度为光速的 2/3，其最小帧长度为 1000bit。试求出数据传输速率。</p>
+<div class="details admonition success">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-check-circle fa-fw"></i>答案<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><p>答案：信号传输速率$ v = 3\times 10^8 \times 2\div3 = 2\times10^8 km/s$；数据传输速率$ R =  Lmin\times(2d \div v) = 1000\div (2 \times 1000 \div (2 \times 10^8)) = 10^8 bit/s$</p>
+<p>解析：使用CSMA/CD协议实现多路访问控制时，通过共享信道通信的两个通信站之间相距的最远距离、信号传播速度、数据帧长度以及信道信息传输速率之间要满足下列约束关系：</p>
+<p><a href="https://cdn.jsdelivr.net/gh/blogimg/picbed@master/2020/04/10/ac02fc466f293e5d9bd9883f18677408.png" data-fancybox="group" data-caption="https://cdn.jsdelivr.net/gh/blogimg/picbed@master/2020/04/10/ac02fc466f293e5d9bd9883f18677408.png">
+    <img class="lazyload" src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/blogimg/picbed@master/2020/04/10/ac02fc466f293e5d9bd9883f18677408.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/blogimg/picbed@master/2020/04/10/ac02fc466f293e5d9bd9883f18677408.png, https://cdn.jsdelivr.net/gh/blogimg/picbed@master/2020/04/10/ac02fc466f293e5d9bd9883f18677408.png 1.5x, https://cdn.jsdelivr.net/gh/blogimg/picbed@master/2020/04/10/ac02fc466f293e5d9bd9883f18677408.png 2x" data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/blogimg/picbed@master/2020/04/10/ac02fc466f293e5d9bd9883f18677408.png" title="https://cdn.jsdelivr.net/gh/blogimg/picbed@master/2020/04/10/ac02fc466f293e5d9bd9883f18677408.png"  />
+</a></p>
+<p>，式中Lmin为数据帧最小长度；R信息传输速率；Dmax为两通信站之间的最远距离；v为信号传播速度。本题中，信号传输速率$v = 3\times 10^8 \times 2\div3 = 2\times10^8 km/s$；数据传输速率$ R =  Lmin\times(2d \div v) = 1000\div (2 \times 1000 \div (2 \times 10^8)) = 10^8 bit/s$</p>
+</div>
+        </div>
+    </div>
+</li>
+<li>
+<p>请将 IP 网络 12.34.56.0/24 划分为 3 个子网，要求：第一个子网的可分配IP 地址不少于 50 个，第二个子网的可分配 IP 地址不少于 60 个，第三个子网的可分配 IP 地址不少于 120 个。</p>
+<div class="details admonition success">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-check-circle fa-fw"></i>答案<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><p><strong>第一个子网的子网地址是 12.34.56.0，子网掩码是 255.255.255.192</strong>，可分配 IP 地址数 为 62，可分配 IP 地址范围是：12.34.56.1/26-12.34.56.62/26；</p>
+<p><strong>第二个子网的子网地址是 12.34.56.64，子网掩码是 255.255.255.192</strong>，可分配 IP 地址 数为 62，可分配 IP 地址范围是：12.34.56.65/26〜12.34.56.126/26；</p>
+<p><strong>第三个子网的子网地址是 12.34.56.128，子网掩码是 255.255.255.128</strong>，可分配 IP 地址 数为 126，可分配 IP 地址范围是：12.34.56.129/25〜12.34.56.254/25。</p>
+</div>
+        </div>
+    </div>
+</li>
+</ol>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2020-07-19</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/posts/%E8%87%AA%E5%AD%A6%E8%80%83%E8%AF%95/%E8%AE%A1%E7%AE%97%E9%A2%98%E6%95%B4%E7%90%86/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://study.tzki.cn/posts/%E8%87%AA%E5%AD%A6%E8%80%83%E8%AF%95/%E8%AE%A1%E7%AE%97%E9%A2%98%E6%95%B4%E7%90%86/" data-title="计算机网络计算题（综合题）整理" data-hashtags="计算机网络"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://study.tzki.cn/posts/%E8%87%AA%E5%AD%A6%E8%80%83%E8%AF%95/%E8%AE%A1%E7%AE%97%E9%A2%98%E6%95%B4%E7%90%86/" data-hashtag="计算机网络"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://study.tzki.cn/posts/%E8%87%AA%E5%AD%A6%E8%80%83%E8%AF%95/%E8%AE%A1%E7%AE%97%E9%A2%98%E6%95%B4%E7%90%86/" data-title="计算机网络计算题（综合题）整理" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://study.tzki.cn/posts/%E8%87%AA%E5%AD%A6%E8%80%83%E8%AF%95/%E8%AE%A1%E7%AE%97%E9%A2%98%E6%95%B4%E7%90%86/" data-title="计算机网络计算题（综合题）整理"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://study.tzki.cn/posts/%E8%87%AA%E5%AD%A6%E8%80%83%E8%AF%95/%E8%AE%A1%E7%AE%97%E9%A2%98%E6%95%B4%E7%90%86/" data-title="计算机网络计算题（综合题）整理"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="https://study.tzki.cn/posts/%E8%87%AA%E5%AD%A6%E8%80%83%E8%AF%95/%E8%AE%A1%E7%AE%97%E9%A2%98%E6%95%B4%E7%90%86/" data-title="计算机网络计算题（综合题）整理" data-description="整理一下常见的综合题计算题等"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/myspace.svg"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="https://study.tzki.cn/posts/%E8%87%AA%E5%AD%A6%E8%80%83%E8%AF%95/%E8%AE%A1%E7%AE%97%E9%A2%98%E6%95%B4%E7%90%86/" data-title="计算机网络计算题（综合题）整理" data-description="整理一下常见的综合题计算题等"><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://study.tzki.cn/posts/%E8%87%AA%E5%AD%A6%E8%80%83%E8%AF%95/%E8%AE%A1%E7%AE%97%E9%A2%98%E6%95%B4%E7%90%86/" data-title="计算机网络计算题（综合题）整理"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/%E8%87%AA%E5%AD%A6%E8%80%83%E8%AF%95/%E8%87%AA%E8%80%83%E8%8B%B1%E8%AF%AD%E4%BA%8C%E5%8D%95%E8%AF%8D/" class="prev" rel="prev" title="自考英语（二）词汇"><i class="fas fa-angle-left fa-fw"></i>自考英语（二）词汇</a></div>
+</div>
+<div id="comments"><div id="valine" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.70.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://antmoe.gitee.io" target="_blank">Dreamy.TZK</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/valine/valine.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery.js@1.2.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/copy-tex.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sviptzk/StaticFile_HEXO@v1.3/butterfly/css/pool.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lunr@2.3.8/lunr.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/twemoji@13.0.0/dist/twemoji.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery.js@1.2.0/dist/js/lightgallery.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lg-thumbnail.js@1.2.0/dist/lg-thumbnail.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lg-zoom.js@1.2.0/dist/lg-zoom.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/copy-tex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/mhchem.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{"valine":{"appId":"MSrsml5TjC3t4RglJVU0PO0K-MdYXbMMI","appKey":"XrcCUv4pMAYuY973iEM37zLq","avatar":"mp","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-facebook@5.0.1/img/facebook/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":true,"highlight":true,"lang":"zh-CN","pageSize":10,"placeholder":"建议在上方留下昵称和邮箱等信息，以便收到回复通知（以下三选一）\t\n1、仅在昵称中留下QQ号（系统自动获取QQ昵称、QQ邮箱、QQ头像等信息）\t\n2、自定义填写昵称、邮箱、网址信息（系统自动匹配头像）\t\n3、匿名留言（不会收到留言回复通知，不推荐）","recordIP":true,"visitor":true}},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"},"twemoji":true};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>
