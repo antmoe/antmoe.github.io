@@ -4,16 +4,9 @@
         <link>https://study.tzki.cn/</link>
         <description>一个收藏回忆与分享技术的地方！</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>sviptzk@163.com (Dreamy.TZK)</managingEditor>
-            <webMaster>sviptzk@163.com (Dreamy.TZK)</webMaster><lastBuildDate>Sun, 19 Jul 2020 10:13:50 &#43;0800</lastBuildDate>
+            <webMaster>sviptzk@163.com (Dreamy.TZK)</webMaster><lastBuildDate>Sun, 12 Jul 2020 21:52:50 &#43;0800</lastBuildDate>
             <atom:link href="https://study.tzki.cn/index.xml" rel="self" type="application/rss+xml" />
         <item>
-    <title>计算机网络计算题（综合题）整理</title>
-    <link>https://study.tzki.cn/posts/%E8%87%AA%E5%AD%A6%E8%80%83%E8%AF%95/%E8%AE%A1%E7%AE%97%E9%A2%98%E6%95%B4%E7%90%86/</link>
-    <pubDate>Sun, 19 Jul 2020 10:13:50 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://study.tzki.cn/posts/%E8%87%AA%E5%AD%A6%E8%80%83%E8%AF%95/%E8%AE%A1%E7%AE%97%E9%A2%98%E6%95%B4%E7%90%86/</guid>
-    <description><![CDATA[考前模拟卷-001 设网络中路由器使用 RIP 协议，路由器 B 的当前路由表如表 1 所示，B 收到从路由器 C 发来的路由信息如表 2 所示。试给出路由器 B 更新后的]]></description>
-</item><item>
     <title>Express框架实现一个简单的博客系统</title>
     <link>https://study.tzki.cn/posts/project/20200712/</link>
     <pubDate>Sun, 12 Jul 2020 21:52:50 &#43;0800</pubDate>
@@ -76,5 +69,12 @@
     <author>作者</author>
     <guid>https://study.tzki.cn/posts/notes/20200704/20200704-3/</guid>
     <description><![CDATA[如何写NodeJs模块 遵守commentjs规范。 导入模块 暴露出去（导出） 一个简单的示例： 1 2 3 4 5 6 7 8 9 10 11 12 13 // 定义一个对象 let db = { baseUrl:]]></description>
+</item><item>
+    <title>七、NodeJs数据库管理</title>
+    <link>https://study.tzki.cn/posts/notes/20200704/20200704-2/</link>
+    <pubDate>Sat, 04 Jul 2020 15:56:50 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://study.tzki.cn/posts/notes/20200704/20200704-2/</guid>
+    <description><![CDATA[title: 七、NodeJs数据库管理 categories: 大前端 NodeJs tags: 大前端 NodeJs mysql 笔记 date: 2020-07-04 15:56:58 建表 MySQL程序可以使用PHP study集成工具。链接、操作数据库可以使用ph]]></description>
 </item></channel>
 </rss>
