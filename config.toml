@@ -63,7 +63,7 @@ theme = "LoveIt"
   #  应用图标配置
   [params.app]
     # 当添加到 iOS 主屏幕或者 Android 启动器时的标题, 覆盖默认标题
-    title = "LoveIt"
+    title = "小康博客"
     # 是否隐藏网站图标资源链接
     noFavicon = false
     # 更现代的 SVG 网站图标, 可替代旧的 .png 和 .ico 文件
@@ -361,9 +361,9 @@ theme = "LoveIt"
         clientSecret = ""
       # Valine 评论系统设置
       [params.page.comment.valine]
-        enable = true
-        appId = "MSrsml5TjC3t4RglJVU0PO0K-MdYXbMMI"
-        appKey = "XrcCUv4pMAYuY973iEM37zLq"
+        enable = false
+        appId = ""
+        appKey = ""
         placeholder = "建议在上方留下昵称和邮箱等信息，以便收到回复通知（以下三选一）\t\n1、仅在昵称中留下QQ号（系统自动获取QQ昵称、QQ邮箱、QQ头像等信息）\t\n2、自定义填写昵称、邮箱、网址信息（系统自动匹配头像）\t\n3、匿名留言（不会收到留言回复通知，不推荐）"
         avatar = "mp"
         meta= ""
@@ -534,8 +534,8 @@ theme = "LoveIt"
 # 作者配置
 [author]
   name = "Dreamy.TZK"
-  email = "sviptzk@163.com"
-  link = "https://antmoe.gitee.io"
+  email = "dreamytzk@outlook.com"
+  link = "https://study.tzki.cn"
 
 # 网站地图配置
 [sitemap]
