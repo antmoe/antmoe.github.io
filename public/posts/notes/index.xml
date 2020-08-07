@@ -5,6 +5,13 @@
         <description>所有我的笔记汇总 | 小康的学习记录</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>dreamytzk@outlook.com (Dreamy.TZK)</managingEditor>
             <webMaster>dreamytzk@outlook.com (Dreamy.TZK)</webMaster><lastBuildDate>Sun, 10 May 2020 21:35:50 &#43;0800</lastBuildDate><atom:link href="https://study.tzki.cn/posts/notes/" rel="self" type="application/rss+xml" /><item>
+    <title>HTTP是什么</title>
+    <link>https://study.tzki.cn/posts/notes/20200807/</link>
+    <pubDate>Fri, 07 Aug 2020 21:18:00 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://study.tzki.cn/posts/notes/20200807/</guid>
+    <description><![CDATA[HTTP是什么？ HTP全称为 Hypertext Transfer Protocol，被译为超文本传输协议，是互联网上应用最为广泛的一种网络协议。 HTTP协议是在Web上进行数]]></description>
+</item><item>
     <title>2020年07月08日笔记汇总</title>
     <link>https://study.tzki.cn/posts/notes/20200708/</link>
     <pubDate>Wed, 08 Jul 2020 17:03:50 &#43;0800</pubDate>
@@ -67,12 +74,5 @@
     <author>作者</author>
     <guid>https://study.tzki.cn/posts/notes/20200622/</guid>
     <description><![CDATA[jQuery原型上的属性 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 kjQuery.prototype = { constructor: kjQuery, init: function (selector) {}, // 版本号 jquery: &#34;1.1.0&#34;, // 实例默认的选择器取值 selector: &#34;&#34;, // 实例默认的长度 length: 0, // 给实例]]></description>
-</item><item>
-    <title>jQuery原理（入口函数）</title>
-    <link>https://study.tzki.cn/posts/notes/20200621/</link>
-    <pubDate>Sun, 21 Jun 2020 19:42:00 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://study.tzki.cn/posts/notes/20200621/</guid>
-    <description><![CDATA[基本结构 jQuery的基本结构如下： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 (function (window, undefiend) { var jQuery = function () { return new jQuery.fn.init() } jQuery.prototype = { constructor: jQuery } jQuery.fn.init.prototype = jQuery.prototype window.jQuery = window.$ =]]></description>
 </item></channel>
 </rss>
