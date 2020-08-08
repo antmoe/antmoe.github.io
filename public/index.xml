@@ -4,9 +4,16 @@
         <link>https://study.tzki.cn/</link>
         <description>一个收藏回忆与分享技术的地方！</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>dreamytzk@outlook.com (Dreamy.TZK)</managingEditor>
-            <webMaster>dreamytzk@outlook.com (Dreamy.TZK)</webMaster><lastBuildDate>Fri, 07 Aug 2020 21:18:00 &#43;0800</lastBuildDate>
+            <webMaster>dreamytzk@outlook.com (Dreamy.TZK)</webMaster><lastBuildDate>Sat, 08 Aug 2020 22:24:00 &#43;0800</lastBuildDate>
             <atom:link href="https://study.tzki.cn/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>HTTP消息</title>
+    <link>https://study.tzki.cn/posts/notes/20200808/</link>
+    <pubDate>Sat, 08 Aug 2020 22:24:00 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://study.tzki.cn/posts/notes/20200808/</guid>
+    <description><![CDATA[HTTP报文 HTTP报文是什么 HTTP报文，又称HTTP消息，是服务器和客户端之间交换数据的方式。有两种类型的消息：请求，由客户端发送用来触]]></description>
+</item><item>
     <title>HTTP是什么</title>
     <link>https://study.tzki.cn/posts/notes/20200807/</link>
     <pubDate>Fri, 07 Aug 2020 21:18:00 &#43;0800</pubDate>
@@ -69,12 +76,5 @@
     <author>作者</author>
     <guid>https://study.tzki.cn/posts/exercise/20200705-cqmanager/</guid>
     <description><![CDATA[查看源代码 准备 mysql-ithm的使用 安装npm i mysql-ithm 使用 参照文档即可。 简单示例 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30]]></description>
-</item><item>
-    <title>八、NPM包管理</title>
-    <link>https://study.tzki.cn/posts/notes/20200704/20200704-3/</link>
-    <pubDate>Sat, 04 Jul 2020 18:17:50 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://study.tzki.cn/posts/notes/20200704/20200704-3/</guid>
-    <description><![CDATA[如何写NodeJs模块 遵守commentjs规范。 导入模块 暴露出去（导出） 一个简单的示例： 1 2 3 4 5 6 7 8 9 10 11 12 13 // 定义一个对象 let db = { baseUrl:]]></description>
 </item></channel>
 </rss>

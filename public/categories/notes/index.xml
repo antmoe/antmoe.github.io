@@ -4,7 +4,14 @@
         <link>https://study.tzki.cn/categories/notes/</link>
         <description>notes - 分类 - 小康的学习记录</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>dreamytzk@outlook.com (Dreamy.TZK)</managingEditor>
-            <webMaster>dreamytzk@outlook.com (Dreamy.TZK)</webMaster><lastBuildDate>Fri, 07 Aug 2020 21:18:00 &#43;0800</lastBuildDate><atom:link href="https://study.tzki.cn/categories/notes/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>dreamytzk@outlook.com (Dreamy.TZK)</webMaster><lastBuildDate>Sat, 08 Aug 2020 22:24:00 &#43;0800</lastBuildDate><atom:link href="https://study.tzki.cn/categories/notes/" rel="self" type="application/rss+xml" /><item>
+    <title>HTTP消息</title>
+    <link>https://study.tzki.cn/posts/notes/20200808/</link>
+    <pubDate>Sat, 08 Aug 2020 22:24:00 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://study.tzki.cn/posts/notes/20200808/</guid>
+    <description><![CDATA[HTTP报文 HTTP报文是什么 HTTP报文，又称HTTP消息，是服务器和客户端之间交换数据的方式。有两种类型的消息：请求，由客户端发送用来触]]></description>
+</item><item>
     <title>HTTP是什么</title>
     <link>https://study.tzki.cn/posts/notes/20200807/</link>
     <pubDate>Fri, 07 Aug 2020 21:18:00 &#43;0800</pubDate>
@@ -67,12 +74,5 @@
     <author>作者</author>
     <guid>https://study.tzki.cn/posts/notes/20200704/20200704-1/</guid>
     <description><![CDATA[什么是中间件 在路由相应之前就会执行中间件的内容，例如在中间件中进行赋值，这种就可以在路由执行时使用这个值。 所以中间件就是服务器开启之后和路由]]></description>
-</item><item>
-    <title>五、express实战-英雄管理系统</title>
-    <link>https://study.tzki.cn/posts/notes/20200703/20200703-2/</link>
-    <pubDate>Fri, 03 Jul 2020 14:55:50 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://study.tzki.cn/posts/notes/20200703/20200703-2/</guid>
-    <description><![CDATA[查看源码 后端路由 简单来说，注册路由就是写接口 登录接口 登录接口实现很简单，只需要接收post传来的参数，然后进行验证即可。 1 2 3 4 5 6 7 8 9 10]]></description>
 </item></channel>
 </rss>

@@ -5,6 +5,13 @@
         <description>所有我的笔记汇总 | 小康的学习记录</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>dreamytzk@outlook.com (Dreamy.TZK)</managingEditor>
             <webMaster>dreamytzk@outlook.com (Dreamy.TZK)</webMaster><lastBuildDate>Sun, 10 May 2020 21:35:50 &#43;0800</lastBuildDate><atom:link href="https://study.tzki.cn/posts/notes/" rel="self" type="application/rss+xml" /><item>
+    <title>HTTP消息</title>
+    <link>https://study.tzki.cn/posts/notes/20200808/</link>
+    <pubDate>Sat, 08 Aug 2020 22:24:00 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://study.tzki.cn/posts/notes/20200808/</guid>
+    <description><![CDATA[HTTP报文 HTTP报文是什么 HTTP报文，又称HTTP消息，是服务器和客户端之间交换数据的方式。有两种类型的消息：请求，由客户端发送用来触]]></description>
+</item><item>
     <title>HTTP是什么</title>
     <link>https://study.tzki.cn/posts/notes/20200807/</link>
     <pubDate>Fri, 07 Aug 2020 21:18:00 &#43;0800</pubDate>
@@ -67,12 +74,5 @@
     <author>作者</author>
     <guid>https://study.tzki.cn/posts/notes/20200623/</guid>
     <description><![CDATA[empty方法 清空指定元素中的所有内容。也就是遍历内容，然后将其innerHTML清空。 1 2 3 4 5 6 7 8 9 10 kjQuery.prototype.extend({ empty: function () { // 遍历所有找到的元素 this.each(function]]></description>
-</item><item>
-    <title>jQuery原理（原型上的属性、方法）</title>
-    <link>https://study.tzki.cn/posts/notes/20200622/</link>
-    <pubDate>Mon, 22 Jun 2020 11:35:00 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://study.tzki.cn/posts/notes/20200622/</guid>
-    <description><![CDATA[jQuery原型上的属性 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 kjQuery.prototype = { constructor: kjQuery, init: function (selector) {}, // 版本号 jquery: &#34;1.1.0&#34;, // 实例默认的选择器取值 selector: &#34;&#34;, // 实例默认的长度 length: 0, // 给实例]]></description>
 </item></channel>
 </rss>

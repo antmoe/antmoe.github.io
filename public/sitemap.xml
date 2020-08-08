@@ -2,11 +2,12 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>https://study.tzki.cn/categories/</loc><lastmod>2020-08-07T21:18:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://study.tzki.cn/categories/</loc><lastmod>2020-08-08T22:24:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://study.tzki.cn/posts/notes/20200808/</loc><lastmod>2020-08-08T22:24:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://study.tzki.cn/categories/notes/</loc><lastmod>2020-08-08T22:24:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://study.tzki.cn/posts/</loc><lastmod>2020-08-08T22:24:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://study.tzki.cn/</loc><lastmod>2020-08-08T22:24:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://study.tzki.cn/posts/notes/20200807/</loc><lastmod>2020-08-07T21:18:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://study.tzki.cn/categories/notes/</loc><lastmod>2020-08-07T21:18:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://study.tzki.cn/posts/</loc><lastmod>2020-08-07T21:18:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://study.tzki.cn/</loc><lastmod>2020-08-07T21:18:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://study.tzki.cn/posts/project/20200712/</loc><lastmod>2020-07-12T21:52:50&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
             <loc>https://study.tzki.cn/categories/project/</loc><lastmod>2020-07-12T21:52:50&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
             <loc>https://study.tzki.cn/posts/notes/20200708/</loc><lastmod>2020-07-08T17:03:50&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url><url>
@@ -20,10 +21,10 @@
             <loc>https://study.tzki.cn/posts/notes/20200707/</loc><lastmod>2020-07-07T16:17:50&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url><url>
             <loc>https://study.tzki.cn/categories/exercise/</loc><lastmod>2020-07-05T22:16:50&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url><url>
             <loc>https://study.tzki.cn/posts/exercise/20200705-cqmanager/</loc><lastmod>2020-07-05T22:16:50&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url><url>
-            <loc>https://study.tzki.cn/posts/notes/20200704/20200704-3/</loc><lastmod>2020-07-04T18:17:50&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url><url>
-            <loc>https://study.tzki.cn/posts/notes/20200704/</loc><lastmod>2020-07-04T17:03:50&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url><url>
-            <loc>https://study.tzki.cn/posts/notes/20200704/20200704-2/</loc><lastmod>2020-07-04T15:56:50&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url><url>
-            <loc>https://study.tzki.cn/posts/notes/20200704/20200704-1/</loc><lastmod>2020-07-04T11:01:50&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url><url>
+            <loc>https://study.tzki.cn/posts/notes/20200704/20200704-3/</loc><lastmod>2020-07-04T18:17:50&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://study.tzki.cn/posts/notes/20200704/</loc><lastmod>2020-07-04T17:03:50&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://study.tzki.cn/posts/notes/20200704/20200704-2/</loc><lastmod>2020-07-04T15:56:50&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://study.tzki.cn/posts/notes/20200704/20200704-1/</loc><lastmod>2020-07-04T11:01:50&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://study.tzki.cn/posts/notes/20200703/</loc><lastmod>2020-07-03T17:03:50&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://study.tzki.cn/posts/notes/20200703/20200703-2/</loc><lastmod>2020-07-03T14:55:50&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://study.tzki.cn/posts/notes/20200703/20200703-1/</loc><lastmod>2020-07-03T14:55:50&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
