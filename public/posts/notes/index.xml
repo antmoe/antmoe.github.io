@@ -5,6 +5,13 @@
         <description>所有我的笔记汇总 | 小康的学习记录</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>dreamytzk@outlook.com (Dreamy.TZK)</managingEditor>
             <webMaster>dreamytzk@outlook.com (Dreamy.TZK)</webMaster><lastBuildDate>Sun, 10 May 2020 21:35:50 &#43;0800</lastBuildDate><atom:link href="https://study.tzki.cn/posts/notes/" rel="self" type="application/rss+xml" /><item>
+    <title>HTTP缓存机制与Cookie</title>
+    <link>https://study.tzki.cn/posts/notes/20200810/</link>
+    <pubDate>Mon, 10 Aug 2020 23:03:00 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://study.tzki.cn/posts/notes/20200810/</guid>
+    <description><![CDATA[HTTP的缓存机制 缓存是什么 缓存是一种保存资源副本并在下次请求时直接使用该副本的技术。当Web缓存发现请求的资源已经被存储，它会拦截请求，返]]></description>
+</item><item>
     <title>HTTP消息</title>
     <link>https://study.tzki.cn/posts/notes/20200808/</link>
     <pubDate>Sat, 08 Aug 2020 22:24:00 &#43;0800</pubDate>
@@ -67,12 +74,5 @@
     <author>作者</author>
     <guid>https://study.tzki.cn/posts/notes/20200624/</guid>
     <description><![CDATA[]]></description>
-</item><item>
-    <title>jQuery原理（DOM操作相关方法）</title>
-    <link>https://study.tzki.cn/posts/notes/20200623/</link>
-    <pubDate>Tue, 23 Jun 2020 11:35:00 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://study.tzki.cn/posts/notes/20200623/</guid>
-    <description><![CDATA[empty方法 清空指定元素中的所有内容。也就是遍历内容，然后将其innerHTML清空。 1 2 3 4 5 6 7 8 9 10 kjQuery.prototype.extend({ empty: function () { // 遍历所有找到的元素 this.each(function]]></description>
 </item></channel>
 </rss>

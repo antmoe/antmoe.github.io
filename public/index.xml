@@ -4,9 +4,16 @@
         <link>https://study.tzki.cn/</link>
         <description>一个收藏回忆与分享技术的地方！</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>dreamytzk@outlook.com (Dreamy.TZK)</managingEditor>
-            <webMaster>dreamytzk@outlook.com (Dreamy.TZK)</webMaster><lastBuildDate>Sat, 08 Aug 2020 22:24:00 &#43;0800</lastBuildDate>
+            <webMaster>dreamytzk@outlook.com (Dreamy.TZK)</webMaster><lastBuildDate>Mon, 10 Aug 2020 23:03:00 &#43;0800</lastBuildDate>
             <atom:link href="https://study.tzki.cn/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>HTTP缓存机制与Cookie</title>
+    <link>https://study.tzki.cn/posts/notes/20200810/</link>
+    <pubDate>Mon, 10 Aug 2020 23:03:00 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://study.tzki.cn/posts/notes/20200810/</guid>
+    <description><![CDATA[HTTP的缓存机制 缓存是什么 缓存是一种保存资源副本并在下次请求时直接使用该副本的技术。当Web缓存发现请求的资源已经被存储，它会拦截请求，返]]></description>
+</item><item>
     <title>HTTP消息</title>
     <link>https://study.tzki.cn/posts/notes/20200808/</link>
     <pubDate>Sat, 08 Aug 2020 22:24:00 &#43;0800</pubDate>
@@ -69,12 +76,5 @@
     <author>作者</author>
     <guid>https://study.tzki.cn/posts/notes/20200707/</guid>
     <description><![CDATA[Promise用来做什么 用来解决回调地狱。回调地狱也就是回调函数中嵌套了回调函数，代码阅读性低。 例如如下代码： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15]]></description>
-</item><item>
-    <title>九、英雄管理系统</title>
-    <link>https://study.tzki.cn/posts/exercise/20200705-cqmanager/</link>
-    <pubDate>Sun, 05 Jul 2020 22:16:50 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://study.tzki.cn/posts/exercise/20200705-cqmanager/</guid>
-    <description><![CDATA[查看源代码 准备 mysql-ithm的使用 安装npm i mysql-ithm 使用 参照文档即可。 简单示例 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30]]></description>
 </item></channel>
 </rss>

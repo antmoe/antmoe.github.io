@@ -4,7 +4,14 @@
         <link>https://study.tzki.cn/categories/notes/</link>
         <description>notes - 分类 - 小康的学习记录</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>dreamytzk@outlook.com (Dreamy.TZK)</managingEditor>
-            <webMaster>dreamytzk@outlook.com (Dreamy.TZK)</webMaster><lastBuildDate>Sat, 08 Aug 2020 22:24:00 &#43;0800</lastBuildDate><atom:link href="https://study.tzki.cn/categories/notes/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>dreamytzk@outlook.com (Dreamy.TZK)</webMaster><lastBuildDate>Mon, 10 Aug 2020 23:03:00 &#43;0800</lastBuildDate><atom:link href="https://study.tzki.cn/categories/notes/" rel="self" type="application/rss+xml" /><item>
+    <title>HTTP缓存机制与Cookie</title>
+    <link>https://study.tzki.cn/posts/notes/20200810/</link>
+    <pubDate>Mon, 10 Aug 2020 23:03:00 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://study.tzki.cn/posts/notes/20200810/</guid>
+    <description><![CDATA[HTTP的缓存机制 缓存是什么 缓存是一种保存资源副本并在下次请求时直接使用该副本的技术。当Web缓存发现请求的资源已经被存储，它会拦截请求，返]]></description>
+</item><item>
     <title>HTTP消息</title>
     <link>https://study.tzki.cn/posts/notes/20200808/</link>
     <pubDate>Sat, 08 Aug 2020 22:24:00 &#43;0800</pubDate>
@@ -67,12 +74,5 @@
     <author>作者</author>
     <guid>https://study.tzki.cn/posts/notes/20200704/20200704-2/</guid>
     <description><![CDATA[title: 七、NodeJs数据库管理 categories: 大前端 NodeJs tags: 大前端 NodeJs mysql 笔记 date: 2020-07-04 15:56:58 建表 MySQL程序可以使用PHP study集成工具。链接、操作数据库可以使用ph]]></description>
-</item><item>
-    <title>六、中间件与跨域</title>
-    <link>https://study.tzki.cn/posts/notes/20200704/20200704-1/</link>
-    <pubDate>Sat, 04 Jul 2020 11:01:50 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://study.tzki.cn/posts/notes/20200704/20200704-1/</guid>
-    <description><![CDATA[什么是中间件 在路由相应之前就会执行中间件的内容，例如在中间件中进行赋值，这种就可以在路由执行时使用这个值。 所以中间件就是服务器开启之后和路由]]></description>
 </item></channel>
 </rss>
