@@ -4,7 +4,14 @@
         <link>https://study.tzki.cn/categories/notes/</link>
         <description>notes - 分类 - 小康的学习记录</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>dreamytzk@outlook.com (Dreamy.TZK)</managingEditor>
-            <webMaster>dreamytzk@outlook.com (Dreamy.TZK)</webMaster><lastBuildDate>Mon, 10 Aug 2020 23:03:00 &#43;0800</lastBuildDate><atom:link href="https://study.tzki.cn/categories/notes/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>dreamytzk@outlook.com (Dreamy.TZK)</webMaster><lastBuildDate>Tue, 11 Aug 2020 20:51:00 &#43;0800</lastBuildDate><atom:link href="https://study.tzki.cn/categories/notes/" rel="self" type="application/rss+xml" /><item>
+    <title>跨域资源共享</title>
+    <link>https://study.tzki.cn/posts/notes/20200811/</link>
+    <pubDate>Tue, 11 Aug 2020 20:51:00 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://study.tzki.cn/posts/notes/20200811/</guid>
+    <description><![CDATA[跨域资源共享是什么 CORS全称为Cross-Origin Resource Sharing，被译为跨域资源共享，新増了一组HTTP首部字段，允许服务器声明哪些]]></description>
+</item><item>
     <title>HTTP缓存机制与Cookie</title>
     <link>https://study.tzki.cn/posts/notes/20200810/</link>
     <pubDate>Mon, 10 Aug 2020 23:03:00 &#43;0800</pubDate>
@@ -67,12 +74,5 @@
     <author>作者</author>
     <guid>https://study.tzki.cn/posts/notes/20200704/20200704-3/</guid>
     <description><![CDATA[如何写NodeJs模块 遵守commentjs规范。 导入模块 暴露出去（导出） 一个简单的示例： 1 2 3 4 5 6 7 8 9 10 11 12 13 // 定义一个对象 let db = { baseUrl:]]></description>
-</item><item>
-    <title>七、NodeJs数据库管理</title>
-    <link>https://study.tzki.cn/posts/notes/20200704/20200704-2/</link>
-    <pubDate>Sat, 04 Jul 2020 15:56:50 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://study.tzki.cn/posts/notes/20200704/20200704-2/</guid>
-    <description><![CDATA[title: 七、NodeJs数据库管理 categories: 大前端 NodeJs tags: 大前端 NodeJs mysql 笔记 date: 2020-07-04 15:56:58 建表 MySQL程序可以使用PHP study集成工具。链接、操作数据库可以使用ph]]></description>
 </item></channel>
 </rss>

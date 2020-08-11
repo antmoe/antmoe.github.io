@@ -4,9 +4,16 @@
         <link>https://study.tzki.cn/</link>
         <description>一个收藏回忆与分享技术的地方！</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>dreamytzk@outlook.com (Dreamy.TZK)</managingEditor>
-            <webMaster>dreamytzk@outlook.com (Dreamy.TZK)</webMaster><lastBuildDate>Mon, 10 Aug 2020 23:03:00 &#43;0800</lastBuildDate>
+            <webMaster>dreamytzk@outlook.com (Dreamy.TZK)</webMaster><lastBuildDate>Tue, 11 Aug 2020 20:51:00 &#43;0800</lastBuildDate>
             <atom:link href="https://study.tzki.cn/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>跨域资源共享</title>
+    <link>https://study.tzki.cn/posts/notes/20200811/</link>
+    <pubDate>Tue, 11 Aug 2020 20:51:00 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://study.tzki.cn/posts/notes/20200811/</guid>
+    <description><![CDATA[跨域资源共享是什么 CORS全称为Cross-Origin Resource Sharing，被译为跨域资源共享，新増了一组HTTP首部字段，允许服务器声明哪些]]></description>
+</item><item>
     <title>HTTP缓存机制与Cookie</title>
     <link>https://study.tzki.cn/posts/notes/20200810/</link>
     <pubDate>Mon, 10 Aug 2020 23:03:00 &#43;0800</pubDate>
@@ -69,12 +76,5 @@
     <author>作者</author>
     <guid>https://study.tzki.cn/posts/project/20200707/</guid>
     <description><![CDATA[下载源码 开发前的准备 安装插件 body-parser cookies express markdown mongoose swig 1 npm i body-parser cookies markdown mongoose swig 基本的目录结构 1 2 3 4 5 6 7 8 9 10 11 blog ├── app.js 应用（启动）入口文件 ├── db 数据库存储]]></description>
-</item><item>
-    <title>十、Promise的使用</title>
-    <link>https://study.tzki.cn/posts/notes/20200707/</link>
-    <pubDate>Tue, 07 Jul 2020 16:17:50 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://study.tzki.cn/posts/notes/20200707/</guid>
-    <description><![CDATA[Promise用来做什么 用来解决回调地狱。回调地狱也就是回调函数中嵌套了回调函数，代码阅读性低。 例如如下代码： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15]]></description>
 </item></channel>
 </rss>
