@@ -4,9 +4,16 @@
         <link>https://study.tzki.cn/</link>
         <description>一个收藏回忆与分享技术的地方！</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>dreamytzk@outlook.com (Dreamy.TZK)</managingEditor>
-            <webMaster>dreamytzk@outlook.com (Dreamy.TZK)</webMaster><lastBuildDate>Tue, 11 Aug 2020 20:51:00 &#43;0800</lastBuildDate>
+            <webMaster>dreamytzk@outlook.com (Dreamy.TZK)</webMaster><lastBuildDate>Wed, 12 Aug 2020 21:13:00 &#43;0800</lastBuildDate>
             <atom:link href="https://study.tzki.cn/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>HTTP协议基础及发展历史</title>
+    <link>https://study.tzki.cn/posts/notes/20200812/</link>
+    <pubDate>Wed, 12 Aug 2020 21:13:00 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://study.tzki.cn/posts/notes/20200812/</guid>
+    <description><![CDATA[经典五层模型介绍 第三层 物理层 定义物理设备如何传输数据 数据链路层 在通信的实体间建立数据链路连接 网络层 数据在节点之间传输创建逻辑链路 传输层 向用户]]></description>
+</item><item>
     <title>跨域资源共享</title>
     <link>https://study.tzki.cn/posts/notes/20200811/</link>
     <pubDate>Tue, 11 Aug 2020 20:51:00 &#43;0800</pubDate>
@@ -69,12 +76,5 @@
     <author>作者</author>
     <guid>https://study.tzki.cn/posts/notes/20200708/20200708-4/</guid>
     <description><![CDATA[mongoose 核心概念 schema 约束字段/列数据 model模型 对应 集合 后期用它来实现数据增删改查 简介 安装 1 npm i mongoose schema 英文网： http://mongoosejs.com 中文网： http://mongoosejs.net/ 作用：用来约束MongoD]]></description>
-</item><item>
-    <title>NodeJs博客系统开发</title>
-    <link>https://study.tzki.cn/posts/project/20200707/</link>
-    <pubDate>Tue, 07 Jul 2020 19:52:50 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://study.tzki.cn/posts/project/20200707/</guid>
-    <description><![CDATA[下载源码 开发前的准备 安装插件 body-parser cookies express markdown mongoose swig 1 npm i body-parser cookies markdown mongoose swig 基本的目录结构 1 2 3 4 5 6 7 8 9 10 11 blog ├── app.js 应用（启动）入口文件 ├── db 数据库存储]]></description>
 </item></channel>
 </rss>

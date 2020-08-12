@@ -5,6 +5,13 @@
         <description>所有我的笔记汇总 | 小康的学习记录</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>dreamytzk@outlook.com (Dreamy.TZK)</managingEditor>
             <webMaster>dreamytzk@outlook.com (Dreamy.TZK)</webMaster><lastBuildDate>Sun, 10 May 2020 21:35:50 &#43;0800</lastBuildDate><atom:link href="https://study.tzki.cn/posts/notes/" rel="self" type="application/rss+xml" /><item>
+    <title>HTTP协议基础及发展历史</title>
+    <link>https://study.tzki.cn/posts/notes/20200812/</link>
+    <pubDate>Wed, 12 Aug 2020 21:13:00 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://study.tzki.cn/posts/notes/20200812/</guid>
+    <description><![CDATA[经典五层模型介绍 第三层 物理层 定义物理设备如何传输数据 数据链路层 在通信的实体间建立数据链路连接 网络层 数据在节点之间传输创建逻辑链路 传输层 向用户]]></description>
+</item><item>
     <title>跨域资源共享</title>
     <link>https://study.tzki.cn/posts/notes/20200811/</link>
     <pubDate>Tue, 11 Aug 2020 20:51:00 &#43;0800</pubDate>
@@ -66,13 +73,6 @@
     <pubDate>Thu, 02 Jul 2020 17:03:50 &#43;0800</pubDate>
     <author>作者</author>
     <guid>https://study.tzki.cn/posts/notes/20200702/</guid>
-    <description><![CDATA[]]></description>
-</item><item>
-    <title>2020年07月01日笔记汇总</title>
-    <link>https://study.tzki.cn/posts/notes/20200701/</link>
-    <pubDate>Wed, 01 Jul 2020 17:03:50 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://study.tzki.cn/posts/notes/20200701/</guid>
     <description><![CDATA[]]></description>
 </item></channel>
 </rss>
