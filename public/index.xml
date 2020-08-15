@@ -4,9 +4,23 @@
         <link>https://study.tzki.cn/</link>
         <description>一个收藏回忆与分享技术的地方！</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>dreamytzk@outlook.com (Dreamy.TZK)</managingEditor>
-            <webMaster>dreamytzk@outlook.com (Dreamy.TZK)</webMaster><lastBuildDate>Wed, 12 Aug 2020 21:13:00 &#43;0800</lastBuildDate>
+            <webMaster>dreamytzk@outlook.com (Dreamy.TZK)</webMaster><lastBuildDate>Sat, 15 Aug 2020 10:29:50 &#43;0800</lastBuildDate>
             <atom:link href="https://study.tzki.cn/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>HTTP各种特性总览</title>
+    <link>https://study.tzki.cn/posts/notes/20200815/20200815-1/</link>
+    <pubDate>Sat, 15 Aug 2020 10:29:50 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://study.tzki.cn/posts/notes/20200815/20200815-1/</guid>
+    <description><![CDATA[更多HTTP头特性可参考：https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers]]></description>
+</item><item>
+    <title>Nginx代理以及面向未来的HTTP</title>
+    <link>https://study.tzki.cn/posts/notes/20200815/20200815-2/</link>
+    <pubDate>Sat, 15 Aug 2020 10:29:50 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://study.tzki.cn/posts/notes/20200815/20200815-2/</guid>
+    <description><![CDATA[windows下使用nginx 通过官网下载Nginx，将其解压。在命令行内输入./nginx.exe即可启动。 基础代理配置 如果启动的ngin]]></description>
+</item><item>
     <title>HTTP协议基础及发展历史</title>
     <link>https://study.tzki.cn/posts/notes/20200812/</link>
     <pubDate>Wed, 12 Aug 2020 21:13:00 &#43;0800</pubDate>
@@ -62,19 +76,5 @@
     <author>作者</author>
     <guid>https://study.tzki.cn/posts/notes/20200708/20200708-3/</guid>
     <description><![CDATA[排序&amp;分页 准备数据 1 2 3 4 5 6 7 8 use test3 db.c1.insert({_id:1,name:&#34;a&#34;,sex:1,age:1}) db.c1.insert({_id:2,name:&#34;a&#34;,sex:1,age:2}) db.c1.insert({_id:3,name:&#34;b&#34;,sex:2,age:3}) db.c1.insert({_id:4,name:&#34;c&#34;,sex:2,age:4}) db.c1.insert({_id:5,name:&#34;d&#34;,sex:2,age:5}) db.c1.find() 排序 1 db.集合名.find().sort(JSON数据) Limit与Skip方法]]></description>
-</item><item>
-    <title>二、MongoDB基本操作及增删改查</title>
-    <link>https://study.tzki.cn/posts/notes/20200708/20200708-2/</link>
-    <pubDate>Wed, 08 Jul 2020 11:01:50 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://study.tzki.cn/posts/notes/20200708/20200708-2/</guid>
-    <description><![CDATA[基本操作 登陆数据库 1 mongo 查看数据库 语法 1 show databases; 选择数据库 1 use 数据库名 如果切换到一个没有的数据库，例如use admin2，那么会隐式创建这个数据库]]></description>
-</item><item>
-    <title>四、mongoose的使用</title>
-    <link>https://study.tzki.cn/posts/notes/20200708/20200708-4/</link>
-    <pubDate>Wed, 08 Jul 2020 11:01:50 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://study.tzki.cn/posts/notes/20200708/20200708-4/</guid>
-    <description><![CDATA[mongoose 核心概念 schema 约束字段/列数据 model模型 对应 集合 后期用它来实现数据增删改查 简介 安装 1 npm i mongoose schema 英文网： http://mongoosejs.com 中文网： http://mongoosejs.net/ 作用：用来约束MongoD]]></description>
 </item></channel>
 </rss>
