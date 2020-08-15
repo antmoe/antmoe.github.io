@@ -4,7 +4,14 @@
         <link>https://study.tzki.cn/categories/notes/</link>
         <description>notes - 分类 - 小康的学习记录</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>dreamytzk@outlook.com (Dreamy.TZK)</managingEditor>
-            <webMaster>dreamytzk@outlook.com (Dreamy.TZK)</webMaster><lastBuildDate>Sat, 15 Aug 2020 10:29:50 &#43;0800</lastBuildDate><atom:link href="https://study.tzki.cn/categories/notes/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>dreamytzk@outlook.com (Dreamy.TZK)</webMaster><lastBuildDate>Sat, 15 Aug 2020 14:50:50 &#43;0800</lastBuildDate><atom:link href="https://study.tzki.cn/categories/notes/" rel="self" type="application/rss+xml" /><item>
+    <title>git的基础使用</title>
+    <link>https://study.tzki.cn/posts/notes/20200815/20200815-3/</link>
+    <pubDate>Sat, 15 Aug 2020 14:50:50 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://study.tzki.cn/posts/notes/20200815/20200815-3/</guid>
+    <description><![CDATA[Git是什么 分布式版本控制系统的安全性要高很多，因为每个开发人员电脑里都有完整的版本库，某一个开发人员的电脑坏掉了不要紧，随便从其他开发人员]]></description>
+</item><item>
     <title>HTTP各种特性总览</title>
     <link>https://study.tzki.cn/posts/notes/20200815/20200815-1/</link>
     <pubDate>Sat, 15 Aug 2020 10:29:50 &#43;0800</pubDate>
@@ -67,12 +74,5 @@
     <author>作者</author>
     <guid>https://study.tzki.cn/posts/notes/20200708/20200708-3/</guid>
     <description><![CDATA[排序&amp;分页 准备数据 1 2 3 4 5 6 7 8 use test3 db.c1.insert({_id:1,name:&#34;a&#34;,sex:1,age:1}) db.c1.insert({_id:2,name:&#34;a&#34;,sex:1,age:2}) db.c1.insert({_id:3,name:&#34;b&#34;,sex:2,age:3}) db.c1.insert({_id:4,name:&#34;c&#34;,sex:2,age:4}) db.c1.insert({_id:5,name:&#34;d&#34;,sex:2,age:5}) db.c1.find() 排序 1 db.集合名.find().sort(JSON数据) Limit与Skip方法]]></description>
-</item><item>
-    <title>二、MongoDB基本操作及增删改查</title>
-    <link>https://study.tzki.cn/posts/notes/20200708/20200708-2/</link>
-    <pubDate>Wed, 08 Jul 2020 11:01:50 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://study.tzki.cn/posts/notes/20200708/20200708-2/</guid>
-    <description><![CDATA[基本操作 登陆数据库 1 mongo 查看数据库 语法 1 show databases; 选择数据库 1 use 数据库名 如果切换到一个没有的数据库，例如use admin2，那么会隐式创建这个数据库]]></description>
 </item></channel>
 </rss>
