@@ -4,9 +4,16 @@
         <link>https://study.tzki.cn/</link>
         <description>一个收藏回忆与分享技术的地方！</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>dreamytzk@outlook.com (Dreamy.TZK)</managingEditor>
-            <webMaster>dreamytzk@outlook.com (Dreamy.TZK)</webMaster><lastBuildDate>Sat, 15 Aug 2020 14:50:50 &#43;0800</lastBuildDate>
+            <webMaster>dreamytzk@outlook.com (Dreamy.TZK)</webMaster><lastBuildDate>Mon, 17 Aug 2020 11:05:00 &#43;0800</lastBuildDate>
             <atom:link href="https://study.tzki.cn/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>HTTP消息</title>
+    <link>https://study.tzki.cn/posts/notes/20200817/</link>
+    <pubDate>Mon, 17 Aug 2020 11:05:00 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://study.tzki.cn/posts/notes/20200817/</guid>
+    <description><![CDATA[图解HTTP网络协议 基于HTTP的组件系统 代理 请求通过一个实体被发出，实体也就是用户代理。大多数情况下，这个用户代理都是指浏览器。 响应 每一个]]></description>
+</item><item>
     <title>git的基础使用</title>
     <link>https://study.tzki.cn/posts/notes/20200815/20200815-3/</link>
     <pubDate>Sat, 15 Aug 2020 14:50:50 &#43;0800</pubDate>
@@ -69,12 +76,5 @@
     <author>作者</author>
     <guid>https://study.tzki.cn/posts/project/20200712/</guid>
     <description><![CDATA[下载源码 前言 这篇文章是记录一下自己动手完成一个博客开发的历程。 一个前台靠扒别人页面后端靠layui实现的博客。 至此博客开坑任务基本完成 2020-07-15 图片]]></description>
-</item><item>
-    <title>一、MongoDB的安装</title>
-    <link>https://study.tzki.cn/posts/notes/20200708/20200708-1/</link>
-    <pubDate>Wed, 08 Jul 2020 11:01:50 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://study.tzki.cn/posts/notes/20200708/20200708-1/</guid>
-    <description><![CDATA[Windows系统 由于二进制包安装了半个小时，还是卡在进度条不动。因此决定使用压缩包进行安装。 下载安装包 下载地址 下载完成后将其解压，例如我解]]></description>
 </item></channel>
 </rss>
